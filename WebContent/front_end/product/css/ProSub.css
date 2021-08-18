@@ -1,0 +1,283 @@
+body{
+    background-color: aliceblue;
+}
+img{
+    max-width: 100%;
+}
+
+
+.goto2{
+    color: black;
+    text-decoration:none;
+}
+
+.goto2:hover{
+    color: aqua;
+    text-decoration:none;
+}
+/*ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â®*/
+.wed-menu{
+    display: flex;
+    justify-content:space-around;
+    border-bottom: 1px solid #c5c5c5;
+    margin: 20px;
+    height: 50px;
+    padding-bottom: 20px;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+.menu-wed{
+    padding: 0px 20px;
+    border-right: 1px solid #c5c5c5;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.topbox{
+    font-size: 18px;
+    font-family:"ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¾Ãƒâ€šÃ‚Â®ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â»Ãƒâ€¦Ã‚Â¸ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â­Ãƒâ€šÃ‚Â£ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â«ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â";
+    padding: 40px 400px;
+}
+
+.bigbox{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.picbox{
+    width: 30%;
+    margin-right: 50px;
+}
+
+.proname{
+    height: 100px;
+    font-size: 20px;
+    font-weight:bold;
+    font-family:"ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¾Ãƒâ€šÃ‚Â®ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â»Ãƒâ€¦Ã‚Â¸ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â­Ãƒâ€šÃ‚Â£ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â«ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â";
+}
+
+.picmain{
+    border: 2px solid black;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.picmain img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.picsub{
+    height: 120px;
+    display: flex;
+    overflow: scroll;
+}
+
+.picsub img{
+    max-height: 100px;
+    max-width: 100px;
+    object-fit: cover;
+    margin: 5px;
+  
+}
+
+.conbox{
+    border: 1px green;
+    width: 30%;
+    display: block;
+    margin-right: 50px;
+}
+
+.content{
+   margin-top: 25px;
+    height: 300px;
+    font-size: 18px;
+   
+}
+
+.price{
+    
+    height: 50px;
+    font-size: 32px;
+    color: deeppink;
+}
+.quantity{
+    height: 50px;
+    display: block;
+}
+.center{
+    padding-right: 95px;
+    width: 350px;
+    margin: 10px auto; 
+    }
+
+.buy{
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+.tobuy{
+    margin: 5px;
+    height: 80%;
+    width: 40%;
+    border: 1px #fc9086;
+    border-radius: 5px;
+    color: #fc9086;
+    background-color: #FFF;
+    cursor: pointer;
+    font-size: 16px;
+    text-align:center;
+    line-height:50px;
+    transition: 0.5s;
+    opacity: 0.8;
+
+}
+
+.buycar{
+    margin: 5px;
+    height: 80%;
+    width: 40%;
+    border:1px solid #fc9086;
+    border-radius: 5px;
+    background-color: #fc9086;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 16px;
+    text-align:center;
+    line-height:50px;
+    transition: 0.5s;
+    opacity: 0.8;
+}
+
+.tobuy:hover{
+    opacity: 1;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.buycar:hover{
+    opacity: 1;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.shop{
+    height: 130px;
+    padding: 10px;
+    background-color: #FFF;
+    margin-bottom: 25px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 20px;
+    display: flex;
+}
+
+.sellogo{
+    width: 200px;
+    overflow: hidden;
+    object-fit: cover;
+    /* cursor: pointer; */
+    margin-right: 10px;
+}
+
+.sellogo img{
+    object-fit: cover;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.selbox{
+    padding-top: 20px;
+    padding-left: 25px;
+    width: 170px;
+    background-color: #FFF;
+    border-left: 2px dashed gainsboro;
+}
+
+.selbox2{
+    padding-top: 20px;
+    padding-left: 25px;
+    width: 200px;
+    background-color: #FFF;
+    border-left: 2px dashed gainsboro;
+}
+
+.selname{
+    height: 25px;
+    margin: 15px 5px 5px 10px;
+    display: block;
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.selnum{
+    height: 20px;
+    border: 1px black;
+    margin-left: 10px;
+    margin-top: 15px;
+    display: block;
+}
+
+.selbtn{
+    height: 40px;
+    margin-left: 10px;
+    display: block;
+    padding-top: 8px;
+}
+
+.proCount{
+    height: 25px;
+    margin: 15px 5px 5px 10px;
+    display: block;
+   
+}
+
+.selreview{
+    height: 25px;
+    margin: 15px 5px 5px 10px;
+    display: block;
+    font-size: 16px;
+}
+
+.selstar{
+    height: 25px;
+    margin: 15px 5px 5px 10px;
+    display: block;
+    font-size: 16px;
+}
+
+.opentime{
+    height: 25px;
+    margin: 15px 5px 5px 10px;
+    display: block;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* .footer{
+    height: 100px;
+    border: 2px solid black;
+    display: block;
+    background-color: black;
+    color: #FFF;
+    margin-top: 20px;
+    
+} */
+a.reserveVenue_btn{
+    padding: 6px 30px;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #FF9797;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 40px;
+    font-size: 14px;
+}

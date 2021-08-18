@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Sarabun:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+#cartIcon {
+    font-size: 18px;
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: end;
+}
+
+.top ul {
+    display: inline-block;
+    float: right;
+}
+
+.top ul li {
+    padding: 0.5rem 0.5rem;
+    display: inline-block;
+}
+
+.top ul li a {
+    color: #FFF;
+    text-decoration: none;
+    border: 1px solid #D5CB8E;
+}
+
+.top {
+    display: inline-block;
+    width: 100%;
+    background-color: #D5CB8E;
+}
+
+.logo {
+    display: block;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    border-radius: 10px;
+}
+
+.headshot img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.nav1 {
+    height: 65px;
+    background-color: #c5dad1;
+}
+
+.nav2 {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid rgb(175, 80, 204); */
+    height: 120px;
+    background-color: #c5dad1;
+}
+
+.nav2 li {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav2 img {
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.nav2 a {
+    letter-spacing: 0.5px;
+    padding: 5px 0;
+    font-weight: 100;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+    color: #495057;
+    font-family: "Caveat", "cursive", "Noto Sans TC", "sans-serif";
+}
+
+.nav2 a:hover {
+    text-decoration: none;
+    color: #FFF;
+    transition: color 0.09s;
+}
+
+#cartModal {
+    display: inline;
+}

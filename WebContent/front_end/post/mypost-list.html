@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mypost-list</title>
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- boostrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mypost-list.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <script src="js/newCart.js"></script>
+
+</head>
+
+<body>
+
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <div class="big_container">
+        <div class="big_left">
+            <div class="post_list_container" id="post_list_container">
+                <!--文章列表-->
+                <span class="my-post">我的發文<i class="fas fa-user-edit"></i></span>
+                <table class="table table-post" id="table-post">
+                    <tr class="table-dark">
+                        <th scope="col" width="10"></th>
+                        <th scope="col" width="400">文章標題</th>
+                        <th scope="col" width="140">文章分類</th>
+                        <th scope="col" width="170">發表時間</th>
+                        <th scope="col" width="48">狀態</th>
+                        <th scope="col" width="70">編輯</th>
+                    </tr>
+                    <tr>
+                        <!-- <td>1</td>
+						<td>結婚的行政工作有哪些要處理呢？結婚的行政工作有哪些</td>
+						<td>聊結婚</td>
+						<td>2018-04-07 20:22:09</td>
+						<td>顯示</td>
+						<td><a href="#">編輯<i class="fas fa-edit"></i></a></td> -->
+
+                    </tr>
+                </table>
+
+            </div>
+
+
+
+            <div class="post-container" id="post-container">
+
+            </div>
+
+        </div>
+
+
+
+
+        <!----------------右邊區域---------------->
+        <div class="big_right">
+            <div class="sidebar">
+                <section class="ad">
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad01.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad02.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="goto_post">
+                    <div class="text">
+                        <p>解疑惑｜找出口｜聊生活</p>
+                        <span>關於結婚的大小事，不知道能問誰？沒人聽你說？歡迎點擊【我想發文】即可開啟話題 </span>
+                    </div>
+                    <a href="/CFA101G3/front_end/post/po_article.html" class="wantpost" id="" target="_blank"> 我想發文</a>
+                </section>
+
+                <div class="hot-articles-area">
+                    <div class="hot-articles-top" id="hot-articles-top">
+                        <span>熱門文章</span><span>HOT ARTICLES</span>
+                        <div class="hot-articles-div"></div>
+                        <hr class="right1">
+                    </div>
+                </div>
+
+                <div class="hot-articles-box">
+                    <ul class="hot-articles" id="hot-articles">
+                    </ul>
+                </div>
+                <div class="hot-articles-area news">
+                    <div class="hot-articles-top" id="hot-articles-top">
+                        <span>優惠快訊</span><span>NEWS</span>
+                        <div class="hot-articles-div"></div>
+                        <hr class="right1">
+                    </div>
+                </div>
+                <section class="ad2">
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad06.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad07.png" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad05.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad03.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad04.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                    </ul>
+                </section>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- SWEET -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <script>
+        //頁面載入即顯示右側的熱門文章
+        hotPost();
+
+        //獲取右側熱門文章
+        function hotPost() {
+            $.ajax({
+                type: "post",
+                url: "../../post/postActionServlet",
+                data: {
+                    "action": "hotPost",
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.length < 6) {
+                        for (let key = 0; key < response.length; key++) {
+                            let tmp = `<a href="show-article-message.html?post_id=${response[key].MES_POST_ID}"><li>${response[key].CAT_NAME}<span>//</span>${response[key].POST_TITLE}</li></a>`;
+                            $("#hot-articles").append(tmp);
+                        }
+                    } else {
+                        for (let key = 0; key < 6; key++) {
+                            let tmp = `<a href="show-article-message.html?post_id=${response[key].MES_POST_ID}"><li>${response[key].CAT_NAME}<span>//</span>${response[key].POST_TITLE}</li></a>`;
+                            $("#hot-articles").append(tmp);
+                        }
+                    }
+                }
+            });
+        }
+
+        $.ajax({
+            type: "post",
+            url: "../../post/postActionServlet",
+            data: {
+                "action": "post_from_writer",
+            },
+            dataType: "json",
+            success: function(response) {
+                console.log(response);
+                let tmp = "";
+                for (let i = 0; i < response.length; i++) {
+                    let status = response[i].post_status;
+                    let post_status = "";
+                    if (status == 1) {
+                        post_status = "顯示";
+                    } else {
+                        post_status = "隱藏";
+                    }
+                    tmp += `<tr>	
+				<td>${i + 1}</td>
+						<td>${response[i].post_title}</td>
+						<td>${getPostTitle(response[i].post_cat_id)}</td>
+						<td>${TIME(response[i].post_time)}</td>
+						<td>${post_status}</td>
+						<td><a class="editletter" href="edit-post.html?post_id=${response[i].post_id}">編輯<i class="fas fa-edit"></i></a></td>
+						</tr>`;
+                }
+                $("#table-post").append(tmp);
+            }
+        });
+
+
+        // 依文章id抓文章資訊
+        // $.ajax({
+        // 	type: "post",
+        // 	url: "../../post/postActionServlet",
+        // 	data: {
+        // 		"action": "",
+        // 	},
+        // 	dataType: "dataType",
+        // 	success: function (response) {
+
+        // 	}
+        // });
+
+        // 把毫秒轉成當地格式
+        function TIME(time) {
+            //new Date()可以接毫秒數
+            let date = new Date(time);
+            //date.toLocaleString(); 可以轉換成當地格式
+            datetime = date.toLocaleString();
+            return datetime;
+            console.log(date)
+        }
+
+        // 依文章id找文章分類
+        function getPostTitle(post_cat_id) {
+            $.ajax({
+                type: "post",
+                url: "../../category/OneCategoryServelt",
+                dataType: 'json',
+                async: false,
+                data: {
+                    "cat_id": post_cat_id
+                },
+                success: function(result) {
+                    postcat = result.cat_name;
+                }
+            });
+            return postcat;
+        }
+    </script>
+
+    <script src="js/friendchat.js"></script>
+</body>
+
+</html>

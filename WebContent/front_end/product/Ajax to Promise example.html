@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <button id="me">Click Me</button>
+    <div id="answer"></div>
+    <img id="image" src="" alt="">
+    <script type="text/javascript">
+        $('#me').on('click', async function() { // 1. 先做一個 async 的環境
+            let result = await test(); // 2. promise 物件必須加上 await 關鍵字，才能等到結果
+            // let result = test();
+            console.log(result);
+            $('#answer').text(result.answer);
+            $('#image').attr('src', result.image).css('display', 'block');
+        });
+
+        function test() { // 3. 做一個 Promise 物件
+            return new Promise(function(resolve, reject) {
+                $.ajax({
+                    url: 'https://yesno.wtf/api',
+                    type: "get",
+                    dataType: 'json',
+                    success: function(res) {
+                        resolve({ answer: res.answer, image: res.image }); // 成功的結果用 resolve
+                        // console.log(res);
+                        // $('#answer').text(res.answer);
+                        // $('#image').attr('src', res.image).css('display', 'block');
+                    },
+                    error: function(res) {
+                        reject({ answer: 'Error! Could not reach the API. ' }); // 失敗的結果用 reject
+
+                        // $('#answer').text();
+                    }
+                });
+            });
+
+        }
+    </script>
+</body>
+
+</html>

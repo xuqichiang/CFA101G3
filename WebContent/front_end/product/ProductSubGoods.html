@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <!-- boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- SWEET -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- 購物車 -->
+    <script src="js/newCart.js"></script>
+
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/ProMain.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="../index/css/friendchat.css">
+    <title>小物專區</title>
+</head>
+
+<body>
+
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <!-- 導覽bar -->
+    <div class="wed-menu" id="wed-menu-id">
+        <ul class="menu">
+            <li class="menu-wed"><a class="goto2" href="ProductMain.html">商品主頁</a></li>
+            <li class="menu-wed"><a class="goto2" href="ProductSubShoes.html">婚鞋專區</a></li>
+            <li class="menu-wed"><a class="goto2" href="ProductSubRing.html">婚戒專區</a></li>
+            <li class="menu-wed"><a class="goto2" href="ProductSubFlower.html">花束專區</a></li>
+            <li class="menu-wed"><a class="goto2" href="ProductSubGoods.html">小物專區</a></li>
+        </ul>
+    </div>
+
+    <!-- 搜尋位置 -->
+    <div class="titlename2"><a class="goto" href="/CFA101G3/front_end/product/ProductSubGoods.html"><i class="fab fa-shopify"></i>&ensp;小物專區</a>
+
+        <span class="search_cheap" id="search_cheap"><a href="#">價格&emsp; 低&ensp;>&ensp;高</span></a>
+        <span class="search_expensive" id="search_expensive"><a href="#">價格&emsp; 高&ensp;>&ensp;低</span></a>
+        <span class="search" id="search"><input type="text" id="control" class="form-control" placeholder="搜尋"></span>
+        <span id="magnifier" class="magnifier"><a class="goto" href="" id="kwds"> <i class="fas fa-search"></i></a></span>
+    </div>
+
+
+    <!-- 動態生成網頁 -->
+    <div id="list" class="list">
+        <!-- <div id="box1" class="box1"> -->
+    </div>
+
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+    <script>
+        //搜尋榜定A標籤
+        $("#search").on('change', function() {
+
+            let control = $("#control").val();
+            console.log(control);
+            $("#kwds").prop('href', `ProductSearch.html?kwds=${control}`)
+
+        });
+        //AJAX生成資料
+        $.ajax({
+            url: "../../product/ProSubServlet?action=getall",
+            type: "get",
+            dataType: "JSON",
+            data: {
+                "pro_proc_id": 4
+            },
+
+            success: function(data) {
+                // console.log(data);
+                $("#list").html("");
+                for (let p = 0; p < data.length; p++) {
+                    let product = `
+
+            <div class="box1">
+            <a href="ProductSingle.html?pro_id=${data[p].pro_id}" id="pro_id${p}">
+            <div class="images" id="images${p}"></div>
+            </a>
+            <div class="name">${data[p].pro_name}</div>
+            <div class="content">${data[p].pro_content}</div>
+            <div class="price"><i class="fas fa-comment-dollar"></i>${data[p].pro_price}</div>
+            </div>
+            `
+                    $("#list").append(product);
+                }
+                getimg();
+            }
+        });
+
+        //價格排序
+        $("#search_cheap").on('click', function() {
+
+            $.ajax({
+                url: "../../product/ProSubServlet?action=cheap",
+                type: "get",
+                dataType: "JSON",
+                data: {
+                    "pro_proc_id": 4
+                },
+                success: function(data) {
+                    console.log(data);
+                    $("#list").html("");
+                    for (let p = 0; p < data.length; p++) {
+                        let product = `
+
+            <div class="box1">
+            <a href="ProductSingle.html?pro_id=${data[p].pro_id}" id="pro_id${p}">
+            <div class="images" id="images${p}"></div>
+            </a>
+            <div class="name">${data[p].pro_name}</div>
+            <div class="content">${data[p].pro_content}</div>
+            <div class="price"><i class="fas fa-comment-dollar"></i>${data[p].pro_price}</div>
+            </div>
+            `
+                        $("#list").append(product);
+                    }
+                    getimg2();
+                }
+            })
+        });
+
+        $("#search_expensive").on('click', function() {
+
+            $.ajax({
+                url: "../../product/ProSubServlet?action=expensive",
+                type: "get",
+                dataType: "JSON",
+                data: {
+                    "pro_proc_id": 4
+                },
+                success: function(data) {
+                    console.log(data);
+                    $("#list").html("");
+                    for (let p = 0; p < data.length; p++) {
+                        let product = `
+
+            <div class="box1">
+            <a href="ProductSingle.html?pro_id=${data[p].pro_id}" id="pro_id${p}">
+            <div class="images" id="images${p}"></div>
+            </a>
+            <div class="name">${data[p].pro_name}</div>
+            <div class="content">${data[p].pro_content}</div>
+            <div class="price"><i class="fas fa-comment-dollar"></i>${data[p].pro_price}</div>
+            </div>
+            `
+                        $("#list").append(product);
+                    }
+                    getimg3();
+                }
+            })
+        });
+
+        //AJAX請求圖片
+        function getimg() {
+            $.ajax({
+                url: "../../product/ProImgSubServlet?action=getall",
+                type: "get",
+                dataType: "JSON",
+                data: {
+                    "pro_proc_id": 4
+                },
+
+                success: function(data) {
+                    console.log(data);
+                    for (let p = 0; p < data.length; p++) {
+                        let images = `<img src="../../product/ProImgOutServlet?proi_id=${data[p].proi_id}" alt="">`;
+
+                        $("#images" + p).append(images);
+
+                    }
+                }
+            })
+        };
+
+        function getimg2() {
+            $.ajax({
+                url: "../../product/ProImgSubServlet?action=cheap",
+                type: "get",
+                dataType: "JSON",
+                data: {
+                    "pro_proc_id": 4
+                },
+
+                success: function(data) {
+                    console.log(data);
+                    for (let p = 0; p < data.length; p++) {
+                        let images = `<img src="../../product/ProImgOutServlet?proi_id=${data[p].proi_id}" alt="">`;
+
+                        $("#images" + p).append(images);
+
+                    }
+                }
+            })
+        };
+
+        function getimg3() {
+            $.ajax({
+                url: "../../product/ProImgSubServlet?action=expensive",
+                type: "get",
+                dataType: "JSON",
+                data: {
+                    "pro_proc_id": 4
+                },
+
+                success: function(data) {
+                    console.log(data);
+                    for (let p = 0; p < data.length; p++) {
+                        let images = `<img src="../../product/ProImgOutServlet?proi_id=${data[p].proi_id}" alt="">`;
+
+                        $("#images" + p).append(images);
+
+                    }
+                }
+            })
+        };
+    </script>
+    <!-- 聊聊 -->
+    <script src="../index/js/friendchat.js"></script>
+</body>
+
+</html>

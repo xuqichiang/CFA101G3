@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/locpIndex.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="js/newCart.js"></script>
+
+    <title>方案主頁</title>
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <!-- 幻燈片 -->
+    <div class="conBG">
+        <div class="container">
+            <div class="carousel slide" id="demo">
+
+                <!--幻燈片指向-->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+
+                <!--幻燈片內容-->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="images/LocationProgram8.jpg" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="images/LocationProgram9.jpg" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="images/LocationProgram10.jpg" alt="">
+                    </div>
+
+                    <!--幻燈片左右控制-->
+                    <a href="#demo" class="carousel-control-prev" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#demo" class="carousel-control-next" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ablock">
+        <a href="LocIndex.html" class="place">
+            <i class="fas fa-church"></i>
+            <h3>婚禮場地</h3>
+        </a>
+        <a href="../locationroom/locrMaintitle.html" class="place">
+            <i class="fas fa-home"></i>
+            <h3>婚禮廳房</h3>
+        </a>
+        <a href="LocpIndex.html" class="place">
+            <i class="fas fa-indent"></i>
+            <h3>婚禮方案</h3>
+        </a>
+        <select id="selectprice" class="form-select" aria-label="Default select example">
+            <option selected>依價格排列</option>
+            <option value="hightolow">由高到低</option>
+            <option value="lowtohigh">由低到高</option>
+        </select>
+    </div>
+    <!-- 商品 -->
+    <div class="titlename">精選方案</div>
+    <div class="list" id="list">
+    </div>
+
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+    <script>
+        let pathName = window.location.pathname;
+        let contextPath = pathName.substring(0, pathName.indexOf('/', 1));
+        let dataSet; //全局變數 排序可用
+        $.ajax({
+            url: contextPath + '/locationprogram/locpServlet?action=getAll_by_status_endtime',
+            type: 'post',
+            dataType: 'json',
+            success: function(data) {
+                dataSet = data;
+                for (let i = 0; i < data.length; i++) {
+                    let tmp = `<div class="box1">
+                        <div class="loc">
+                            <div class="locrimg"><img src="data:image/*;base64,${data[i].loc_logo}"></div>
+                            <div class="locname">${data[i].loc_name}</div>
+                        </div>
+                        <div class="images">
+                            <a href="Locpsingle.html?locp_id=${data[i].locp_id}"><img src="${contextPath}/locationprogram/locpServlet?action=getLocpImg&locp_id=${data[i].locp_id}"></a>
+                        </div>
+                        <div class="name">${data[i].locp_name}</div>
+                        <div class="content">${data[i].locp_content}</div>
+                        <div class="price"><i class="fas fa-comment-dollar"></i>${data[i].locp_price}</div>
+                    </div>`;
+                    $('#list').append(tmp);
+                }
+            }
+        })
+
+        //選取價格排列時,請求方案資訊
+        $('#selectprice').on('change', function(e) {
+            let condition = $(e.target).val();
+            let data;
+            if (condition == "hightolow") {
+                //價格高到低
+                data = dataSet.sort(function(a, b) {
+                    return b.locp_price - a.locp_price
+                });
+            } else if (condition == "lowtohigh") {
+                //價格低到高
+                data = dataSet.sort(function(a, b) {
+                    return a.locp_price - b.locp_price
+                });
+            }
+            if (data != undefined) {
+                $('#list').html("");
+                for (let i = 0; i < data.length; i++) {
+                    let tmp = `<div class="box1">
+                        <div class="loc">
+                            <div class="locrimg"><img src="data:image/*;base64,${data[i].loc_logo}"></div>
+                            <div class="locname">${data[i].loc_name}</div>
+                        </div>
+                        <div class="images">
+                            <a href="Locpsingle.html?locp_id=${data[i].locp_id}"><img src="${contextPath}/locationprogram/locpServlet?action=getLocpImg&locp_id=${data[i].locp_id}"></a>
+                        </div>
+                        <div class="name">${data[i].locp_name}</div>
+                        <div class="content">${data[i].locp_content}</div>
+                        <div class="price"><i class="fas fa-comment-dollar"></i>${data[i].locp_price}</div>
+                    </div>`;
+                    $('#list').append(tmp);
+                }
+            }
+        });
+    </script>
+    <script src="js/friendchat.js"></script>
+</body>
+
+</html>

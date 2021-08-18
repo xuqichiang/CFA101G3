@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/LocSellerProfile.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="js/jquery.datetimepicker.full.js"></script>
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/newCart.js"></script>
+    <title>場地中心｜MarryHappiness</title>
+</head>
+<style>
+    .locinfo {
+        font-size: 0px;
+        border-radius: 3px;
+        border: 1px solid rgba(0, 0, 0, .2);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .locinfo li {
+        position: relative;
+        cursor: default;
+        padding: 16px 0px;
+        display: inline-block;
+        vertical-align: top;
+        flex: 1;
+        text-align: center;
+    }
+    
+    .num {
+        display: block;
+        margin: 0 auto;
+        font-size: 36px;
+        color: #2D6788;
+    }
+    
+    .locinfo li+li::after {
+        display: block;
+        content: '';
+        width: 1px;
+        height: 90px;
+        background-color: rgba(0, 0, 0, .2);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    
+    .infotitle {
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+    <div class="wrap">
+        <div class="side-bar">
+            <img class="imgdata" src="" alt="">
+            <div class="user-name s-user-name"></div>
+            <div class="user-hr"><i class="fas fa-heart"></i></div>
+            <ul class="menu">
+                <li><a href="../member/LocSellerProfile.html?action=profile" id="profile"><i class="fas fa-user"></i>個人資料</a></li>
+                <li><a href="../member/LocSellerProfile.html?action=setting" id="setting"><i class="fas fa-file-invoice"></i>帳號設定</a></li>
+                <li><a href="../member/LocSellerProfile.html?action=sellerProfile"><i class="fas fa-shopping-cart"></i>店家資料</a></li>
+                <li><a href="../locationprogram/Locmanagement.html"><i class="fas fa-church"></i>場地管理</a></li>
+                <li><a href="javascript:void(0)" id="locRManage"><i class="fas fa-home"></i>廳房管理</a></li>
+                <ul class="menu-locR">
+                    <li><a href="../locationorder/locationOrderGetAll.html"><i class="fas fa-user"></i>訂單資料</a>
+                    </li>
+                    <li><a href="../../locationroom/locationRoomServlet?action=locationRoomGetAll"><i
+                                class="fas fa-file-invoice"></i>查詢廳房</a></li>
+
+                    <li><a href="../locationroom/locationRoomGetOnee2.jsp"><i
+                            class="fas fa-church"></i>新增廳房</a></li>
+                    <li><a href="../../locationroom/locationRoomServlet?action=locationRoomDelete"><i
+                            class="fas fa-camera-retro"></i>刪除廳房</a></li>
+                </ul>
+                <li><a href="javascript:void(0)" id="locPManage"><i class="fas fa-indent"></i>方案管理</a></li>
+                <ul class="menu-locP">
+                    <li><a href="../locationprogram/listLocpBySmemId.html"><i class="fas fa-tasks"></i>查詢方案</a></li>
+                    <li><a href="../locationprogram/addLocpimage.html"><i class="fas fa-folder-plus"></i></i>新增方案</a></li>
+                    <li><a href="../locationprogram/updateLocpimage.html"><i class="fas fa-pencil-alt"></i>修改方案</a></li>
+                    <li><a href="../locationprogram/delLocp.html"><i class="fas fa-trash-alt"></i>刪除方案</a></li>
+                </ul>
+                <li><a href="../locationprogram/loccalendar.html"><i class="far fa-calendar-alt"></i>行程管理</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2 style="font-size: 20px;font-weight: 500;">場地管理</h2>
+            <div class="profile">
+                <div class="info">
+                    <p>
+                        <h2 style="color: #fb6b5e;font-size: 18px;margin-bottom: 20px;">場地資訊</h2>
+                    </p>
+                    <ul class="locinfo">
+                        <li><span class="infotitle">登記的廳房</span><span id="alllocr" class="num">0</span></li>
+                        <li><span class="infotitle">上架的廳房</span><span id="onlinelocr" class="num">0</span></li>
+                        <li><span class="infotitle">下架的廳房</span><span id="offlinelocr" class="num">0</span></li>
+                    </ul>
+                    <br>
+                    <ul class="locinfo">
+                        <li><span class="infotitle">登記的方案</span><span id="alllocp" class="num">0</span></li>
+                        <li><span class="infotitle">上架的方案</span><span id="onlinelocp" class="num">0</span></li>
+                        <li><span class="infotitle">下架的方案</span><span id="offlinelocp" class="num">0</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+    <script>
+        //取得賣家的方案
+        $.ajax({
+            url: '../../locationprogram/getOneBySmemidServlet',
+            type: 'post',
+            dataType: 'json',
+            success: function(data) {
+                let alllocpcount = 0;
+                let onlinelocpcount = 0;
+                let offlinelocpcount = 0;
+                for (let i = 0; i < data.length; i++) {
+                    alllocpcount++;
+                    if (data[i].locp_status == 1) {
+                        onlinelocpcount++;
+                    } else {
+                        offlinelocpcount++;
+                    }
+                }
+                $('#alllocp').text(alllocpcount);
+                $('#onlinelocp').text(onlinelocpcount);
+                $('#offlinelocp').text(offlinelocpcount);
+            }
+        })
+
+        //取得賣家的廳房
+        $.ajax({
+            url: '../../locationprogram/getRoomBySmemidServlet',
+            type: 'post',
+            dataType: 'json',
+            success: function(data) {
+                let alllocrcount = 0;
+                let onlinelocrcount = 0;
+                let offlinelocrcount = 0;
+                for (let i = 0; i < data.length; i++) {
+                    alllocrcount++;
+                    if (data[i].locr_STATUS == 1) {
+                        onlinelocrcount++;
+                    } else {
+                        offlinelocrcount++;
+                    }
+                }
+                $('#alllocr').text(alllocrcount);
+                $('#onlinelocr').text(onlinelocrcount);
+                $('#offlinelocr').text(offlinelocrcount);
+            }
+        })
+
+        //profile跟資料庫請求個人資料
+        Ajaxprofile();
+        //跟資料庫請求個人頭像
+        Ajaxheadshot();
+
+        function Ajaxprofile() {
+            $.ajax({
+                type: "get",
+                url: "../../member/buyProfileServlet",
+                dataType: 'json',
+                success: function(result) {
+                    if (result == "0") {
+                        window.location.href = "../../front_end/index/index.jsp";
+                    } else {
+                        resultData = result;
+                        $('.user-name').html(result.name != null ? result.name : "尚未填寫");
+                        $('#phone').html(result.phone != null ? result.phone : "尚未填寫");
+                        $('#city').html(result.city != null ? result.city : "尚未填寫");
+                        $('#cityarea').html(result.cityarea != null ? result.cityarea : "尚未填寫");
+                        $('#street').html(result.street != null ? result.street : "尚未填寫");
+                    }
+                }
+            });
+        };
+
+        function Ajaxheadshot() {
+            $.ajax({
+                type: "post",
+                url: "../../member/headshotBuyServlet",
+                data: {
+                    "headshot": "headshot"
+                },
+                xhrFields: {
+                    // 將回傳結果以Blob保持原本二進位的格式回傳
+                    //jquery的dataType無法設定返回格式為blob需要手動修改
+                    responseType: "blob"
+                },
+                success: function(result) {
+                    let img = document.getElementsByClassName('imgdata');
+                    if (result.size != "0") {
+                        let url = URL.createObjectURL(result);
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = url;
+                        }
+                    } else {
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = "images/music_castanet_girl.png";
+                        }
+                    }
+                }
+            });
+        }
+
+        $('#locRManage').on('click', function() {
+            $('.menu-locR').slideToggle();
+        });
+        $('#locPManage').on('click', function() {
+            $('.menu-locP').slideToggle();
+        });
+    </script>
+    <script src="js/friendchat.js"></script>
+
+</body>
+
+</html>

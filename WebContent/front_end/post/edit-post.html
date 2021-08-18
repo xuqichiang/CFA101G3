@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mypost-list</title>
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- boostrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <link rel="stylesheet" href="css/edit-post.css">
+    <script src="js/newCart.js"></script>
+
+</head>
+
+<body>
+
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+
+
+
+    <div class="big_container">
+        <div class="big_left">
+            <div class="po_big_container">
+                <div class="po-container" id="po-container">
+                    <div class="po-top">
+                        <p>
+                            編輯文章 <i class="far fa-edit"></i>
+                        </p>
+                    </div>
+                    <div class="postcontent" id="postcontent">
+
+                        <!-- <div class="inner-top" id="inner-top">
+							<div>
+								<select class="form-select form-select-sm form-select2 select-profession"
+									aria-label=".form-select-sm example" id="select-profession">
+									<option value="7">選擇分類</option>
+									<option value="1">聊結婚</option>
+									<option value="2">好店推薦</option>
+									<option value="3">我要靠北</option>
+									<option value="4">準媽咪</option>
+									<option value="5">購便宜</option>
+									<option value="6">官方文章</option>
+									<option value="7">其它閒聊</option>
+								</select>
+							</div>
+
+							標題 
+							</br>
+							<input type="text" class="form-control title" id="title" maxlength="40">
+						</div>
+
+
+
+
+						輸入標籤的地方  限定只能打10個字
+						<div class="tag-box">
+							<input type="text" class="tagInput form-control" id="tagInput" maxlength="10"
+								placeholder="請輸入標籤(非必填)">
+
+							<button type="button" class="btn btn-danger tag-input-btn tagBtn" id="tagBtn">加入此標籤</button>
+							<!--生成的Tag出現在此列 -->
+                        <!-- <div id="tags"></div>
+						</div>
+
+						<div id="errorMsg"></div>
+
+						文章內容
+						<div id="editor2" class="editor2 form-control" contenteditable="true"></div>
+
+						選擇檔案 按鈕
+						<input type="file" name="file" id="file" class="file" accept="image/gif, image/jpeg, image/png">
+
+						確認修改 按鈕
+						<div class="inner-btn">
+							<input type="button" class="btn btn-dark" value="確認修改" id="post-button">
+						</div>-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!----------------右邊區域---------------->
+        <div class="big_right">
+            <div class="sidebar">
+                <section class="ad">
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad01.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad02.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="goto_post">
+                    <div class="text">
+                        <p>解疑惑｜找出口｜聊生活</p>
+                        <span>關於結婚的大小事，不知道能問誰？沒人聽你說？歡迎點擊【我想發文】即可開啟話題 </span>
+                    </div>
+                    <a href="/CFA101G3/front_end/post/po_article.html" class="wantpost" id="wantpost">
+						我想發文</a>
+                </section>
+
+                <div class="edit-articles-area">
+                    <section class="goto_edit">
+                        <div class="edittext">
+                            <span class="editspan">編輯文章</span><span>EDIT ARTICLES</span>
+                            <div class="edit-articles-div"></div>
+                            <hr class="right1">
+                        </div>
+                        <a href="mypost-list.html" class="mypost" id="mypostbtn"> 編輯我的文章</a>
+                    </section>
+                </div>
+
+
+
+                <div class="hot-articles-area">
+                    <div class="hot-articles-top" id="hot-articles-top">
+                        <span>熱門文章</span><span>HOT ARTICLES</span>
+                        <div class="hot-articles-div"></div>
+                        <hr class="right1">
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="hot-articles-box">
+                    <ul class="hot-articles" id="hot-articles">
+                    </ul>
+                </div>
+                <div class="hot-articles-area news">
+                    <div class="hot-articles-top" id="hot-articles-top">
+                        <span>優惠快訊</span><span>NEWS</span>
+                        <div class="hot-articles-div"></div>
+                        <hr class="right1">
+                    </div>
+                </div>
+                <section class="ad2">
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad06.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad07.png" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad05.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad03.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad04.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                    </ul>
+                </section>
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- SWEET -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <script>
+        //頁面載入即顯示右側的熱門文章
+        hotPost();
+
+        //獲取右側熱門文章
+        function hotPost() {
+            $.ajax({
+                type: "post",
+                url: "../../post/postActionServlet",
+                data: {
+                    "action": "hotPost",
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.length < 6) {
+                        for (let key = 0; key < response.length; key++) {
+                            let tmp = `<a href="show-article-message.html?post_id=${response[key].MES_POST_ID}"><li>${response[key].CAT_NAME}<span>//</span>${response[key].POST_TITLE}</li></a>`;
+                            $("#hot-articles").append(tmp);
+                        }
+                    } else {
+                        for (let key = 0; key < 6; key++) {
+                            let tmp = `<a href="show-article-message.html?post_id=${response[key].MES_POST_ID}"><li>${response[key].CAT_NAME}<span>//</span>${response[key].POST_TITLE}</li></a>`;
+                            $("#hot-articles").append(tmp);
+                        }
+                    }
+                }
+            });
+        }
+
+
+
+        //用postid抓出該則文章內容
+        let urlParams = new URLSearchParams(window.location.search);
+        let post_id = urlParams.get("post_id");
+        console.log(post_id)
+
+
+        let tagArray = []; //tags陣列
+        // 依文章id抓文章資訊
+        $.ajax({
+            type: "post",
+            url: "../../post/showOnePostBypostIdServlet",
+            data: {
+                "action": "getPost",
+                "post_id": post_id
+            },
+            dataType: "json",
+            success: function(response) {
+                post_id = response.POST_ID;
+                console.log(post_id);
+                let tmp = `
+				<div class="inner-top" id="inner-top">
+					 <div>
+								<select class="form-select form-select-sm form-select2 select-profession"
+									aria-label=".form-select-sm example" id="select-status" style="width: 100px">
+									<option value="1">顯示</option>
+									<option value="0">隱藏</option>
+								</select>
+							</div>
+							 <div>
+								<select class="form-select form-select-sm form-select2 select-profession"
+									aria-label=".form-select-sm example" id="select-profession">
+									<option value="7">選擇分類</option>
+									<option value="1">聊結婚</option>
+									<option value="2">好店推薦</option>
+									<option value="3">我要靠北</option>
+									<option value="4">準媽咪</option>
+									<option value="5">購便宜</option>
+									
+									<option value="7">其它閒聊</option>
+								</select>
+							</div>
+
+							<!-- 標題 -->
+							 </br>
+							<input type="text" value="${response.POST_TITLE}" class="form-control title" id="title" maxlength="40">
+						</div>
+
+
+
+
+							<!--輸入標籤的地方  限定只能打10個字 -->
+							<div class="tag-box">
+								<input type="text" class="tagInput form-control" id="tagInput" maxlength="10"
+									placeholder="請輸入標籤(非必填)">
+
+								<button type="button" class="btn btn-danger tag-input-btn tagBtn"
+									id="tagBtn">加入此標籤</button>
+								<!--生成的Tag出現在此列 -->
+								<div id="tags"></div>
+
+							</div>
+
+							<div id="errorMsg"></div>
+
+							<!-- 文章內容 -->
+							<div id="editor2"  class="editor2 form-control" contenteditable="true">${response.POST_CONTENT}</div>
+
+							<!-- 選擇檔案 按鈕 -->
+							<input type="file" name="file" id="file" class="file"
+								accept="image/gif, image/jpeg, image/png">
+
+							<!-- 確認修改 按鈕 -->
+							<div class="inner-btn">
+								<input type="button" class="btn btn-dark" value="確認修改" id="post-button">
+							</div>
+						</div>
+				`;
+                $("#postcontent").append(tmp);
+                $("#select-profession").val(response.CAT_ID);
+                $("#select-status").val(response.POST_STATUS);
+
+
+                //確認是否為管理員
+                $.ajax({
+                    type: "post",
+                    url: "../../admin/adminServlet?action=check",
+                    dataType: "json",
+                    success: function(response) {
+                        if (response) {
+                            let tmp = `<option value="6">官方文章</option>`;
+                            $('#select-profession').append(tmp);
+                        }
+                    }
+                });
+
+                //取得tags
+                getTags();
+            }
+
+        });
+
+        // 用文章id取得標籤們
+        // function getTagName(demo) {
+        function getTags() {
+            let tags = "";
+            $.ajax({
+                type: "post",
+                url: "../../post/postTagRefServlet",
+                data: {
+                    "action": "getTags",
+                    "ptr_post_id": post_id,
+                },
+                // async: false,
+                dataType: "json",
+                success: function(response) {
+                    console.log(response);
+                    for (let i = 0; i < response.length; i++) {
+                        tags = response[i].tagVO.tag_name;
+                        tagArray.push(tags);
+                        let onetag = `
+								<button type="button" class="btn btn-secondary btn-sm">
+                                <span>${tags}</span>
+                                <a class="badge bg-secondary">X</a>
+                            </button>
+						`;
+
+                        $("#tags").append(onetag);
+                    }
+                    console.log(tagArray);
+                }
+            });
+        }
+
+
+
+        // 把毫秒轉成當地格式
+        function TIME(time) {
+            //new Date()可以接毫秒數
+            let date = new Date(time);
+            //date.toLocaleString(); 可以轉換成當地格式
+            datetime = date.toLocaleString();
+            return datetime;
+            console.log(date)
+        }
+
+
+
+        /*讀取圖片功能2.0*/
+        $('body').on('change', '#file', function() {
+            if (this.files && this.files[0]) {
+                /*判斷檔案大小是否超過*/
+                let size = 0;
+                for (let i = 0; i < this.files.length; i++) {
+                    size = size + this.files[i].size;
+                }
+                if (size > 1024 * 1024 * 5) {
+                    $('#file').val(""); //清空file所選圖片
+                    alert("您的檔案大小超過5M");
+                    return;
+                }
+                /******************/
+
+                var reader = new FileReader(); //創建檔案讀取物件
+                reader.onload = function(e) {
+                    let myForm = new FormData(); //創建表單物件
+                    let imgData = e.target.result; //獲取檔案讀取後的資料
+                    let blob = new Blob([imgData], {
+                        type: 'image/*'
+                    }); //轉換成blob型別
+                    let fileName = $('#file').val(); //獲取檔案名稱
+                    myForm.append(fileName, blob); //把圖片加入到表單內
+                    $.ajax({
+                        type: "post",
+                        enctype: 'multipart/form-data',
+                        url: "../../post/postUploadServlet",
+                        data: myForm,
+                        processData: false,
+                        contentType: false,
+                        success: function(result) {
+                            let template = `<img src="../../post/postUploadServlet?data=${result}" alt="">`;
+
+                            $("#editor2").append(template);
+                            $('#file').val(""); //清空file所選圖片
+                        }
+                    });
+                }
+                reader.readAsArrayBuffer(this.files[0]);
+            }
+        });
+
+
+
+        function checkTagType(tagvalue) {
+            //正則表達式
+            let reg = /^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]|[a-zA-Z0-9_.]){1,20}$/;
+            //獲取輸入框中的值
+            console.log(reg.test(tagvalue));
+            return reg.test(tagvalue);
+        }
+
+
+
+        //監聽點擊按鈕後插入tag
+        $('body').on('click', '#tagBtn', function(e) {
+            if (tagArray.length >= 5) {
+                $('#tagBtn').attr("disabled", "disabled");
+                return;
+            }
+            let tagValue = $('#tagInput').val().trim();
+            if (!checkTagType(tagValue)) {
+                alert("請輸入中文、數字或英文");
+                //輸入非法字元後，清空輸入框
+                $("#tagInput").val("");
+                return;
+            }
+
+            if (tagValue != "") {
+                tagArray.push(tagValue);
+                let tagTemp =
+                    `<button type="button" class="btn btn-secondary btn-sm">
+                                <span>${tagValue}</span>
+                                <a class="badge bg-secondary">X</a>
+                            </button>`
+                $('#tags').append(tagTemp);
+                $('#tagInput').val("");
+            }
+        });
+
+        //刪除tag
+        $('body').on('click', '#tags a', function(e) {
+            //e.currentTarget 指的是註冊的對象'a' 如果'a'底下有其他<span>且要選擇他的span 要用e.target
+            e.currentTarget.closest("button").remove();
+            let tmpValue = $(e.currentTarget).siblings('span').html();
+            console.log(tmpValue);
+            tagArray.forEach(function(item, index, object) {
+                if (item == tmpValue) {
+                    object.splice(index, 1);
+                }
+            });
+            if (tagArray.length < 5) {
+                $('#tagBtn').removeAttr("disabled");
+            }
+        });
+
+
+
+        // 按下確認修改的按鈕
+        $("body").on('click', '#post-button', function() {
+            let selectprofession = $("#select-profession").val(); //取下拉選單的值
+            let title = $("#title").val(); //取title的值
+            let editor2 = $("#editor2").html();
+            let post_status = $("#select-status").val();
+            let tags = tagArray.toString();
+            console.log(tags);
+            $.ajax({
+                url: "../../post/postActionServlet",
+                type: "POST",
+                dataType: 'json',
+                data: { //把data送進servlet
+                    "action": "edit_post",
+                    "post_id": post_id,
+                    "post_status": post_status,
+                    "post_cat_id": selectprofession,
+                    "post_title": title,
+                    "post_content": editor2,
+                    "tag_name": tags
+                },
+                success: function(result) {
+                    alert(result.msg);
+                    window.location.href = 'mypost-list.html';
+                },
+                error: function(data) {
+                    $("#errorMsg").html("");
+                    console.log(data.responseText);
+                    // let errorMsg = data.responseText.split(",");
+                    let errorMsg = JSON.parse(data.responseText);
+                    for (let i = 0; i < errorMsg.length; i++) {
+                        $("#errorMsg").append(errorMsg[i] + "<br>");
+                        // console.log(errorMsg[i]);
+                    }
+                    alert("修改失敗");
+                }
+            });
+        });
+    </script>
+
+    <script src="js/friendchat.js"></script>
+</body>
+
+</html>

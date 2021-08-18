@@ -1,0 +1,155 @@
+.biglogo {
+    height: 300px;
+    margin: 20px;
+    display: flex;
+}
+
+.shop_banner {
+    width: 450px;
+    overflow: hidden;
+    object-fit: cover;
+    margin-right: 30px;
+}
+
+.shop_banner img {
+    object-fit: cover;
+    /* height: 100%; */
+}
+
+.shop_content {
+    width: 650px;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.shop_text {
+    border: 0px;
+    width: 600px;
+    height: 210px;
+    resize: none;
+}
+
+.biglist {
+    height: 1150px;
+    margin: 10px 30px 10px 30px;
+    display: flex;
+}
+
+.shop_search {
+    width: 230px;
+    display: block;
+    margin: 10px;
+    background-color: #fff;
+}
+
+.shop_product {
+    width: 100%;
+    margin: 10px;
+    background-color: #fff;
+    /* display: flex;
+    justify-content: left; */
+    flex-wrap: wrap;
+    overflow: hidden;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+.shop_product h2 {
+    font-size: 30px;
+    color: gray;
+}
+
+.box2 {
+    height: 250px;
+    /* width: 20%; */
+    display: block;
+    /* margin-right: 30px; */
+    margin: 30px 30px 0px 30px;
+}
+
+.SHbox {
+    /* width: 158px; */
+    height: 250px;
+    display: block;
+    /* border: 1px lightgray; */
+    background-color: honeydew;
+}
+
+.SHtitle {
+    display: block;
+    background-color: darkseagreen;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    /* border-radius: 2px 2px 0px 0px; */
+}
+
+.SHinput {
+    width: 145px;
+}
+
+.SHinput2 {
+    width: 60px;
+}
+
+.SHname {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn {
+    width: auto;
+}
+
+.btnbox {
+    display: flex;
+    justify-content: center;
+}
+
+.SHselect {
+    width: 145px;
+    height: 25px;
+}
+
+.locinfo {
+    display: flex;
+    justify-content: space-around;
+}
+
+.loctitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.talktalk {
+    width: 120px;
+    border: #fc9086;
+    border-radius: 10px;
+    background-color: #fc9086;
+    cursor: pointer;
+    color: #FFF;
+    overflow: hidden;
+    transition: 0.7s;
+}
+
+.talktalk:hover {
+    opacity: 1;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.talktalk a {
+    /* color: #FFF; */
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    /* transition: 0.5s; */
+    opacity: 0.8;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}

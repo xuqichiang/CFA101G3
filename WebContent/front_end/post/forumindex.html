@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marry Happiness-forum</title>
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- boostrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/forumindex.css">
+    <link rel="stylesheet" href="css/swi.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <script src="js/newCart.js"></script>
+
+</head>
+
+
+<body>
+
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+
+    <div class="big_container">
+        <div class="big_left">
+            <div class="Article_container">
+                <hr class="hr2">
+                <div class="topArticle">
+                    <!-- Swiper -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="imgArea">
+                                    <img src="images/article05.jpeg" alt="" class="pic">
+                                </div>
+                                <div class="article">
+                                    <p class="title">從你開始改變！珍惜每個小時刻，家，就會變得很溫暖</p>
+                                    <p class="author">文/一流人 /2021-08-01</p>
+                                    <p class="texttop">
+                                        人與人之間的磁場與相處方式是會互相影響的。從自己開始改變，開始珍惜每個小時刻，家，就會變得很溫暖，很幸福。（本文摘自《我愛，我強大》一書，以下為摘文。）...
+                                        <a href="show-article-message.html?post_id=21" class="more">More</a>
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="imgArea">
+                                    <img src="images/article04.jpg" alt="" class="pic">
+                                </div>
+                                <div class="article">
+                                    <p class="title">《婚姻故事》紅什麼？</p>
+                                    <p class="author">文/魯平 /2021-08-04</p>
+                                    <p class="texttop">
+                                        《婚姻故事》（Marriage Story）之所以不叫做「離婚故事」（Divorce Story），因為它探討的是我們在平凡日常的對話、甚至激烈衝突之中看見愛情真實的樣子......接受那份真實、接受彼此最醜陋的一面、為了彼此適當的妥協，相互扶持走下去，或許就是相遇相愛、結婚的意義...
+                                        <a href="show-article-message.html?post_id=24" class="more">More</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="imgArea">
+                                    <img src="images/article02-2.jpg" alt="" class="pic">
+                                </div>
+                                <div class="article">
+                                    <p class="title">家庭、事業不必二選一</p>
+                                    <p class="author">文/整合傳播部企劃製作 /2021-08-04</p>
+                                    <p class="texttop">
+                                        台灣多數企業仍為傳統中小型產業，一直以來較少女性創業、接班的案例。再者，女性在台灣傳統家庭文化中，常被賦予照顧家庭的責任，打拼事業的同時，還必須在太太、媽媽與媳婦等身分中取得平衡。 事業、家庭，職場女性怎麼選？或許，在數位經濟興起的時代下，這不必再是「二選一」的難題。... <a href="show-article-message.html?post_id=27" class="more">More</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+
+                    </div>
+
+                </div>
+                <hr class="hr2">
+            </div>
+
+            <div class="catbox">
+                <div class="category">
+                    <ul id="category-data">
+
+                        <!-- <li><a href="forumindex.html?currentPage=1&rows=10">所有話題<span id=""></span></a></li> -->
+                        <!--<li><a href="#">聊結婚<span>(95)</span></a></li>
+            <li><a href="#">好店推薦<span>(58)</span></a></li>
+            <li><a href="#">我要靠北<span>(30)</span></a></li>
+            <li><a href="#">準媽咪<span>(26)</span></a></li>
+            <li><a href="#">購便宜<span>(48)</span></a></li>
+            <li><a href="#">官方文章<span>(25)</span></a></li>
+            <li><a href="#">其它閒聊<span>(21)</span></a></li>
+            <li><a href="#">搜尋</a></li> -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="post-container" id="post-container">
+
+                <!-- 一則討論區貼文 -->
+                <!-- <div class="postone">
+            
+            <hr>
+        </div> -->
+
+
+
+
+            </div>
+
+            <div class="page-area">
+                <div class="page" id="page"></div>
+                <div class="totalPage" id="totalPage"></div>
+            </div>
+        </div>
+
+
+
+        <div class="big_right">
+            <div class="sidebar">
+                <section class="ad">
+                    <ul>
+                        <li>
+                            <a href="../workphoto/browseHome.html" target="_blank"><img src="images/ad01.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="../photoprogram/programContent.html?phop_id=24" target="_blank"><img src="images/ad02.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="goto_post">
+                    <div class="text">
+                        <p>解疑惑｜找出口｜聊生活</p>
+                        <span>關於結婚的大小事，不知道能問誰？沒人聽你說？歡迎點擊【我想發文】即可開啟話題 </span>
+                    </div>
+                    <a href="javascript:void(0);" class="wantpost" id="wantpost">
+						我想發文</a>
+                </section>
+
+                <div class="edit-articles-area">
+                    <section class="goto_edit">
+                        <div class="edittext">
+                            <span class="editspan">編輯文章</span><span>EDIT ARTICLES</span>
+                            <div class="edit-articles-div"></div>
+                            <hr class="right1">
+                        </div>
+                        <a href="javascript:void(0);" class="mypost" id="mypostbtn"> 編輯我的文章</a>
+                    </section>
+                </div>
+
+
+
+                <div class="hot-articles-area">
+                    <div class="hot-articles-top" id="hot-articles-top">
+                        <span>熱門文章</span><span>HOT ARTICLES</span>
+                        <div class="hot-articles-div"></div>
+                        <hr class="right1">
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="hot-articles-box">
+                    <ul class="hot-articles" id="hot-articles">
+                    </ul>
+                </div>
+                <div class="hot-articles-area news">
+                    <div class="hot-articles-top" id="hot-articles-top">
+                        <span>優惠快訊</span><span>NEWS</span>
+                        <div class="hot-articles-div"></div>
+                        <hr class="right1">
+                    </div>
+                </div>
+                <section class="ad2">
+                    <ul>
+                        <li>
+                            <a href="../photoprogram/programContent.html?phop_id=20" target="_blank"><img src="images/ad06.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad07.png" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad05.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad03.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img src="images/ad04.jpg" alt="" title="" width="300" border="0"></a>
+                        </li>
+                    </ul>
+                </section>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- SWEET -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js">
+    </script>
+
+    <script src="js/forumindex.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function(index, className) {
+                    return '<span class="' + className + '"></span>';
+                },
+            },
+        });
+    </script>
+    <script src="js/friendchat.js"></script>
+</body>
+
+</html>

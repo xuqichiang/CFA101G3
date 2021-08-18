@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootatrap套版-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <!--頭-->
+    <link rel="stylesheet" href="css/footer.css">
+    <!--腳-->
+    <link rel="stylesheet" href="css/updatePhog.css">
+    <!--內容-->
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!--下拉選單JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!--ICON-->
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="js/newCart.js"></script>
+    <title>MarryHappiness｜攝影師管理-更新攝影師資訊</title>
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart"><a href="javascript:void(0)" id="cartModal"><i class="fas fa-shopping-cart" id="cartIcon"></i></a></li>
+            </ul>
+        </div>
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location</a></li>
+            <li><a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a></li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post</a></li>
+        </ul>
+    </header>
+    <!--內容-->
+    <div class="container">
+        <!--左欄-->
+        <div class="side-bar">
+            <!-- <img src="images/MHlogo_01.svg"> -->
+            <img class="imgdata" src="" alt="">
+            <div class="user-name s-user-name"></div>
+            <div class="user-hr"><i class="fas fa-heart"></i></div>
+            <!--管理頁面選單-->
+            <ul class="menu">
+                <li><a href="wedSellerProfile.html?action=profile" id="profile"><i class="fas fa-user"></i>個人資料</a></li>
+                <li><a href="wedSellerProfile.html?action=setting" id="setting"><i class="fas fa-file-invoice"></i>帳號設定</a></li>
+                <li><a href="wedSellerProfile.html?action=sellerProfile"><i class="fas fa-address-card"></i>店家資料</a></li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo"><i class="fas fa-calendar-alt"></i>預約管理</a>
+                    <ul id="demo" class="collapse">
+                        <li><a class="work" href="../photoorder/listReserve.html"><i class="fas fa-angle-right"></i>查詢訂單</a></li>
+                        <li><a class="work" href="calendarPhotographer.html"><i class="fas fa-angle-right"></i>查詢行程</a></li>
+                    </ul>
+                </li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo2"><i class="fas fa-tasks"></i>方案管理</a>
+                    <ul id="demo2" class="collapse">
+                        <li><a class="work" href="../photoprogram/listAllPhotoProgram.html"><i class="fas fa-angle-right"></i>查詢方案</a></li>
+                        <li><a class="work" href="../photoprogram/addPhotoProgram.html"><i class="fas fa-angle-right"></i>新增方案</a></li>
+                        <li><a class="work" href="../photoprogram/updatePhotoProgram.html"><i class="fas fa-angle-right"></i>修改方案</a></li>
+                    </ul>
+                </li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo3"><i class="fas fa-camera-retro"></i>攝影師管理</a>
+                    <ul id="demo3" class="collapse">
+                        <li><a class="work" href="listAllPhotographer.html"><i class="fas fa-angle-right"></i>查詢攝影師</a></li>
+                        <li><a class="work" href="addPhotographer.html"><i class="fas fa-angle-right"></i>新增攝影師</a></li>
+                        <li><a class="work" href="updataPhotographer.html"><i class="fas fa-angle-right"></i>修改攝影師</a></li>
+                    </ul>
+                </li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo4"><i class="fas fa-pencil-alt"></i>作品集管理</a>
+                    <ul id="demo4" class="collapse">
+                        <li><a class="work" href="addWork.html"><i class="fas fa-angle-right"></i></i>新增作品集</a></li>
+                        <li><a class="work" href="updataWork.html"><i class="fas fa-angle-right"></i></i>修改作品集</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--右欄-->
+        <div class="content">
+            <div class="title-top">
+                <i class="fas fa-camera-retro"></i>
+                <h2>修改攝影師</h2>
+            </div>
+            <!--修改-->
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">攝影師</label>
+                <select class="form-control" id="phog-id">
+                    <option value="">---請選擇---</option>
+                </select>
+            </div>
+            <div class="form-group" id="phog-status-id">
+                <label for="exampleFormControlSelect1">攝影師狀態</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="phog_status" id="phog_status_1" value="1">
+                    <label class="form-check-label" for="phog_status_1">在職中</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="phog_status" id="phog_status_0" value="0">
+                    <label class="form-check-label" for="phog_status_0">已離職</label>
+                </div>
+                <br>
+                <button type="button" class="edit-submit" id="confirm">確認修改</button>
+            </div>
+        </div>
+    </div>
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+    <script src="js/updataPhog.js"></script>
+    <script src="js/friendchat.js"></script>
+</body>
+
+</html>

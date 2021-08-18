@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/Locorder.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="js/jquery.datetimepicker.full.js"></script>
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>後台中心｜MarryHappiness</title>
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="#">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="#">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="#" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="#">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+    <div class="wrap">
+        <div class="side-bar">
+            <img src="images/MHlogo_03.svg" alt="">
+            <div class="user-name s-user-name"></div>
+            <div class="user-hr"><i class="fas fa-heart"></i></div>
+            <ul class="menu">
+                <li><a href="#"><i class="fas fa-server"></i>後台管理</a></li>
+                <li><a href="#"><i class="fas fa-gift"></i>週邊訂單</a></li>
+                <li><a href="Locorder.html"><i class="fas fa-hotel"></i>場地訂單</a></li>
+                <li><a href="#"><i class="fas fa-camera-retro"></i>攝影訂單</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2>場地訂單</h2>
+            <div class="profile">
+                <div class="info">
+                    <p>
+                        <h2>訂單狀態</h2>
+                    </p>
+                    <ul class="locinfo">
+                        <li><span class="infotitle">全部的訂單</span><a href="Locorderinfo.html?currentPage=1&rows=5"><span id="allorder" class="num">0</span></a></li>
+                        <li><span class="infotitle">預約成功</span><a href="Locorderinfo.html?loco_status=1&currentPage=1&rows=5"><span id="orderstatus1" class="num">0</span></a></li>
+                        <li><span class="infotitle">預約失敗</span><a href="Locorderinfo.html?loco_status=2&currentPage=1&rows=5"><span id="orderstatus2" class="num">0</span></a></li>
+                        <li><span class="infotitle">完成的訂單</span><a href="Locorderinfo.html?loco_status=3&currentPage=1&rows=5"><span id="orderstatus3" class="num">0</span></a></li>
+                        <li><span class="infotitle">取消的訂單</span><a href="Locorderinfo.html?loco_status=4&currentPage=1&rows=5"><span id="orderstatus4" class="num">0</span></a></li>
+                    </ul>
+                    <p>
+                        <h2>依編號搜尋</h2>
+                    </p>
+                    <div class="searchbar">
+                        <form action="">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">訂單編號</span>
+                                <input type="text" id="locoid" name="locoid" class="form-control">
+                            </div>
+                            <button type="button" id="cheak" class="btn btn-primary mb-3">搜尋</button>
+                            <h3 id="o-prompt"></h3>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="">婚禮小物</a></li>
+                <li><a href="">婚鞋</a></li>
+                <li><a href="">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="">幸福專欄</a></li>
+                <li><a href="">幸福聊聊</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+    <script>
+        //取得所有場地訂單
+        $.ajax({
+            url: '../../locationorder/getAllLocOrderServlet',
+            type: 'post',
+            dataType: 'json',
+            success: function(data) {
+                let totalorder = 0;
+                let reserveok = 0;
+                let reserveng = 0;
+                let orderok = 0;
+                let orderng = 0;
+                for (let i = 0; i < data.length; i++) {
+                    totalorder++;
+                    if (data[i].loco_order_status == 1) {
+                        reserveok++;
+                    } else if (data[i].loco_order_status == 2) {
+                        reserveng++;
+                    } else if (data[i].loco_order_status == 3) {
+                        orderok++;
+                    } else if (data[i].loco_order_status == 4) {
+                        orderng++;
+                    }
+                }
+                $('#allorder').text(totalorder);
+                $('#orderstatus1').text(reserveok);
+                $('#orderstatus2').text(reserveng);
+                $('#orderstatus3').text(orderok);
+                $('#orderstatus4').text(orderng);
+            }
+        })
+
+        //點擊Button出查詢
+        $('#cheak').on('click', function() {
+            let locoid = $('#locoid').val();
+            $.ajax({
+                url: '../../locationorder/getOneOrderByPrimaryKeyServlet',
+                type: 'post',
+                data: {
+                    'loco_id': locoid,
+                    'action': 'getorderbyintput'
+                },
+                dataType: 'json',
+                success: function(data) {
+                    if (data == 1) {
+                        window.location.href = "Locorderdetaliedinfo.html";
+                    } else {
+                        $('#o-prompt').text('請輸入有效的編號');
+                        $('#o-prompt').css('color', 'red');
+                        $('#o-prompt').css('font-size', '15px');
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

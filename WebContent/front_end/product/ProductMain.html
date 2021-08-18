@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <!-- boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- SWEET -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/newCart.js"></script>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/ProMain.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="../index/css/friendchat.css">
+    <title>商品主頁</title>
+</head>
+
+<body>
+
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <div class="wrap">
+
+        <!-- 幻燈片 -->
+        <div class="SWCON">
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a class="SWIMG" href="ProductSeller.html?memid=7"><img src="images/promain1.jpg" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="SWIMG" href="ProductSeller.html?memid=8"><img src="images/promain2.jpg" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="SWIMG" href="ProductSeller.html?memid=9"><img src="images/promain3-2.jpg" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="SWIMG" href="ProductSeller.html?memid=10"><img src="images/promain4.jpg" alt=""></a>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- 商品 -->
+
+        <div class="titlename"><a class="goto" href="/CFA101G3/front_end/product/ProductSubShoes.html"><i class="fas fa-capsules"></i>&ensp;婚鞋專區</a>
+            <span class="seemore"><a class="goto3" href="/CFA101G3/front_end/product/ProductSubShoes.html">看更多<i class="far fa-hand-point-right"></i></a></span>
+        </div>
+        <div class="list">
+            <div class="box1">
+                <a href="" id="pro_id1">
+                    <div class="images" id="images1"></div>
+                </a>
+                <div class="name" id="name1"></div>
+                <div class="content" id="content1"></div>
+                <div class="price" id="price1"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id2">
+                    <div class="images" id="images2"></div>
+                </a>
+                <div class="name" id="name2"></div>
+                <div class="content" id="content2"></div>
+                <div class="price" id="price2"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id3">
+                    <div class="images" id="images3"></div>
+                </a>
+                <div class="name" id="name3"></div>
+                <div class="content" id="content3"></div>
+                <div class="price" id="price3"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id4">
+                    <div class="images" id="images4"></div>
+                </a>
+                <div class="name" id="name4"></div>
+                <div class="content" id="content4"></div>
+                <div class="price" id="price4"></div>
+            </div>
+        </div>
+        <div class="titlename"><a class="goto" href="/CFA101G3/front_end/product/ProductSubRing.html"><i class="fab fa-sketch"></i>&ensp;婚戒專區</a>
+            <span class="seemore"><a class="goto3" href="/CFA101G3/front_end/product/ProductSubRing.html">看更多<i class="far fa-hand-point-right"></i></a></span>
+        </div>
+        <div class="list">
+            <div class="box1">
+                <a href="" id="pro_id5">
+                    <div class="images" id="images5"></div>
+                </a>
+                <div class="name" id="name5"></div>
+                <div class="content" id="content5"></div>
+                <div class="price" id="price5"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id6">
+                    <div class="images" id="images6"></div>
+                </a>
+                <div class="name" id="name6"></div>
+                <div class="content" id="content6"></div>
+                <div class="price" id="price6"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id7">
+                    <div class="images" id="images7"></div>
+                </a>
+                <div class="name" id="name7"></div>
+                <div class="content" id="content7"></div>
+                <div class="price" id="price7"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id8">
+                    <div class="images" id="images8"></div>
+                </a>
+                <div class="name" id="name8"></div>
+                <div class="content" id="content8"></div>
+                <div class="price" id="price8"></div>
+            </div>
+        </div>
+        <div class="titlename"><a class="goto" href="/CFA101G3/front_end/product/ProductSubFlower.html"><i class="fas fa-cannabis"></i>&ensp;花束專區</a>
+            <span class="seemore"><a  class="goto3" href="/CFA101G3/front_end/product/ProductSubFlower.html">看更多<i class="far fa-hand-point-right"></i></a></span>
+        </div>
+        <div class="list">
+            <div class="box1">
+                <a href="" id="pro_id9">
+                    <div class="images" id="images9"></div>
+                </a>
+                <div class="name" id="name9"></div>
+                <div class="content" id="content9"></div>
+                <div class="price" id="price9"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id10">
+                    <div class="images" id="images10"></div>
+                </a>
+                <div class="name" id="name10"></div>
+                <div class="content" id="content10"></div>
+                <div class="price" id="price10"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id11">
+                    <div class="images" id="images11"></div>
+                </a>
+                <div class="name" id="name11"></div>
+                <div class="content" id="content11"></div>
+                <div class="price" id="price11"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id12">
+                    <div class="images" id="images12"></div>
+                </a>
+                <div class="name" id="name12"></div>
+                <div class="content" id="content12"></div>
+                <div class="price" id="price12"></div>
+            </div>
+        </div>
+        <div class="titlename"><a class="goto" href="/CFA101G3/front_end/product/ProductSubGoods.html"><i class="fab fa-shopify"></i>&ensp;小物專區</a>
+            <span class="seemore"><a  class="goto3" href="/CFA101G3/front_end/product/ProductSubGoods.html">看更多<i class="far fa-hand-point-right"></i></a></span>
+        </div>
+        <div class="list">
+            <div class="box1">
+                <a href="" id="pro_id13">
+                    <div class="images" id="images13"></div>
+                </a>
+                <div class="name" id="name13"></div>
+                <div class="content" id="content13"></div>
+                <div class="price" id="price13"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id14">
+                    <div class="images" id="images14"></div>
+                </a>
+                <div class="name" id="name14"></div>
+                <div class="content" id="content14"></div>
+                <div class="price" id="price14"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id15">
+                    <div class="images" id="images15"></div>
+                </a>
+                <div class="name" id="name15"></div>
+                <div class="content" id="content15"></div>
+                <div class="price" id="price15"></div>
+            </div>
+            <div class="box1">
+                <a href="" id="pro_id16">
+                    <div class="images" id="images16"></div>
+                </a>
+                <div class="name" id="name16"></div>
+                <div class="content" id="content16"></div>
+                <div class="price" id="price16"></div>
+            </div>
+        </div>
+    </div>
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+    <Script>
+        $.ajax({
+            url: "../../product/ProMainServlet?action=shoes",
+            data: "POST",
+            dataType: "JSON",
+            success: function(data) {
+                console.log(data);
+                for (let p = 0; p < data.length; p++) {
+                    let images = `<img src="../../product/ProImgOutServlet3?pro_id=${data[p].PRO_ID}" alt="">`
+                    $("#images" + (p + 1)).append(images);
+                    let names = `<div>${data[p].PRO_NAME}</div>`
+                    $("#name" + (p + 1)).html(names);
+                    let contents = `<div>${data[p].PRO_CONTENT}</div>`
+                    $("#content" + (p + 1)).html(contents);
+                    let prices = `<i class="fas fa-comment-dollar"></i><span>${data[p].PRO_PRICE}</span>`;
+                    $("#price" + (p + 1)).append(prices);
+                    $(`#pro_id${(p+1)}`).prop('href', `ProductSingle.html?pro_id=${data[p].PRO_ID}`);
+                }
+            }
+        })
+
+        $.ajax({
+            url: "../../product/ProMainServlet?action=ring",
+            data: "POST",
+            dataType: "JSON",
+            success: function(data) {
+                console.log(data);
+                for (let p = 0; p < data.length; p++) {
+                    let images = `<img src="../../product/ProImgOutServlet3?pro_id=${data[p].PRO_ID}" alt="">`
+                    $("#images" + (p + 5)).append(images);
+                    let names = `<div>${data[p].PRO_NAME}</div>`
+                    $("#name" + (p + 5)).html(names);
+                    let contents = `<div>${data[p].PRO_CONTENT}</div>`
+                    $("#content" + (p + 5)).html(contents);
+                    let prices = `<i class="fas fa-comment-dollar"></i><span>${data[p].PRO_PRICE}</span>`
+                    $("#price" + (p + 5)).append(prices);
+                    $(`#pro_id${(p+5)}`).prop('href', `ProductSingle.html?pro_id=${data[p].PRO_ID}`);
+                }
+            }
+        })
+
+        $.ajax({
+            url: "../../product/ProMainServlet?action=flower",
+            data: "POST",
+            dataType: "JSON",
+            success: function(data) {
+                console.log(data);
+                for (let p = 0; p < data.length; p++) {
+                    let images = `<img src="../../product/ProImgOutServlet3?pro_id=${data[p].PRO_ID}" alt="">`
+                    $("#images" + (p + 9)).append(images);
+                    let names = `<div>${data[p].PRO_NAME}</div>`
+                    $("#name" + (p + 9)).html(names);
+                    let contents = `<div>${data[p].PRO_CONTENT}</div>`
+                    $("#content" + (p + 9)).html(contents);
+                    let prices = `<i class="fas fa-comment-dollar"></i><span>${data[p].PRO_PRICE}</span>`
+                    $("#price" + (p + 9)).append(prices);
+                    $(`#pro_id${(p+9)}`).prop('href', `ProductSingle.html?pro_id=${data[p].PRO_ID}`);
+                }
+            }
+        })
+        $.ajax({
+            url: "../../product/ProMainServlet?action=goods",
+            data: "POST",
+            dataType: "JSON",
+            success: function(data) {
+                console.log(data);
+                for (let p = 0; p < data.length; p++) {
+                    let images = `<img src="../../product/ProImgOutServlet3?pro_id=${data[p].PRO_ID}" alt="">`
+                    $("#images" + (p + 13)).append(images);
+                    let names = `<div>${data[p].PRO_NAME}</div>`
+                    $("#name" + (p + 13)).html(names);
+                    let contents = `<div>${data[p].PRO_CONTENT}</div>`
+                    $("#content" + (p + 13)).html(contents);
+                    let prices = `<i class="fas fa-comment-dollar"></i><span>${data[p].PRO_PRICE}</span>`
+                    $("#price" + (p + 13)).append(prices);
+                    $(`#pro_id${(p+13)}`).prop('href', `ProductSingle.html?pro_id=${data[p].PRO_ID}`);
+                }
+            }
+        })
+
+
+        //  當初不成熟ㄟCODE
+        //  $.get("../../product/ProImgServlet", function(data){
+        //      for(let p=1;p<17;p++){
+        //         let images =`<img src="data:image/*;base64,${data[p+3].proi_images}">` 
+        //         $("#images"+p).append(images);
+        //      }
+        // })
+        //  
+        // $.get("../../product/ProReadServlet", function(data){
+        //     console.log(data);
+        //     for(let p=1;p<17;p++){
+        //     let names =`<div>${data[p+3].pro_name}</div>` 
+        //     $("#name"+p).append(names);
+        //     let contents =`<div>${data[p+3].pro_content}</div>` 
+        //     $("#content"+p).append(contents);
+        //     let prices =`<span>${data[p+3].pro_price}</span>` 
+        //     $("#price"+p).append(prices);
+        //     $(`#pro_id${p}`).prop('href',`ProductSingle.html?pro_id=${data[p+3].pro_id}`);
+        //     }
+        // },"json");
+    </Script>
+
+
+    <!-- 幻燈片 -->
+    <!-- Swiper JS -->
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function(index, className) {
+                    return '<span class="' + className + '">' + '</span>';
+                },
+            },
+        });
+    </script>
+    <script src="../index/js/friendchat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+/*頁面*/
+.container{
+    display: flex;
+    margin-bottom: 50px;
+    max-width: 1300px;
+}
+
+/*左欄*/
+.side-bar{
+    width:25%;
+    border-radius: 15px;
+    background: #fadcda;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-top: 50px;
+    opacity: 0.9;
+}
+
+.side-bar img{
+    width: 80%;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.s-user-name{
+    font-size: 20px;
+    text-align: center;
+}
+.user-hr{
+    display: flex;
+    justify-content: center;
+}
+.user-hr i{
+    color: #6e6d6d;
+    margin-bottom: 30px;
+    opacity: 0.3;
+}
+
+.user-hr::before{
+    color: #6e6d6d;
+    content: "——————";
+    line-height: 20px;
+    opacity: 0.3;
+}
+
+.user-hr::after{
+    color: #6e6d6d;
+    content: "——————";
+    line-height: 20px;
+    opacity: 0.3;
+}
+
+/*選單*/
+.menu a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #495057;
+    
+}
+
+.menu i{
+    display: inline-block;
+    margin-right: 10px;
+    color: #b97687;
+}
+
+.menu li{
+    width: 85%;
+    line-height: 45px;
+    margin: 10px auto;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.menu a:hover{
+    color:#495057;
+    background: #eeb8b8;
+    border-radius: 5px;
+}
+/*show選單*/
+.work {
+    font-size: 13px;
+    padding: 10px;
+    background-color: #f8cbcb;
+    border-radius: 5px;
+}
+
+.menu-work li {
+    line-height: 20px;
+}
+
+/*右側*/
+.content{
+    width:70%;
+    border-radius: 15px;
+    padding-bottom: 30px;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+
+.title-top{
+    display: flex;
+    align-items: center;
+}
+
+h2{
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/*add表選單*/
+.form-group{
+    width: 30%;
+    margin-right: 20px;
+}
+
+label{
+    margin: 10px 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.form-control{
+    font-size: 14px;
+    /* text-align: center;
+    text-align-last: center; */
+}
+
+.form-check-inline{
+    display: none;
+}
+
+.form-check-label{
+    margin: auto;
+    font-size: 14px;
+    font-weight: 350;
+}
+
+/*隊長按鈕*/
+.edit-submit {
+    display: inline-block;
+    background: #eeb8b8;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    width: 10%;
+    height: 35px;
+    border: 1px solid #eeb8b8;
+    font-size: 14px;
+}
+
+.edit-submit:hover {
+    background: #eeb8b8;
+}
+
+/*改變input顏色*/
+.form-control:focus {
+    border-color: #fadcda;
+    box-shadow: 0 0 0 0.2rem rgba(255, 198, 193, 0.25);
+} 
+
+/*大頭圖片*/
+.s-user-name{
+    margin-bottom:20px;
+}
+.side-bar img{
+    width: 120px;
+    height: 120px;
+
+}
+.user-hr{
+    margin-bottom:-30px;
+}

@@ -1,0 +1,179 @@
+/*頁面*/
+
+.container {
+    margin-bottom: 30px;
+}
+
+
+/*店家資訊*/
+
+.mem-information {
+    height: 100px;
+    background-color: #d5cb8e;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+}
+
+
+/*LOGO*/
+
+.mem-logo {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    /*隱藏邊框外*/
+    background-color: white;
+    border-radius: 30%;
+    margin-left: 30px;
+    opacity: 0.8;
+    /*刷淡*/
+    display: flex;
+    align-items: center;
+}
+
+.mem-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/*婚攝店家*/
+
+.mem-wed {
+    margin-left: 10px;
+}
+
+.mem-shop {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-family: 微軟正黑體;
+    color: #000000;
+}
+
+
+/*地標*/
+
+.mem-map {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.mem-map img {
+    width: 15px;
+    height: 15px;
+}
+
+
+/*作品+方案*/
+
+.wor-phop {
+    font-size: 10px;
+    color: #000000;
+}
+
+
+/*店家資訊*/
+
+.top-content {
+    height: 100px;
+    background-color: #d5cb8e;
+    margin-top: 35px;
+    border-radius: 15px;
+    opacity: 0.5;
+}
+
+
+/*瀏覽作品資訊*/
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+    margin-top: 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.phog-name {
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+}
+
+.wor-amount {
+    font-size: 14px;
+    color: #6e6d6d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p img {
+    width: 15px;
+    opacity: 0.5;
+    margin-right: 5px;
+}
+
+.wor-button {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.btn-outline-danger {
+    padding: 10px 35px;
+    margin: 10px;
+    border: 1px solid #eeb8b8;
+    background-color: #eeb8b8;
+    color: white;
+    font-family: 微軟正黑體;
+    border-radius: 20px;
+}
+
+.btn-outline-danger:hover {
+    border: 1px solid #fadcda;
+    background-color: #fadcda;
+}
+
+.btn-outline-danger a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*照片*/
+
+.wed-images img {
+    border-radius: 20px;
+}
+
+.wed-images:hover img {
+    opacity: 0.7;
+}
+
+
+/*麵包屑*/
+
+.breadcrumb {
+    background-color: transparent;
+    /*取消背景顏色*/
+    font-size: 12px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #414141;
+}
+
+.breadcrumb a:hover {
+    color: #eeb8b8;
+}
+
+.breadcrumb-item.active {
+    background: #fff;
+}

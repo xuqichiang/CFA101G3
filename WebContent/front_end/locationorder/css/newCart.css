@@ -1,0 +1,145 @@
+#cartIcon {
+    position: relative;
+    font-size: 20px;
+    float: right;
+    margin-right: 20px;
+}
+
+.count {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 12px;
+    height: 12px;
+    background: red;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 8px;
+    text-align: center;
+}
+
+#cartModal {
+    text-decoration: none;
+}
+
+#cart img {
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+}
+
+#cart a {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+.site-color {
+    color: rgb(247, 66, 47);
+    font-size: 16px;
+}
+
+.total-list {
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-list h5 {
+    margin: 0;
+}
+
+.cartModal-header {
+    background: #ff80a2;
+    color: #fff;
+}
+
+.cartModal-header img {
+    display: inline-block;
+    height: 40px;
+}
+
+#checkout {
+    color: #fff;
+    background-color: rgb(247, 66, 47);
+    border: 1px solid rgb(247, 66, 47);
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#cartModal-cancel {
+    color: #fff;
+    background-color: #6c757d!important;
+    border: 1px solid #6c757d;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.cartModal .table,
+.cartModal input[type="number"] {
+    color: #4d4949!important;
+}
+
+.cartModal .hide {
+    display: none!important;
+}
+
+.cartModal {
+    width: 600px;
+    border: 1px solid #ada6a6;
+    position: fixed;
+    top: 36px;
+    right: 0;
+    background: #fff;
+    display: none;
+    z-index: 9999;
+}
+
+.cartModal-table th,
+.cartModal-table td {
+    width: 16%;
+    text-align: center;
+    vertical-align: middle
+}
+
+.cartModal-title {
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.cartModal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.cartModal-footer button {
+    margin-left: 10px;
+}

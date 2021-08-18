@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>article-message</title>
+<link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link rel='stylesheet prefetch'
+	href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+<link rel="stylesheet" href="css/cssreset.css">
+<link rel="stylesheet" href="css/all.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/show_article_message.css">
+<link rel="stylesheet" href="css/friendchat.css">
+<link rel="stylesheet" href="css/newCart.css">
+<script src="js/newCart.js"></script>
+</head>
+
+<body>
+
+	<!--大頭-->
+	<header>
+		<div class="top">
+			<ul>
+				<!-- 購物車圖片Icon -->
+
+				<li><a href="../index/index.jsp">首頁</a></li>
+				<li><a href="../member/login.html"><i
+						class="fas fa-sign-out-alt"></i>登入</a></li>
+				<li><a href="../../member/loginServlet?action=logout"><i
+						class="fas fa-sign-out-alt"></i>登出</a></li>
+				<li><a href="../../member/checkServlet"><i
+						class="fas fa-home"></i> 會員系統</a></li>
+				<li class="headcart"><a href="javascript:void(0)"
+					id="cartModal"> <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+				</li>
+
+			</ul>
+		</div>
+
+
+		<!--上面增加的小色塊-->
+		<div class="nav1"></div>
+		<ul class="nav2">
+			<li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+			</a></li>
+			<li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+			</a></li>
+			<li><a href="../index/index.jsp" class="logo"><img
+					src="images/MHlogo_01.svg"></a></li>
+			<li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+			</a></li>
+			<li><a href="../post/forumindex.html">專欄討論<br>Post
+			</a></li>
+		</ul>
+	</header>
+
+
+	<div class="big_container">
+		<!-- 左側文章處+留言-->
+		<div class="big_left">
+
+			<div class="category">
+				<ul id="category-data">
+				</ul>
+			</div>
+
+			<div id="post-container">
+				<!-- 一則討論區貼文 -->
+			</div>
+
+			<!--輸入留言處-->
+			<div class="message-box">
+				<span> 我要回應 </span>
+				<textarea cols="80" class="message-area" id="message-area"
+					name="message-area" maxlength="255" placeholder="請登入後留言(250字)..."></textarea>
+				<!--textarea要用.val()來取值 可編輯的div用.html()取值-->
+				<span id="span1"></span>
+				<div class="reply-box">
+					<div class="btn-box">
+						<input type="button" class="reply_btn" value="發送" id="reply_btn">
+					</div>
+				</div>
+			</div>
+
+			<div class="messageSum" id="messageSum"></div>
+
+
+
+			<!--秀出會員的留言-->
+			<div class="all-message">
+				<div class="one-message" id="one-message">
+					<!-- <div class="message-top">
+                        <div class="left_author_pic">
+                            <img src="images/animal_panda.png" width="40">
+                        </div>
+
+                        <div class="right_info">
+                            <ul>
+                                <li class="mem_author">Apple</li>
+                                <li class="time">留言時間</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="inner-message" id="inner-message">
+                        我是留言我是留言
+                        <hr class="left1">
+                    </div> -->
+				</div>
+			</div>
+
+
+		</div>
+		<!-- 右側bar-->
+		<div class="big_right">
+			<div class="sidebar">
+				<section class="ad">
+					<ul>
+						<li><a href="#" target="_blank"><img
+								src="images/ad01.jpg" alt="" title="" width="300" border="0"></a>
+						</li>
+						<li><a href="#" target="_blank"><img
+								src="images/ad02.jpg" alt="" title="" width="300" border="0"></a>
+						</li>
+					</ul>
+				</section>
+
+				<section class="goto_post">
+					<div class="text">
+						<p>解疑惑｜找出口｜聊生活</p>
+						<span>關於結婚的大小事，不知道能問誰？沒人聽你說？歡迎點擊【我想發文】即可開啟話題 </span>
+					</div>
+					<a href="javascript:void(0);" class="wantpost" id="wantpost">
+						我想發文</a>
+				</section>
+
+				<div class="edit-articles-area">
+					<section class="goto_edit">
+						<div class="edittext">
+							<span class="editspan">編輯文章</span><span>EDIT ARTICLES</span>
+							<div class="edit-articles-div"></div>
+							<hr class="right1">
+						</div>
+						<a href="javascript:void(0);" class="mypost" id="mypostbtn">
+							編輯我的文章</a>
+					</section>
+				</div>
+
+
+
+				<div class="hot-articles-area">
+					<div class="hot-articles-top" id="hot-articles-top">
+						<span>熱門文章</span><span>HOT ARTICLES</span>
+						<div class="hot-articles-div"></div>
+						<hr class="right1">
+					</div>
+				</div>
+
+
+
+
+
+				<div class="hot-articles-box">
+					<ul class="hot-articles" id="hot-articles">
+					</ul>
+				</div>
+				<div class="hot-articles-area news">
+					<div class="hot-articles-top" id="hot-articles-top">
+						<span>優惠快訊</span><span>NEWS</span>
+						<div class="hot-articles-div"></div>
+						<hr class="right1">
+					</div>
+				</div>
+				<section class="ad2">
+					<ul>
+						<li><a href="#" target="_blank"><img
+								src="images/ad06.jpg" alt="" title="" width="300" border="0"></a>
+						</li>
+						<li><a href="#" target="_blank"><img
+								src="images/ad07.png" alt="" title="" width="300" border="0"></a>
+						</li>
+						<li><a href="#" target="_blank"><img
+								src="images/ad05.jpg" alt="" title="" width="300" border="0"></a>
+						</li>
+						<li><a href="#" target="_blank"><img
+								src="images/ad03.jpg" alt="" title="" width="300" border="0"></a>
+						</li>
+						<li><a href="#" target="_blank"><img
+								src="images/ad04.jpg" alt="" title="" width="300" border="0"></a>
+						</li>
+					</ul>
+				</section>
+
+			</div>
+		</div>
+
+
+
+
+	</div>
+	<!--尾巴-->
+	<div class="footer">
+		<div class="foote-top">
+			<ul class="foote-content">
+				<div>婚攝服務</div>
+				<li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+			</ul>
+			<ul class="foote-content">
+				<div>婚宴服務</div>
+				<li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+			</ul>
+			<ul class="foote-content">
+				<div>婚禮週邊</div>
+				<li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+				<li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+				<li><a href="../product/ProductSubRing.html">婚戒</a></li>
+			</ul>
+			<ul class="foote-content">
+				<div>專欄討論</div>
+				<li><a href="../post/forumindex.html">幸福專欄</a></li>
+			</ul>
+		</div>
+		<div class="foote-between">
+			<img src="images/MHlogo_01.svg" alt="">
+			<p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+		</div>
+	</div>
+	<script>
+        //頁面載入即顯示熱門文章
+        hotPost();
+
+        //獲取熱門文章
+        function hotPost() {
+            $.ajax({
+                type: "post",
+                url: "../../post/postActionServlet",
+                data: {
+                    "action": "hotPost",
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.length < 5) {
+                        for (let key = 0; key < response.length; key++) {
+                            let tmp = `<a href="show-article-message.html?post_id=${response[key].MES_POST_ID}"><li>${response[key].CAT_NAME}//${response[key].POST_TITLE}</li></a>`;
+                            $("#hot-articles").append(tmp);
+                        }
+                    } else {
+                        for (let key = 0; key < 6; key++) {
+                            let tmp = `<a href="show-article-message.html?post_id=${response[key].MES_POST_ID}"><li>${response[key].CAT_NAME}//${response[key].POST_TITLE}</li></a>`;
+                            $("#hot-articles").append(tmp);
+                        }
+                    }
+                }
+            });
+        }
+
+        //用postid抓出該則文章
+        let urlParams = new URLSearchParams(window.location.search);
+        let param = urlParams.get("post_id");
+        console.log(param);
+        if (param != null) {
+            $.ajax({
+                type: "post",
+                url: "../../post/showOnePostBypostIdServlet",
+                dataType: 'json',
+                async: false,
+                data: {
+                    "post_id": param,
+                    "action": "getPost"
+                },
+                success: function(result) {
+                    console.log(result);
+                    let template = ` <div class="post-box">
+                     <div class="post-top">
+                         <div class="left_author_pic">
+                             <img src="data:image/*;base64,${result.MEM_HEADSHOT}" width="50">
+                         </div>
+
+                         <div class="right_info">
+                             <ul>
+                                 <li class="mem_author">${result.MEM_NAME}</li>
+                                 <li class="time">${TIME(result.POST_TIME)}</li>
+                             </ul>
+                         </div>
+                     </div>
+
+                     <div class="post-content">
+                         <span class="postone_cat">${result.CAT_NAME}</span>
+                         <span>// </span>
+
+                         <span class="post-title">${result.POST_TITLE}</span>
+                          <div class="inner_count" id="inner_count">
+                         </div>
+
+
+
+                         <div class="inner">
+                              <div class="inner_tag" id="inner_tag">
+                            
+                              </div>
+                             <div class="inner_text">
+                                 ${result.POST_CONTENT}
+                             </div>
+                         </div>   
+                     </div>
+             </div>`;
+                    $("#post-container").append(template);
+                }
+            });
+            //用postid得到該則文章的標籤們
+            $.ajax({
+                type: "post",
+                url: "../../post/showOnePostBypostIdServlet",
+                dataType: 'json',
+                async: false,
+                data: {
+                    "post_id": param,
+                    "action": "getTag"
+                },
+                // result是list 用for of取值
+                success: function(result) {
+                    console.log(result)
+                    for (const tags of result) {
+                        if (tags.tagVO.tag_name != "") {
+                            $("#inner_tag").append(`#${tags.tagVO.tag_name} `);
+                        }
+                    }
+                }
+            });
+
+
+            //用postid抓出留言內容
+            $.ajax({
+                type: "post",
+                url: "../../message/showMessageServlet",
+                dataType: 'json',
+                data: {
+                    "mes_post_id": param
+                },
+                success: function(result) {
+                    console.log(result);
+                    for (let i = 0; i < result.length; i++) {
+                        let template = `<div class="message-top">
+                        <div class="left_author_pic">
+                            <img src="data:image/*;base64,${result[i].MEM_HEADSHOT}" width="40">
+                        </div>
+
+                        <div class="right_info">
+                            <ul>
+                                <li class="mem_author">${result[i].MEM_NAME}</li>
+                                <li class="time">${result[i].MES_TIME}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="inner-message" id="inner-message">
+                         ${result[i].MES_CONTENT}
+                        <hr class="left1">
+                    </div>`;
+                        $("#one-message").append(template);
+                    }
+                    $("#messageSum").text("共" + result.length + "則回應");
+                }
+            });
+
+            // 按下留言按鈕 會抓到輸入的內容
+            $("#reply_btn").on('click', function() {
+                let message = $("#message-area").val();
+                //當遇到兩個空白轉換成兩個   是因有其他考量,如果只是純文字資料沒有其他標籤符號則轉換一個空白就行了
+                message2 = message.replace(/  /g, "  ");
+                //textarea換行轉成<br>
+                message2 = message2.replace(/\n/g, "<br>");
+
+                $.ajax({
+                    url: "../../message/poMessageServlet",
+                    type: "POST",
+                    data: { //把data送進servlet
+                        "mes_post_id": param,
+                        "mes_content": message2
+                    },
+                    success: function(result) {
+                        alert(result);
+                        window.location.reload();
+                    }
+                });
+            });
+        }
+
+        // 判斷留言框裡是否有文字  有的話送出鈕才會出現
+        $('#message-area').on('input propertychange', function() {
+            ifcommnull();
+        });
+
+        function ifcommnull() {
+            let textval = $('#message-area').val();
+            if (textval == "") {
+                $('#reply_btn').removeClass("showbtn");
+            } else {
+                $('#reply_btn').addClass("showbtn");
+            }
+        }
+
+        function TIME(time) {
+            //new Date()可以接毫秒數
+            let date = new Date(time);
+            //date.toLocaleString(); 可以轉換成當地格式
+            datetime = date.toLocaleString();
+            return datetime;
+            console.log(date)
+        }
+        
+      //按下我要發文時 判斷是否已登入
+        $('#wantpost').on('click', function () {
+            $.ajax({
+                type: "post",
+                url: "../../post/postActionServlet",
+                dataType: 'json',
+                async: false,
+                data: {
+                    "action": "mem_post"
+                },
+                success: function (result) {
+                    if (result == 0) {
+                        swal("請先登入", "才可以發文喔", "info");
+                    } else if (result == 1) {
+                        window.location.href = 'po_article.html';
+                    } else {
+                        alert("出4啦")
+                    }
+                }
+            });
+        })
+        
+        $('#mypostbtn').on('click', function () {
+    $.ajax({
+        type: "post",
+        url: "../../post/postActionServlet",
+        dataType: 'json',
+        async: false,
+        data: {
+            "action": "mem_post"
+        },
+        success: function (result) {
+            console.log(result);
+            if (result == 0) {
+                swal("請先登入", "才可以編輯喔", "info");
+            } else if (result == 1) {
+                window.location.href = 'mypost-list.html';
+            } else {
+                alert("出4啦")
+            }
+        }
+    });
+
+})
+
+      //按下發送回應鈕時 判斷是否已登入
+        $('#reply_btn').on('click', function () {
+            $.ajax({
+                type: "post",
+                url: "../../post/postActionServlet",
+                dataType: 'json',
+                async: false,
+                data: {
+                    "action": "mem_post"
+                },
+                success: function (result) {
+                    if (result == 0) {
+                        swal("請先登入", "才可以回應喔", "info");
+                    } else if (result == 1) {
+                        window.location.href = 'show-article-message.html';
+                    } else {
+                        alert("出4啦")
+                    }
+                }
+            });
+        })
+
+
+
+        
+    </script>
+	<!-- SWEET -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="js/friendchat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+/*頁面*/
+.container{
+    width: 1200px;
+    margin-bottom: 30px;
+    
+}
+
+/*整個預約區*/
+.reserve-content{
+    height: 100%;
+    border: 1px solid #d5cb8e;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/*店家資訊*/
+.mem-information{
+    height: 100px;
+    border-bottom: 1px solid #d5cb8e;
+    background-color: #d5cb8e;
+    display: flex;
+    align-items: center;
+    opacity:0.5;
+}
+
+/*LOGO*/
+.mem-logo{
+    width: 70px;
+    height: 70px;
+    overflow: hidden; /*隱藏邊框外*/
+    background-color: white;
+    border-radius: 30%;
+    margin-left: 30px;
+    opacity:0.8; /*刷淡*/
+    display: flex;
+    align-items: center;
+}
+
+.mem-logo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*婚攝店家*/
+.mem-wed{
+    margin-left: 10px;
+}
+
+.mem-shop{
+    margin-bottom:8px;
+    font-size: 18px;
+    font-family: 微軟正黑體;
+    letter-spacing: 3px;
+}
+
+/*地標*/
+.mem-map{
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.mem-map img{
+    width: 15px;
+    height: 15px;
+}
+
+/*作品+方案*/
+.wor-phop{
+    font-size: 10px;
+    color: #000000;
+}
+
+/*預約專區*/
+.reserve-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topic-from{
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 20px 0;
+}
+
+/*表單*/
+.table-form{
+    width: 450px;
+}
+
+label{
+    margin: 10px 0;
+    font-weight: 500;
+    color: #495057;
+    letter-spacing: 1px;
+}
+
+.form-control{
+    font-size: 14px;
+}
+
+/*單選*/
+.form-check-inline{
+    margin: 8px;
+}
+
+.form-check-label{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/*備註*/
+textarea{
+    height: 200px;
+}
+
+/*確認*/
+.btn-light{
+    margin-bottom: 20px;
+    height: 40px;
+    width: 100%;
+    font-size: 14px;
+}
+
+textarea{
+    resize: none; /*無法缩放*/
+}
+
+/*改變input顏色*/
+.form-control:focus {
+    border-color: #fadcda;
+    box-shadow: 0 0 0 0.2rem rgba(255, 198, 193, 0.25);
+}
+
+/*麵包屑*/
+.breadcrumb{
+    background-color: transparent; /*取消背景顏色*/
+    font-size: 12px;
+}
+
+.breadcrumb a{
+    text-decoration: none;
+    color:#414141;
+}
+
+.breadcrumb a:hover{
+    color: #eeb8b8;
+}
+
+.breadcrumb-item.active {
+    background: #fff;
+}

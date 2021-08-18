@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/buyerShopOrder.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/newCart.js"></script>
+
+    <title>會員中心｜MarryHappiness</title>
+</head>
+
+<body>
+    <!-- 載入前動畫 -->
+    <div class="loading-wrap">
+        <div class="loading-img">
+            <img src="images/loading.gif" class="loading">
+            <img src="images/loading2.gif" class="loading2">
+        </div>
+    </div>
+
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+    <div class="wrap">
+        <div class="side-bar">
+            <img class="imgdata" src="" alt="">
+            <div class="user-name s-user-name"></div>
+            <div class="user-hr"><i class="fas fa-heart"></i></div>
+            <ul class="menu">
+                <li><a href="memberBuyProfile.html?action=profile" id="profile"><i class="fas fa-user"></i>個人資料</a></li>
+                <li><a href="memberBuyProfile.html?action=setting" id="setting"><i
+                            class="fas fa-file-invoice"></i>帳號設定</a></li>
+                <li><a href="buyerShopOrder.html?action=getAll"><i class="fas fa-shopping-cart"></i>商品訂單</a></li>
+                <li><a href="buyerLocationOrder.html"><i class="fas fa-church"></i>婚禮場地</a></li>
+                <li><a href="BuyerOrder.html"><i class="fas fa-camera-retro"></i>婚紗攝影</a></li>
+            </ul>
+        </div>
+        <div class="content" id="content">
+            <div class="order">
+                <ul class="order-nav">
+                    <li><a id="getAll" href="buyerShopOrder.html?action=getAll">全部</a></li>
+                    <li><a id="outstanding" href="buyerShopOrder.html?action=outstanding">待付款</a></li>
+                    <li><a id="unshipped" href="buyerShopOrder.html?action=unshipped">待出貨</a></li>
+                    <li><a id="shipped" href="buyerShopOrder.html?action=shipped">待收貨</a></li>
+                    <li><a id="finish" href="buyerShopOrder.html?action=finish">訂單已完成</a></li>
+                </ul>
+                <ul class="order-main" id="order-main">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="popup-wrap">
+        <div class="popup-container">
+            <div class="spo-wrap" id="spo-wrap">
+                <!-- <div class="mb10">訂單編號:<span id="spo_id"></span></div>
+                <div class="mb10">訂單成立時間:<span id="spo_time"></span></div>
+                <div class="mb10">訂單金額:<span id="spo_payment"></span></div>
+                <div class="mb10">運費:<span id="spo_payment"></span></div>
+                <div class="mb10">收貨人姓名:<span id="spo_receiver_name"></span></div>
+                <div class="mb10">收貨人電話:<span id="spo_receiver_phone"></span></div>
+                <div class="mb10">收貨人地址:<span id="spo_receiver_address"></span></div>
+                <div class="mb10">訂單狀態:<span id="spo_status"></span></div>
+                <div class="mb10">付款狀態:<span id="spo_pay_status"></span></div>
+                <div class="mb10">發貨狀態:<span id="spo_cargo_status"></span></div> -->
+            </div>
+        </div>
+    </div>
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+    <form action="../../shop_order/buyerSpoServlet?action=checkout" method="post" id="submit-form">
+        <input type="hidden" name="paytype" value="" id="paytype">
+        <input type="hidden" name="spo_id" value="" id="spo_id">
+    </form>
+    <script src="js/friendchat.js"></script>
+    <script>
+        //跟資料庫請求個人頭像
+        Ajaxheadshot();
+
+        function Ajaxheadshot() {
+            $.ajax({
+                type: "post",
+                url: "../../member/headshotBuyServlet",
+                data: {
+                    "headshot": "headshot"
+                },
+                xhrFields: {
+                    // 將回傳結果以Blob保持原本二進位的格式回傳
+                    //jquery的dataType無法設定返回格式為blob需要手動修改
+                    responseType: "blob"
+                },
+                success: function(result) {
+                    let img = document.getElementsByClassName('imgdata');
+                    if (result.size != "0") {
+                        let url = URL.createObjectURL(result);
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = url;
+                        }
+                    } else {
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = "images/music_castanet_girl.png";
+                        }
+                    }
+
+                }
+            });
+        }
+
+
+        //profile跟資料庫請求個人資料
+        Ajaxprofile();
+
+        function Ajaxprofile() {
+            $.ajax({
+                type: "get",
+                url: "../../member/buyProfileServlet",
+                dataType: 'json',
+                success: function(result) {
+                    if (result == "0") {
+                        window.location.href = "../../front_end/index/index.jsp";
+                    } else {
+                        resultData = result;
+                        $('.user-name').html(result.name != null ? result.name : "尚未填寫");
+                    }
+                }
+            });
+        };
+
+
+        let urlParams = new URLSearchParams(window.location.search);
+        let action = urlParams.get("action");
+
+        //取得全部買家訂單
+        if (action == "getAll") {
+            $('#getAll').css("background", "#fc908621");
+            $('#getAll').css("color", "#fa3e2c");
+            $.ajax({
+                type: "post",
+                url: "../../shop_order/buyerSpoServlet?action=getAll",
+                dataType: "json",
+                beforeSend: function() {
+                    $('.loading-wrap').show();
+                },
+                success: function(data) {
+                    for (const key in data) {
+                        let orderTmp =
+                            `<li>
+                        <i class="fas fa-store"></i><span class="seller">${getMemberName(data[key].spo_smem_id)}</span>
+                        <div id="order-block-wrap${key}">
+                        </div>
+                        <div class="order-footer clearfix">
+                            <div class="order-price">
+                                <span>訂單金額：</span>
+                                <span class="price mr10">$${data[key].spo_payment}</span>
+                            </div>
+                            <div class="order-status">
+                                <span class="spo_status">訂單狀態：${spo_status(data[key].spo_status, data[key].spo_id)}</span>
+                                <span class="spo_pay_status">付款狀態：${spo_pay_status(data[key].spo_pay_status, data[key].spo_id)}</span>
+                                <span class="spo_cargo_status">發貨狀態：${spo_cargo_status(data[key].spo_cargo_status, data[key].spo_id)}</span>
+                            </div>
+                        </div>
+                    </li>`;
+                        $('#order-main').append(orderTmp);
+                        let result = getSpoiVOList(data[key].spo_id);
+                        for (const key2 in result) {
+                            let spoiTmp = `<a href="javascript:void(0)" data-spo_id="${data[key].spo_id}"><div class="order-block">
+                                    <img src="../../product/ProImgOutServlet?proi_id=${getProductImg(result[key2].provo.pro_id)}" alt="">
+                                    <div class="product-wrap">
+                                        <div class="product-title">${result[key2].provo.pro_name}</div>
+                                        <div class="product-content">
+                                            ${result[key2].provo.pro_content}
+                                        </div>
+                                        <div class="product-count">x${result[key2].spoi_quantity}</div>
+                                    </div>
+                                    <div class="price">$${result[key2].spoi_totalprice}</div>
+                                </div></a>`;
+                            $(`#order-block-wrap${key}`).append(spoiTmp);
+                        }
+                    }
+                    $('.loading-wrap').hide();
+                }
+            });
+        }
+
+        //取得待付款訂單
+        if (action == "outstanding") {
+            $('#outstanding').css("background", "#fc908621");
+            $('#outstanding').css("color", "#fa3e2c");
+            $.ajax({
+                type: "post",
+                url: "../../shop_order/buyerSpoServlet?action=outstanding",
+                dataType: "json",
+                beforeSend: function() {
+                    $('.loading-wrap').show();
+                },
+                success: function(data) {
+                    for (const key in data) {
+                        let orderTmp =
+                            `<li>
+                        <i class="fas fa-store"></i><span class="seller">${getMemberName(data[key].spo_smem_id)}</span>
+                        <div id="order-block-wrap${key}">
+                        </div>
+                        <div class="order-footer clearfix">
+                            <div class="order-price">
+                                <span>訂單金額：</span>
+                                <span class="price mr10">$${data[key].spo_payment}</span>
+                            </div>
+                            <div class="order-status">
+                                <span class="spo_status">訂單狀態：${spo_status(data[key].spo_status, data[key].spo_id)}</span>
+                                <span class="spo_pay_status">付款狀態：${spo_pay_status(data[key].spo_pay_status, data[key].spo_id)}</span>
+                                <span class="spo_cargo_status">發貨狀態：${spo_cargo_status(data[key].spo_cargo_status, data[key].spo_id)}</span>
+                            </div>
+                        </div>
+                    </li>`;
+                        $('#order-main').append(orderTmp);
+                        let result = getSpoiVOList(data[key].spo_id);
+                        for (const key2 in result) {
+                            let spoiTmp = `<a href="javascript:void(0)" data-spo_id="${data[key].spo_id}"><div class="order-block">
+                                    <img src="../../product/ProImgOutServlet?proi_id=${getProductImg(result[key2].provo.pro_id)}" alt="">
+                                    <div class="product-wrap">
+                                        <div class="product-title">${result[key2].provo.pro_name}</div>
+                                        <div class="product-content">
+                                            ${result[key2].provo.pro_content}
+                                        </div>
+                                        <div class="product-count">x${result[key2].spoi_quantity}</div>
+                                    </div>
+                                    <div class="price">$${result[key2].spoi_totalprice}</div>
+                                </div></a>`;
+                            $(`#order-block-wrap${key}`).append(spoiTmp);
+                        }
+                    }
+                    $('.loading-wrap').hide();
+                }
+            });
+        }
+
+        //取得未發貨訂單
+        if (action == "unshipped") {
+            $('#unshipped').css("background", "#fc908621");
+            $('#unshipped').css("color", "#fa3e2c");
+            $.ajax({
+                type: "post",
+                url: "../../shop_order/buyerSpoServlet?action=unshipped",
+                dataType: "json",
+                beforeSend: function() {
+                    $('.loading-wrap').show();
+                },
+                success: function(data) {
+                    for (const key in data) {
+                        let orderTmp =
+                            `<li>
+                        <i class="fas fa-store"></i><span class="seller">${getMemberName(data[key].spo_smem_id)}</span>
+                        <div id="order-block-wrap${key}">
+                        </div>
+                        <div class="order-footer clearfix">
+                            <div class="order-price">
+                                <span>訂單金額：</span>
+                                <span class="price mr10">$${data[key].spo_payment}</span>
+                            </div>
+                            <div class="order-status">
+                                <span class="spo_status">訂單狀態：${spo_status(data[key].spo_status, data[key].spo_id)}</span>
+                                <span class="spo_pay_status">付款狀態：${spo_pay_status(data[key].spo_pay_status, data[key].spo_id)}</span>
+                                <span class="spo_cargo_status">發貨狀態：${spo_cargo_status(data[key].spo_cargo_status, data[key].spo_id)}</span>
+                            </div>
+                        </div>
+                    </li>`;
+                        $('#order-main').append(orderTmp);
+                        let result = getSpoiVOList(data[key].spo_id);
+                        for (const key2 in result) {
+                            let spoiTmp = `<a href="javascript:void(0)" data-spo_id="${data[key].spo_id}"><div class="order-block">
+                                    <img src="../../product/ProImgOutServlet?proi_id=${getProductImg(result[key2].provo.pro_id)}" alt="">
+                                    <div class="product-wrap">
+                                        <div class="product-title">${result[key2].provo.pro_name}</div>
+                                        <div class="product-content">
+                                            ${result[key2].provo.pro_content}
+                                        </div>
+                                        <div class="product-count">x${result[key2].spoi_quantity}</div>
+                                    </div>
+                                    <div class="price">$${result[key2].spoi_totalprice}</div>
+                                </div></a>`;
+                            $(`#order-block-wrap${key}`).append(spoiTmp);
+                        }
+                    }
+                    $('.loading-wrap').hide();
+                }
+            });
+        }
+
+        //取得待收貨訂單
+        if (action == "shipped") {
+            $('#shipped').css("background", "#fc908621");
+            $('#shipped').css("color", "#fa3e2c");
+            $.ajax({
+                type: "post",
+                url: "../../shop_order/buyerSpoServlet?action=shipped",
+                dataType: "json",
+                beforeSend: function() {
+                    $('.loading-wrap').show();
+                },
+                success: function(data) {
+                    for (const key in data) {
+                        let orderTmp =
+                            `<li>
+                        <i class="fas fa-store"></i><span class="seller">${getMemberName(data[key].spo_smem_id)}</span>
+                        <div id="order-block-wrap${key}">
+                        </div>
+                        <div class="order-footer clearfix">
+                            <div class="order-price">
+                                <span>訂單金額：</span>
+                                <span class="price mr10">$${data[key].spo_payment}</span>
+                            </div>
+                            <div class="order-status">
+                                <span class="spo_status">訂單狀態：${spo_status(data[key].spo_status, data[key].spo_id)}</span>
+                                <span class="spo_pay_status">付款狀態：${spo_pay_status(data[key].spo_pay_status, data[key].spo_id)}</span>
+                                <span class="spo_cargo_status">發貨狀態：${spo_cargo_status(data[key].spo_cargo_status, data[key].spo_id)}</span>
+                            </div>
+                        </div>
+                    </li>`;
+                        $('#order-main').append(orderTmp);
+                        let result = getSpoiVOList(data[key].spo_id);
+                        for (const key2 in result) {
+                            let spoiTmp = `<a href="javascript:void(0)" data-spo_id="${data[key].spo_id}"><div class="order-block">
+                                    <img src="../../product/ProImgOutServlet?proi_id=${getProductImg(result[key2].provo.pro_id)}" alt="">
+                                    <div class="product-wrap">
+                                        <div class="product-title">${result[key2].provo.pro_name}</div>
+                                        <div class="product-content">
+                                            ${result[key2].provo.pro_content}
+                                        </div>
+                                        <div class="product-count">x${result[key2].spoi_quantity}</div>
+                                    </div>
+                                    <div class="price">$${result[key2].spoi_totalprice}</div>
+                                </div></a>`;
+                            $(`#order-block-wrap${key}`).append(spoiTmp);
+                        }
+                    }
+                    $('.loading-wrap').hide();
+                }
+            });
+        }
+
+        //取得已完成訂單
+        if (action == "finish") {
+            $('#finish').css("background", "#fc908621");
+            $('#finish').css("color", "#fa3e2c");
+            $.ajax({
+                type: "post",
+                url: "../../shop_order/buyerSpoServlet?action=finish",
+                dataType: "json",
+                beforeSend: function() {
+                    $('.loading-wrap').show();
+                },
+                success: function(data) {
+                    for (const key in data) {
+                        let orderTmp =
+                            `<li>
+                        <i class="fas fa-store"></i><span class="seller">${getMemberName(data[key].spo_smem_id)}</span>
+                        <div id="order-block-wrap${key}">
+                        </div>
+                        <div class="order-footer clearfix">
+                            <div class="order-price">
+                                <span>訂單金額：</span>
+                                <span class="price mr10">$${data[key].spo_payment}</span>
+                            </div>
+                            <div class="order-status">
+                                <span class="spo_status">訂單狀態：${spo_status(data[key].spo_status, data[key].spo_id)}</span>
+                                <span class="spo_pay_status">付款狀態：${spo_pay_status(data[key].spo_pay_status, data[key].spo_id)}</span>
+                                <span class="spo_cargo_status">發貨狀態：${spo_cargo_status(data[key].spo_cargo_status, data[key].spo_id)}</span>
+                            </div>
+                        </div>
+                    </li>`;
+                        $('#order-main').append(orderTmp);
+                        let result = getSpoiVOList(data[key].spo_id);
+                        for (const key2 in result) {
+                            let spoiTmp = `<a href="javascript:void(0)" data-spo_id="${data[key].spo_id}"><div class="order-block">
+                                    <img src="../../product/ProImgOutServlet?proi_id=${getProductImg(result[key2].provo.pro_id)}" alt="">
+                                    <div class="product-wrap">
+                                        <div class="product-title">${result[key2].provo.pro_name}</div>
+                                        <div class="product-content">
+                                            ${result[key2].provo.pro_content}
+                                        </div>
+                                        <div class="product-count">x${result[key2].spoi_quantity}</div>
+                                    </div>
+                                    <div class="price">$${result[key2].spoi_totalprice}</div>
+                                </div></a>`;
+                            $(`#order-block-wrap${key}`).append(spoiTmp);
+                        }
+                    }
+                    $('.loading-wrap').hide();
+                }
+            });
+        }
+
+        //會員編號找到會員名稱
+        function getMemberName(mem_id) {
+            let mem_name = "";
+            $.ajax({
+                type: "post",
+                url: "../../member/memServlet",
+                data: {
+                    "action": "getMemberVO",
+                    "mem_id": mem_id
+                },
+                async: false,
+                dataType: "json",
+                success: function(response) {
+                    mem_name = response.mem_name;
+                }
+            });
+            return mem_name;
+        }
+
+        //取得商品照片ID
+        function getProductImg(pro_id) {
+            let proi_id = 0;
+            $.ajax({
+                type: "post",
+                url: "../../product/ProImgSelServlet",
+                data: {
+                    "proi_pro_id": pro_id
+                },
+                dataType: "json",
+                async: false,
+                success: function(data) {
+                    proi_id = data[0].proi_id;
+                }
+            });
+            return proi_id;
+        }
+
+        //取得商品資料
+        function getSpoiVOList(spo_id) {
+            let result;
+            $.ajax({
+                type: "post",
+                url: "../../shop_order/buyerSpoServlet?action=getBySpo_id",
+                data: {
+                    "spo_id": spo_id
+                },
+                dataType: "json",
+                async: false,
+                success: function(response) {
+                    result = response;
+                }
+            });
+            return result;
+        }
+
+        //取得商品訂單VO
+        function getSpoVO(spo_id) {
+            let spoVO;
+            $.ajax({
+                type: "post",
+                url: "../../shop_order/buyerSpoServlet?action=getSpoVO",
+                data: {
+                    "spo_id": spo_id
+                },
+                dataType: "json",
+                async: false,
+                success: function(data) {
+                    spoVO = data;
+                }
+            });
+            return spoVO;
+        }
+
+        function spo_status(status, spo_id) {
+            //0:處理中	1:已確認	2:已完成	3:已取消
+            let spoVO = getSpoVO(spo_id);
+            let spo_cargo_status = spoVO.spo_cargo_status;
+            if (status == 0) {
+                if (spo_cargo_status == 0) {
+                    return `處理中 <button data-spo_id="${spo_id}">取消訂單</button>`;
+                } else {
+                    return "處理中";
+                }
+            } else if (status == 1) {
+                if (spo_cargo_status == 0) {
+                    return `已確認 <button data-spo_id="${spo_id}">取消訂單</button>`;
+                } else {
+                    return "已確認";
+                }
+            } else if (status == 2) {
+                return "已完成";
+            } else if (status == 3) {
+                return "已取消";
+            }
+        }
+
+        function spo_pay_status(status, spo_id) {
+            //0:未付款	1:付款失敗	2:超過付款時間	3:已付款	4:退款中	5:已退款
+            let spoVO = getSpoVO(spo_id);
+            let spo_status = spoVO.spo_status;
+            if (status == 0) {
+                if (spo_status == 3) {
+                    return `未付款`;
+                } else {
+                    return `未付款 <button data-spo_id="${spo_id}">付款去</button>`;
+                }
+            } else if (status == 1) {
+                if (spo_status == 3) {
+                    return `付款失敗`;
+                } else {
+                    return `付款失敗 <button data-spo_id="${spo_id}">付款去</button>`;
+                }
+            } else if (status == 2) {
+                return "超過付款時間";
+            } else if (status == 3) {
+                return "已付款";
+            } else if (status == 4) {
+                return "退款中";
+            } else if (status == 5) {
+                return "已退款";
+            }
+        }
+
+        function spo_cargo_status(status, spo_id) {
+            //0:未發貨	1:已發貨	2:已取貨	3:已退貨
+            if (status == 0) {
+                return "未發貨";
+            } else if (status == 1) {
+                return `已發貨 <button data-spo_id="${spo_id}" value="Receipt">確定收貨</button><button data-spo_id="${spo_id}" value="Return">退貨</button>`;
+            } else if (status == 2) {
+                return "已取貨";
+            } else if (status == 3) {
+                return "已退貨";
+            }
+        }
+
+        //對訂單狀態處理綁定點擊事件
+        $('#order-main').on('click', '.spo_status button', function(e) {
+            Swal.fire({
+                title: '您確定要取消訂單嗎?',
+                text: "取消後將無法返回唷～",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '是的, 忍痛取消!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let spo_id = e.currentTarget.dataset.spo_id;
+                    $.ajax({
+                        type: "post",
+                        url: "../../shop_order/buyerSpoServlet",
+                        data: {
+                            "action": "cancelOrder",
+                            "spo_id": spo_id
+                        },
+                        dataType: "json",
+                        success: function(response) {
+                            if (response) {
+                                Swal.fire(
+                                    '已經取消了!',
+                                    '您已經將此筆訂單取消',
+                                    'success'
+                                ).then((response) => {
+                                    window.location.reload();
+                                });
+                            } else {
+                                swal("發生異常", "取消失敗，請聯絡客服人員", "error").then((response) => {
+                                    window.location.reload();
+                                });
+                            }
+                        }
+                    });
+                }
+            })
+        });
+
+        //綁定付款點擊事件
+        $('#order-main').on('click', '.spo_pay_status button', function(e) {
+            let spo_id = e.currentTarget.dataset.spo_id;
+            $('#spo_id').val(spo_id);
+            Swal.fire({
+                title: '請選擇您的付款方式?',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: `信用卡付款`,
+                denyButtonText: `WebATM`,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $('#paytype').val(0);
+                    $('#submit-form').submit();
+                } else if (result.isDenied) {
+                    $('#paytype').val(1);
+                    $('#submit-form').submit();
+                }
+            })
+        });
+
+        //綁定確認收貨or退貨點擊事件
+        $('#order-main').on('click', '.spo_cargo_status button', function(e) {
+            let spo_id = e.currentTarget.dataset.spo_id;
+            let action = e.currentTarget.value;
+            if (action == "Receipt") {
+                Swal.fire({
+                    title: '確定已收貨了嗎?',
+                    text: "確定收貨後將撥款給賣家唷～",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '是的, 確定收貨!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: "post",
+                            url: "../../shop_order/buyerSpoServlet",
+                            data: {
+                                "action": action,
+                                "spo_id": spo_id
+                            },
+                            dataType: "json",
+                            success: function(response) {
+                                if (response) {
+                                    Swal.fire(
+                                        '確定收貨成功!',
+                                        '您已完成此訂單，歡迎您再次光臨',
+                                        'success'
+                                    ).then((response) => {
+                                        window.location.reload();
+                                    });
+                                } else {
+                                    swal("發生異常", "作業失敗，請聯絡客服人員", "error").then((response) => {
+                                        window.location.reload();
+                                    });
+                                }
+                            }
+                        });
+                    }
+                })
+            }
+
+            if (action == "Return") {
+                Swal.fire({
+                    title: '確定要退貨嗎?',
+                    text: "請確認商品是否保持完整性，退貨後將進入退款流程",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '是的, 確定退貨!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: "post",
+                            url: "../../shop_order/buyerSpoServlet",
+                            data: {
+                                "action": action,
+                                "spo_id": spo_id
+                            },
+                            dataType: "json",
+                            success: function(response) {
+                                if (response) {
+                                    Swal.fire(
+                                        '已退貨成功!',
+                                        '後續將進入退款流程，請您耐心等待',
+                                        'success'
+                                    ).then((response) => {
+                                        window.location.reload();
+                                    });
+                                } else {
+                                    swal("發生異常", "作業失敗，請聯絡客服人員", "error").then((response) => {
+                                        window.location.reload();
+                                    });
+                                }
+                            }
+                        });
+                    }
+                })
+            }
+        });
+
+        //綁定查看詳情
+        $('#order-main').on('click', 'a', function(e) {
+            let spo_id = e.currentTarget.dataset.spo_id;
+            $.ajax({
+                type: "post",
+                url: "../../shop_order/buyerSpoServlet",
+                data: {
+                    "action": "getOne",
+                    "spo_id": spo_id
+                },
+                dataType: "json",
+                success: function(response) {
+                    let tmp = `<div class="mb10"><label>訂單編號:</label><span>${response.spo_id}</span></div>
+                <div class="mb10"><label>訂單成立時間:</label><span>${new Date(response.spo_time).toLocaleString()}</span></div>
+                <div class="mb10"><label>訂單金額:</label><span>${response.spo_payment}</span></div>
+                <div class="mb10"><label>運費:</label><span>${response.spo_postage}</span></div>
+                <div class="mb10"><label>收貨人姓名:</label><span>${response.spo_receiver_name}</span></div>
+                <div class="mb10"><label>收貨人電話:</label><span>${response.spo_receiver_phone}</span></div>
+                <div class="mb10"><label>收貨人地址:</label><span>${response.spo_receiver_address}</span></div>
+                <div class="mb10"><label>訂單狀態:</label><span>${spo_status(response.spo_status,response.spo_id)}</span></div>
+                <div class="mb10"><label>付款狀態:</label><span>${spo_pay_status(response.spo_pay_status,response.spo_id)}</span></div>
+                <div class="mb10"><label>發貨狀態:</label><span>${spo_cargo_status(response.spo_cargo_status,response.spo_id)}</span></div>`;
+                    $('#spo-wrap').html(tmp);
+                }
+            });
+            $('.popup-wrap').fadeIn();
+        })
+
+        //點擊查看詳情外的div可關閉視窗
+        $('.popup-wrap').on('click', function(e) {
+            if (e.currentTarget == e.target) {
+                $('.popup-wrap').fadeOut();
+            }
+        })
+    </script>
+</body>
+
+</html>

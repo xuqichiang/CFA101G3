@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/newCart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/ProSeller.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="../index/css/friendchat.css">
+    <title>商品中心｜MarryHappiness</title>
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <!-- WRAP -->
+    <div class="wrap">
+        <!-- sidebar -->
+        <div class="side-bar">
+            <img class="imgdata" src="" alt="">
+            <div class="user-name s-user-name"></div>
+            <div class="user-hr"><i class="fas fa-heart"></i></div>
+            <ul class="menu">
+                <li><a href="ProSellerProfile.html?action=profile" id="profile"><i class="fas fa-user"></i>個人資料</a></li>
+                <li><a href="ProSellerProfile.html?action=setting" id="setting"><i class="fas fa-file-invoice"></i>帳號設定</a></li>
+                <li><a href="ProSellerProfile.html?action=sellerProfile"><i class="fas fa-shopping-cart"></i>店家資料</a></li>
+                <li class="menu-work">
+                    <li class="menu-work">
+                        <a href="javascript:void(0)" id="goSel">
+                            <i class="fas fa-home"></i>查看賣場
+                        </a>
+                    </li>
+                    <li><a data-toggle="collapse" href="#demo"><i class="fas fa-shopping-cart"></i>商品管理</a></li>
+                    <ul id="demo" class="collapse">
+                        <li><a class="work" href="/CFA101G3/front_end/product/ProductCRUD.html"><i
+                            class="fas fa-user"></i>我的商品</a></li>
+                        <li><a class="work" href="/CFA101G3/front_end/product/ProductINSERT.html"><i
+                            class="fas fa-shopping-cart"></i>新增商品</a></li>
+                        <li><a class="work" href="/CFA101G3/front_end/product/ProductUPImages.html"><i
+                            class="fas fa-camera-retro"></i>上傳圖片</a></li>
+                    </ul>
+                </li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo2"><i class="fas fa-hand-point-right"></i>訂單管理</a>
+                    <ul id="demo2" class="collapse">
+                        <li><a class="work" href="ProductOrder.html"><i class="fas fa-hand-point-right"></i>我的訂單</a>
+                        </li>
+                        <li><a class="work" href="ProductCancel.html"><i class="fas fa-hand-point-right"></i>取消作業</a>
+                        </li>
+                        <li><a class="work" href="ProductRefund.html"><i class="fas fa-hand-point-right"></i>退貨/退款</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- <li><a href="/CFA101G3/front_end/product/ProductCRUD2.html"><i class="fas fa-file-invoice"></i>商品總覽</a>
+        </li>
+        <li><a href="/CFA101G3/front_end/product/ProductDELETE.html"><i class="fas fa-church"></i>刪除商品</a></li> -->
+            </ul>
+        </div>
+        <!-- CONTENT -->
+        <div class="content">
+            <h2>店家資料</h2>
+            <div class="profile">
+                <table class="table">
+                    <tr>
+                        <td>商品賣家</td>
+                        <td><span id="pro_smem_id" name="pro_smem_id"></span></td>
+                    </tr>
+                    <tr>
+                        <td>商品名稱</td>
+                        <td><input type="text" id="pro_name" name="pro_name"></td>
+                    </tr>
+                    <tr>
+                        <td>商品價格</td>
+                        <td><input type="text" id="pro_price" name="pro_price"></td>
+                    </tr>
+                    <tr>
+                        <td>商品類別</td>
+                        <td>
+                            <select name="pro_proc_id" id="pro_proc_id">
+                                <option value="1">婚鞋專區</option>
+                                <option value="2">婚戒專區</option>
+                                <option value="3">花束專區</option>
+                                <option value="4">小物專區</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>商品狀態</td>
+                        <td>
+                            <label>
+    <input type="radio" id="pro_status" name="pro_status" value="1">
+                                <span>上架</span>
+    <input type="radio" id="pro_status" name="pro_status" value="0">
+                                <span>下架</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>商品內容</td>
+                        <td><textarea id="pro_content" name="pro_content" placeholder="請輸入商品"></textarea></td>
+                    </tr>
+                </table>
+
+                <div id="check" class="check">
+                    <input type="button" value="確認" id="submit" class="btn btn-secondary" disabled>
+                    <input type="button" value="取消" id="cancel" class="btn btn-secondary">
+                    <span id="checkpoint" class="checkpoint"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+    <!-- JS -->
+    <script>
+        //請求大頭貼
+        Ajaxheadshot();
+
+        function Ajaxheadshot() {
+            $.ajax({
+                type: "post",
+                url: "../../member/headshotBuyServlet",
+                data: {
+                    "headshot": "headshot"
+                },
+                xhrFields: {
+                    // 將回傳結果以Blob保持原本二進位的格式回傳
+                    //jquery的dataType無法設定返回格式為blob需要手動修改
+                    responseType: "blob"
+                },
+                success: function(result) {
+                    let img = document.getElementsByClassName('imgdata');
+                    if (result.size != "0") {
+                        let url = URL.createObjectURL(result);
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = url;
+                        }
+                    } else {
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = "images/music_castanet_girl.png";
+                        }
+                    }
+                }
+            });
+        }
+        //點擊確認修改資料
+        $("#submit").on('click', function() {
+            // let pro_smem_id = $("#pro_smem_id").val();
+            let pro_name = $('#pro_name').val();
+            let pro_price = $('#pro_price').val();
+            let pro_content = $('#pro_content').val();
+            let pro_proc_id = $('#pro_proc_id').val();
+            let pro_status = $("input:radio[name=pro_status]:checked").val()
+                // console.log(pro_smem_id);
+            $.ajax({
+                url: "../../product/ProInsertServlet",
+                type: "POST",
+                dataType: "JSON",
+                data: {
+                    // "pro_smem_id":pro_smem_id,
+                    "pro_name": pro_name,
+                    "pro_price": pro_price,
+                    "pro_content": pro_content,
+                    "pro_proc_id": pro_proc_id,
+                    "pro_status": pro_status
+                },
+                success: function(data) {
+                    alert(data.msg);
+                },
+                error: function(data) {
+                    alert("上傳失敗, 請重新檢查")
+                },
+            });
+        });
+        //取消重載入
+        $("#cancel").on('click', function() {
+                location.reload(false);
+            })
+            //請求得到會員資料
+        $.ajax({
+            url: "../../product/ProFindBySellerServlet",
+            type: "GET",
+            dataType: "JSON",
+            success: function(data) {
+                console.log(data)
+                $("#pro_smem_id").append(data[0].pro_smem_id);
+            }
+        });
+        //秀商家名字
+        $.ajax({
+            type: "get",
+            url: "../../member/buyProfileServlet",
+            dataType: 'json',
+            success: function(result) {
+                if (result == "0") {
+                    window.location.href = "index.html";
+                } else {
+                    resultData = result;
+                    $('.user-name').append(result.name != null ? result.name : "尚未填寫");
+                }
+            }
+        });
+
+
+        $('#goSel').on('click', function(e) {
+            $.ajax({
+                url: "../../product/ProFindBySellerServlet",
+                type: "GET",
+                dataType: "JSON",
+                success: function(data) {
+                    if (data.length != 0) {
+                        window.location.href = `ProductSeller.html?memid=${data[0].pro_smem_id}`;
+                    } else {
+                        alert("目前賣場無商品");
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="js/ProCheck.js"></script>
+    <script src="../index/js/friendchat.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+.container{
+    margin-bottom: 30px;
+}
+/*選單*/
+.wed-menu{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #c5c5c5;
+    padding: 20px;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+.menu-wed{
+    padding: 0px 20px;
+    border-right: 1px solid #c5c5c5;
+}
+
+h1{
+    font-size: 23px;
+    font-weight: 50;
+    letter-spacing:2px;
+    font-family: 微軟正黑體;
+}
+
+.menu-wed a{
+    text-decoration: none;
+    color: #6e6d6d;
+    font-family: 微軟正黑體;
+}
+
+.form-control{
+    font-size: 15px;
+    font-family: 微軟正黑體;
+}
+
+/*作品集數量*/
+.wor-amount{
+    padding: 20px;
+    font-size: 14px;
+    color: #6e6d6d;
+    font-family: 微軟正黑體;
+}
+
+/*婚攝作品內容*/
+.web-content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.web-content a{
+    text-decoration: none;
+}
+
+/*婚攝作品*/
+.wor-name{
+    margin: 10px 0px;
+}
+
+/*圖片*/
+.wed-images{
+    width: 360px;
+    height: 250px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 0 5px;
+}
+
+.wed-images img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    object-fit: cover; /*填滿元素的整個內容框*/
+    transition: all 0.5s;
+}
+
+.wed-images:hover img{
+    transform: scale(1.2,1.2);
+}
+
+/*名稱d*/
+.phog-name{
+    color: #414141;
+    margin: 5px;
+    
+}
+
+/*攝影師*/
+.mem-shop-name{
+    color: #6e6d6d;
+    font-size: 14px;
+    margin: 5px;
+}
+
+/*改變input顏色*/
+.form-control:focus {
+    border-color: #fadcda;
+    box-shadow: 0 0 0 0.2rem rgba(255, 198, 193, 0.25);
+}
+
+/*搜尋*/
+.search{
+    display: flex;
+}
+.border-0{
+    background-color: white;
+    margin-left: 3px;
+}
+.fa-search{
+    color: #6e6d6d;
+}

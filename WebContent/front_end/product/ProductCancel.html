@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/newCart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/ProSeller.css">
+    <link rel="stylesheet" href="css/SpoForm.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="../index/css/friendchat.css">
+    <title>商品中心｜MarryHappiness</title>
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <div class="wrap">
+
+        <!-- sidebar -->
+        <div class="side-bar">
+            <img class="imgdata" src="" alt="">
+            <div class="user-name s-user-name"></div>
+            <div class="user-hr"><i class="fas fa-heart"></i></div>
+            <ul class="menu">
+                <li><a href="ProSellerProfile.html?action=profile" id="profile"><i class="fas fa-user"></i>個人資料</a></li>
+                <li><a href="ProSellerProfile.html?action=setting" id="setting"><i class="fas fa-file-invoice"></i>帳號設定</a></li>
+                <li><a href="ProSellerProfile.html?action=sellerProfile"><i class="fas fa-shopping-cart"></i>店家資料</a></li>
+                <li class="menu-work">
+                    <li class="menu-work">
+                        <a href="javascript:void(0)" id="goSel">
+                            <i class="fas fa-home"></i>查看賣場
+                        </a>
+                    </li>
+                    <li><a data-toggle="collapse" href="#demo"><i class="fas fa-shopping-cart"></i>商品管理</a></li>
+                    <ul id="demo" class="collapse">
+                        <li><a class="work" href="/CFA101G3/front_end/product/ProductCRUD.html"><i
+                                class="fas fa-user"></i>我的商品</a></li>
+                        <li><a class="work" href="/CFA101G3/front_end/product/ProductINSERT.html"><i
+                                class="fas fa-shopping-cart"></i>新增商品</a></li>
+                        <li><a class="work" href="/CFA101G3/front_end/product/ProductUPImages.html"><i
+                                class="fas fa-camera-retro"></i>上傳圖片</a></li>
+                    </ul>
+                </li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo2"><i class="fas fa-hand-point-right"></i>訂單管理</a>
+                    <ul id="demo2" class="collapse">
+                        <li><a class="work" href="ProductOrder.html"><i class="fas fa-hand-point-right"></i>我的訂單</a>
+                        </li>
+                        <li><a class="work" href="ProductCancel.html"><i class="fas fa-hand-point-right"></i>取消作業</a>
+                        </li>
+                        <li><a class="work" href="ProductRefund.html"><i class="fas fa-hand-point-right"></i>退貨/退款</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- <li><a href="/CFA101G3/front_end/product/ProductCRUD2.html"><i class="fas fa-file-invoice"></i>商品總覽</a>
+            </li>
+            <li><a href="/CFA101G3/front_end/product/ProductDELETE.html"><i class="fas fa-church"></i>刪除商品</a></li> -->
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>訂單取消</h2>
+            <div class="profile">
+                <table id="table" class="table">
+                </table>
+                <div id="check" class="check">
+                </div>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" id="hiddenme" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+              幫我藏起來
+              </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" id="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">婚禮週邊單筆訂單細項</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                        </div>
+                        <div class="modal-body" id="modal-body">
+
+                            <form>
+                                <div class="form-group">
+
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer" id="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" hidden>Close</button>
+                            <button type="button" class="btn btn-primary" hidden>Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+    <script>
+        //AJAX請求資料
+
+        $.ajax({
+            url: "../../shop_order/SpoSelCanServlet",
+            type: "POST",
+            dataType: "JSON",
+            success: function(data) {
+                console.log(data);
+                let LIST = "";
+                LIST += `<tr>
+						    <th>訂單ID</th>
+                            <th>訂單時間</th>
+                            <th>訂單金額</th>
+                            
+                            <th>姓名</th>
+                            
+
+                            <th>付款方式</th>
+                            <th>付款狀態</th>
+                            <th>發貨狀態</th>
+                            <th>訂單狀態</th>
+                            <th>訂單查看</th>
+                            <th>訂單明細</th>
+						     </tr>`
+                $("#table").html(LIST);
+                let html = "";
+
+                for (i = 0; i < data.length; i++) {
+                    html += `<tr>																
+                                 <td>${data[i].spo_id}</td>
+                                 <td>${TIME(data[i].spo_time)}</td>
+                                 <td>${data[i].spo_payment}</td>
+                                 
+                                 <td>${data[i].spo_receiver_name}</td>
+                                
+                                 <td>${data[i].spo_paytype == 1?"webATM":"信用卡"}</td>
+                                 <td>${PAYSTATUS(data[i].spo_pay_status)}</td>
+                                 <td>${CARSTATUS(data[i].spo_cargo_status)}</td>
+                                 <td>${SPOSTATUS(data[i].spo_status)}</td>
+                                 <td><a  id="SPO" data-spoId="${data[i].spo_id}" href="javascript:void(0)"><i class="fas fa-search"></i></a></td>
+                                 <td><a  id="SPOI" data-spoId="${data[i].spo_id}" href="javascript:void(0)"><i class="fas fa-clipboard-list"></i></a></td>
+	                        </tr>`
+                }
+                $("#table").append(html);
+
+
+            },
+            error: function(data) {
+                alert("尚未登入")
+                window.href("login")
+            },
+        });
+
+        //請求大頭貼
+        Ajaxheadshot();
+
+        function Ajaxheadshot() {
+            $.ajax({
+                type: "post",
+                url: "../../member/headshotBuyServlet",
+                data: {
+                    "headshot": "headshot"
+                },
+                xhrFields: {
+                    // 將回傳結果以Blob保持原本二進位的格式回傳
+                    //jquery的dataType無法設定返回格式為blob需要手動修改
+                    responseType: "blob"
+                },
+                success: function(result) {
+                    let img = document.getElementsByClassName('imgdata');
+                    if (result.size != "0") {
+                        let url = URL.createObjectURL(result);
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = url;
+                        }
+                    } else {
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = "images/music_castanet_girl.png";
+                        }
+                    }
+                }
+            });
+        }
+
+
+        //動態產生會員名
+        $.ajax({
+            type: "get",
+            url: "../../member/buyProfileServlet",
+            dataType: 'json',
+            success: function(result) {
+                if (result == "0") {
+                    window.location.href = "index.html";
+                } else {
+                    resultData = result;
+                    $('.user-name').append(result.name != null ? result.name : "尚未填寫");
+                }
+            }
+        });
+
+        //從ID動態產生表單
+        $("#table").on('click', "#SPO", function(e) {
+            // $('#table').hide();
+            //取值
+            let spoid = e.currentTarget.dataset.spoid
+                //e.target 事件上 e會顯示是 i
+                //e.currentTarget 看註冊的選擇 會顯示是 a 
+                // .dataset.proid;
+            $.ajax({
+                url: "../../shop_order/SpoFindByPKServlet",
+                type: "post",
+                dataType: "json",
+                data: {
+                    "spo_id": spoid
+                },
+                success: function(data) {
+                    $("#modal-footer").html("");
+                    console.log(data)
+                    let html2 =
+                        `													
+                            <label for="">週邊訂單ID</label>
+                              <input class="form-control" type="text" value="${data.spo_id}" readonly>
+                              <label for="">訂單時間</label>
+                              <input class="form-control" type="text" value="${TIME(data.spo_time)}" readonly>
+                              <label for="">訂單總金額</label>
+                              <input class="form-control" type="text" value="${data.spo_payment}" readonly>
+                              <label for="">運費</label>
+                              <input class="form-control" type="text" value="${data.spo_postage}" readonly>
+                              <label for="">買家會員ID</label>
+                              <input class="form-control" type="text" value="${data.spo_bmem_id}" readonly>
+                              <label for="">收貨人姓名</label>
+                              <input class="form-control" type="text" value="${data.spo_receiver_name}" readonly>
+                              <label for="">收貨人電話</label>
+                              <input class="form-control" type="text" value="${data.spo_receiver_phone}" readonly>
+                              <label for="">收貨人地址</label>
+                              <input class="form-control" type="text" value="${data.spo_receiver_address}" readonly>
+                              <label for="">付款方式</label>
+                              <input class="form-control" type="text" value="${data.spo_paytype == 1?"webATM":"信用卡"}" readonly>
+                              <label for="">付款狀態</label>
+                              <input class="form-control" type="text" value="${PAYSTATUS(data.spo_pay_status)}" readonly id="paystatus">
+                              <label for="">發貨狀態</label>
+                              <input class="form-control" type="text" value="${CARSTATUS(data.spo_cargo_status)}" readonly id="carstatus">
+                              <label for="">訂單狀態</label>
+                              <input class="form-control" type="text" value="${SPOSTATUS(data.spo_status)}" readonly id="spostatus">
+	               `
+                    $("#modal-body").html(html2)
+                        //已付款(未退款)訂單 進行確認
+                    if (data.spo_status == 0 || data.spo_status == 1) {
+                        let btnOK = `<button type="button" class="btn btn-success" id="cancelOK">取消訂單</button>`
+                        $("#modal-footer").html(btnOK);
+                    }
+                    document.getElementById("hiddenme").click();
+
+                    //監聽事件 確認訂單
+
+                    $("#cancelOK").on('click', function() {
+                        console.log("取消訂單進來囉");
+                        $.ajax({
+                            url: "../../shop_order/SpoCancelServlet",
+                            type: "post",
+                            dataType: "json",
+                            data: {
+                                "spo_id": spoid
+                            },
+                            success: function(data) {
+                                if (data == 1) {
+                                    alert("確認完成");
+                                    location.reload(false);
+                                } else {
+                                    alert("確認失敗 請再確認");
+                                }
+                            }
+                        })
+                    })
+                }
+            })
+        });
+
+
+        //從ID動態產生表單
+        $("#table").on('click', "#SPOI", function(e) {
+            //取值
+            let spoid = e.currentTarget.dataset.spoid
+                //e.target 事件上 e會顯示是 i
+                //e.currentTarget 看註冊的選擇 會顯示是 a 
+            $.ajax({
+                url: "../../shop_order_item/SpoiSeeServlet",
+                type: "post",
+                dataType: "json",
+                data: {
+                    "spo_id": spoid
+                },
+                success: function(data) {
+                    $("#modal-footer").html("");
+                    $("#modal-body").html("");
+
+                    for (let i = 0; i < data.length; i++) {
+                        let html2 =
+                            `	
+                        <div class = "SPOIBOX">									
+                              <label for="">商品ID</label>
+                              <input class="form-control" type="text" value="${data[i].provo.pro_id}" readonly>
+                              <label for="">商品名稱</label>
+                              <input class="form-control" type="text" value="${data[i].provo.pro_name}" readonly>
+                              <label for="">商品單價</label>
+                              <input class="form-control" type="text" value="${data[i].provo.pro_price}" readonly>
+                              <label for="">商品數量</label>
+                              <input class="form-control" type="text" value="${data[i].spoi_quantity}" readonly>
+                              <label for="">商品小計</label>
+                              <input class="form-control" type="text" value="${data[i].spoi_totalprice}" readonly>
+                        </div>
+	               `
+                        $("#modal-body").append(html2)
+                    }
+                    document.getElementById("hiddenme").click();
+
+                }
+            })
+        });
+
+        // HEHE
+        function TIME(time) {
+            //new Date()可以接毫秒數
+            let date = new Date(time);
+            //date.toLocaleString(); 可以轉換成當地格式
+            datetime = date.toLocaleString();
+            return datetime;
+            console.log(date)
+        }
+
+        function SPOSTATUS(id) {
+            if (id == 0) {
+                return "處理中";
+            } else if (id == 1) {
+                return "已確認";
+            } else if (id == 2) {
+                return "已完成";
+            } else if (id == 3) {
+                return "已取消";
+            }
+        }
+
+        function PAYSTATUS(id) {
+            if (id == 0) {
+                return "未付款";
+            } else if (id == 1) {
+                return "付款失敗";
+            } else if (id == 2) {
+                return "逾期付款";
+            } else if (id == 3) {
+                return "已付款";
+            } else if (id == 4) {
+                return "退款中";
+            } else if (id == 5) {
+                return "已退款";
+            }
+        }
+
+        function CARSTATUS(id) {
+            if (id == 0) {
+                return "未發貨";
+            } else if (id == 1) {
+                return "已發貨";
+            } else if (id == 2) {
+                return "已取貨";
+            } else if (id == 3) {
+                return "已退貨";
+            }
+        }
+
+        $('#goSel').on('click', function(e) {
+            $.ajax({
+                url: "../../product/ProFindBySellerServlet",
+                type: "GET",
+                dataType: "JSON",
+                success: function(data) {
+                    if (data.length != 0) {
+                        window.location.href = `ProductSeller.html?memid=${data[0].pro_smem_id}`;
+                    } else {
+                        alert("目前賣場無商品");
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="../index/js/friendchat.js"></script>
+
+</body>
+
+</html>

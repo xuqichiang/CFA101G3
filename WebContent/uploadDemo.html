@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    .content img{
+        max-width: 200px;/*限制圖片最大顯示大小為200px*/
+    }
+    .content{
+    	overflow: hidden;
+    	overflow-y: scroll;
+    	width: 50%;
+    	height: 300px;
+    	border: 2px solid blue;
+    	border-radius: 5px;
+    	
+    }
+</style>
+
+<body>
+    <div id="content" class="content" contenteditable="true">
+        點我可以編輯
+    </div>
+    <input type="file" name="file" id="file" accept="image/gif, image/jpeg, image/png">
+    <script>
+        $('#file').on('change',function(){
+            if (this.files && this.files[0]) { 
+                /*判斷檔案大小是否超過*/
+                let size = 0;
+                for (let i = 0; i < this.files.length; i++) {
+                    size = size + this.files[i].size;
+                }
+                if(size > 1024 * 1024 * 5){
+                    $('#file').val("");//清空file所選圖片
+                    alert("您的檔案大小超過5M");
+                    return;
+                }
+                /******************/
+
+                var reader = new FileReader(); //創建檔案讀取物件
+                reader.onload = function (e) { 
+                let myForm = new FormData();//創建表單物件
+                let imgData = e.target.result;//獲取檔案讀取後的資料
+                let blob = new Blob([imgData], { type: 'image/*' });//轉換成blob型別
+                let fileName = $('#file').val();//獲取檔案名稱
+                myForm.append(fileName,blob);//把圖片加入到表單內
+                $.ajax({
+                type:"post",
+                enctype : 'multipart/form-data',
+                url:"post/postUploadServlet",
+                data:myForm,
+                processData: false,
+                contentType : false,
+                success:function (result) {
+                    let template = `<img src="post/postUploadServlet?data=${result}" alt="">`;
+                    $("#content").append(template);
+                    $('#file').val("");//清空file所選圖片
+                }
+            });
+            } 
+            reader.readAsArrayBuffer(this.files[0]);
+            } 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+/*頁面*/
+
+.container {
+    display: flex;
+    margin-bottom: 50px;
+    max-width: 1300px;
+}
+/*左欄*/
+
+.side-bar {
+    width: 25%;
+    border-radius: 15px;
+    background: #fadcda;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-top: 50px;
+    opacity: 0.9;
+}
+
+.side-bar img {
+    width: 80%;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.s-user-name {
+    font-size: 20px;
+    text-align: center;
+}
+
+.user-hr {
+    display: flex;
+    justify-content: center;
+}
+
+.user-hr i {
+    color: #6e6d6d;
+    margin-bottom: 30px;
+    opacity: 0.3;
+}
+
+.user-hr::before {
+    color: #dee2e6;
+    content: "";
+    display: inline-block;
+    width: 100px;
+    height: 1px;
+    border-bottom: 1px solid #a1a0a0bd;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.user-hr::after {
+    color: #dee2e6;
+    display: inline-block;
+    content: "";
+    width: 100px;
+    height: 1px;
+    border-bottom: 1px solid #a1a0a0bd;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+
+/*選單*/
+
+.menu a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #495057;
+}
+
+.menu i {
+    display: inline-block;
+    margin-right: 10px;
+    color: #b97687;
+}
+
+.menu li {
+    width: 85%;
+    line-height: 45px;
+    margin: 10px auto;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.menu a:hover {
+    color: #495057;
+    background: #eeb8b8;
+    border-radius: 5px;
+}
+
+/*show選單*/
+
+.work {
+    font-size: 13px;
+    padding: 10px;
+    background-color: #f8cbcb;
+    border-radius: 5px;
+}
+
+.menu-work li {
+    line-height: 20px;
+}
+
+
+/*右側*/
+
+.content {
+    width: 70%;
+    border-radius: 15px;
+    padding-bottom: 30px;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+
+.title-top {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+/*list查詢表格*/
+
+.table {
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.table th {
+    border-bottom: none;
+    color: #000000;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+table td,
+table th {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.table tr:nth-of-type(even) {
+    background-color: #e9e0cf;
+}
+
+
+/*詳細資訊*/
+
+.phoo th {
+    width: 150px;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #414141;
+    letter-spacing: 1px;
+    margin: 10px;
+}
+
+.phoo-show {
+    margin-top: 40px;
+}
+
+.table a {
+    color: #b97687;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/*按鈕*/
+
+.btn-light {
+    font-size: 13px;
+    float: right;
+    margin: 5px;
+}
+
+/*大頭圖片*/
+.s-user-name{
+    margin-bottom:20px;
+}
+.side-bar img{
+    width: 120px;
+    height: 120px;
+}
+.user-hr{
+    margin-bottom:-30px;
+}

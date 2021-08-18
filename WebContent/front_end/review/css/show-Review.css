@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Sarabun:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+/* 
+font-family: 'Noto Sans TC', sans-serif  思源黑體 包含中英文;
+font-family: 'Sarabun', sans-serif;   英文正體字  
+font-family: 'Caveat', cursive; 英文藝術字
+*/
+
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 300;
+}
+
+.big_container {
+    width: 100%;
+    /* border: magenta 1px solid; */
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* .category  ul{
+    display: flex;
+    justify-content: left;
+    padding: 15px 0px 0px 30px;
+}
+
+
+.category  ul  li{
+ padding: 0.3rem 0.6rem;
+}
+
+.category  ul  li a{
+    color: #5a4e51 ;
+} */
+
+
+/* 左邊大區塊 */
+
+.big_left {
+    width: 76%;
+    margin-left: 40px;
+    display: inline-block;
+    /* border: rgb(235, 41, 235) 1px solid; */
+}
+
+
+/* 左側評價區 */
+
+
+/* 一則評價的區塊 */
+
+.one-message {
+    display: inline-block;
+    width: 800px;
+    margin: 10px 0px 30px 100px;
+    /* border: #ffb3b3 1px solid; */
+    position: relative;
+}
+
+
+/* 上半部 */
+
+.message-top {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    align-items: center;
+    /* border: #ffb3b3 1px solid;  */
+}
+
+.right_info {
+    margin-top: 5px;
+    margin-left: 5px;
+    /* border: indigo 1px solid; */
+}
+
+.right_info ul {
+    line-height: 20px;
+}
+
+
+/* 商店名稱 */
+
+.storename {
+    font-size: 17px;
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
+    color: #FF80A2;
+    margin: 10px 2px;
+    text-decoration: none;
+}
+
+.mem_author {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    color: cadetblue;
+}
+
+
+/* 發文時間 */
+
+.time {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 100;
+    text-align: right;
+    margin-right: 10px;
+}
+
+
+/*底下的留言評論*/
+
+
+/*評價文字內容*/
+
+.inner-message {
+    display: inline-block;
+    width: 710px;
+    font-weight: 400;
+    /* height: 800px; */
+    /* border: 1px solid rgb(255, 228, 77); */
+    line-height: 26px;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+
+/* 留言時間 */
+
+.time {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 100;
+    margin-top: 20px;
+}
+
+
+/* 底下水平線 */
+
+hr.left1 {
+    margin: 5px 0px 0px 0px;
+    border: #ffb3b3 0.5px solid;
+    width: 700px;
+    background-color: #ffb3b3;
+    /* position: absolute; */
+    bottom: 1px;
+}
+
+
+/*******右邊sidebar區**********/
+
+
+/* 右邊大區塊 */
+
+.big_right {
+    width: 24%;
+    display: block;
+    /* border: rgb(247, 244, 114) 1px solid; */
+}
+
+.sidebar {
+    background-color: #FADCDA;
+    width: 98%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+
+/* 如果有廣告的話 */
+
+
+/* .ad img{
+    margin-top: 10px;
+} */
+
+
+/* 我想分享的區塊 */
+
+.goto_post {
+    margin-top: 15px;
+    width: 96%;
+    /* border: maroon 1px solid; */
+    display: inline-block;
+}
+
+.goto_post .text {
+    text-align: left;
+    margin-bottom: 15px;
+    color: rgba(0, 0, 0, .8);
+}
+
+
+/* 店家評價募集中 */
+
+.goto_post .text p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    /* border: rgb(75, 167, 95) 1px solid;  */
+}
+
+
+/* 五星大推? 可怕雷店? 文字 */
+
+.goto_post .text span {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    /* border: rgb(75, 167, 95) 1px solid;  */
+}
+
+
+/* 我想分享 按鈕 */
+
+.goto_post a {
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    line-height: 45px;
+    color: #FFF;
+    background-color: #FF80A2;
+}
+
+.goto_post a:hover {
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+
+/* 熱門商家 底下的hr*/
+
+.right1 {
+    border: 1px solid rgb(97, 91, 91);
+    width: 280px;
+    position: absolute;
+    text-align: center;
+}
+
+
+/* 熱門商家 */
+
+
+/* 最上面的標題字 */
+
+.hot-store-area {
+    margin-top: 50px;
+    width: 96%;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    /* border: deeppink 1px solid; */
+}
+
+
+/* 熱門婚紗攝影 文字 */
+
+.hot-store-top span {
+    float: left;
+    padding-right: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    /* margin-bottom: 30px; */
+}
+
+
+/* 作用：讓熱門商家的字跟下方水平線有點間隔 */
+
+.hot-store-div {
+    height: 8px;
+    /* border: rgb(13, 158, 86) 1px solid; */
+}
+
+
+/* 每個熱門商家的小區塊 */
+
+.hot-store {
+    width: 300px;
+    display: flex;
+    /* border: rgb(13, 4, 148) 1px solid;  */
+    margin: 20px 0 10px 0;
+}
+
+
+/* 店家圖片區塊 */
+
+.left_store_pic {
+    /* display: inline-block; */
+    width: 78px;
+    height: 78px;
+    text-align: left;
+    /* border: dodgerblue 1px solid; */
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+
+/* 圓形店家圖片 */
+
+.left_store_pic img {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+
+/* 店名+評價+星數 區塊 */
+
+.sidebar_right_info {
+    margin-left: 5px;
+    /* border: indigo 1px solid; */
+}
+
+.sidebar_right_info ul {
+    margin-left: 5px;
+    text-align: left;
+    font-size: 15px;
+}
+
+
+/* 店名+評價+星數 文字 */
+
+.sidebar_right_info ul li {
+    line-height: 20px;
+    margin-bottom: 2px;
+}
+
+
+/* 右側商店名稱 */
+
+.sidebar_storename {
+    font-size: 16px;
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
+    color: #FF80A2;
+    margin: 20px 0 0 0;
+    text-decoration: none;
+}
+
+
+/* 按下評價此商家按鈕 跳出的視窗 */
+
+.commentTitle {
+    font-size: 20px;
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
+}
+
+.commentBox label {
+    margin: 10px 0 5px 0;
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
+    color: #FF80A2;
+}
+
+.errorMsg {
+    margin: 10px 0 5px 20px;
+    font-family: 'Noto Sans TC';
+    font-weight: 400;
+    color: #FF80A2;
+}
+
+.modal-footer {
+    justify-content: space-between !important;
+}
+
+footer {
+    /* margin-top: 50px; */
+    height: 79px;
+    background: #D5CB8E;
+}

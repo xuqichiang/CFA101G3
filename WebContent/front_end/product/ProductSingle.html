@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- SWEET -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- 購物車 -->
+    <script src="js/newCart.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/ProSub.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="../index/css/friendchat.css">
+
+    <title>商品資訊</title>
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <!-- 動態生成網頁 -->
+    <div class="wrap">
+
+        <!-- 導覽bar -->
+        <div class="wed-menu" id="wed-menu-id">
+            <ul class="menu">
+                <li class="menu-wed"><a class="goto2" href="ProductMain.html">商品主頁</a></li>
+                <li class="menu-wed"><a class="goto2" href="ProductSubShoes.html">婚鞋專區</a></li>
+                <li class="menu-wed"><a class="goto2" href="ProductSubRing.html">婚戒專區</a></li>
+                <li class="menu-wed"><a class="goto2" href="ProductSubFlower.html">花束專區</a></li>
+                <li class="menu-wed"><a class="goto2" href="ProductSubGoods.html">小物專區</a></li>
+            </ul>
+        </div>
+        <div class="bigbox">
+            <div class="picbox">
+                <div id="picmain" class="picmain"></div>
+                <div class="picsub" id="picsub">
+                    <div class="picsub2" id="picsub2">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="conbox">
+                <div id="proname" class="proname"> </div>
+                <div id="price" class="price"><i class="fas fa-comment-dollar"></i></div>
+                <div class="quantity">
+
+                </div>
+
+                <div class="buy">
+                    <div id="tobuy" class="tobuy">
+                        <!-- <a  id="tobuy" href=""></a>  -->
+                        立即結帳
+                    </div>
+                    <div id="buycar" class="buycar">
+                        加入購物車
+                    </div>
+                </div>
+
+                <div id="content" class="content"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 商家簡易資訊 -->
+    <div class="shop">
+        <div class="sellogo" id="sellogo">
+        </div>
+        <div class="selbox">
+            <div class="selname" id="selname"></div>
+            <div class="selnum" id="selnum">店家編號:</div>
+        </div>
+        <div class="selbox">
+            <div class="proCount" id="proCount">
+                <i class="fas fa-wine-bottle"></i>商品總數:
+            </div>
+
+            <div class="selbtn" id="selbtn">
+                <i class="fas fa-home"></i>
+                <a href="" id="smemPro">
+                    <button type="button" class="btn btn-secondary btn-sm">查看賣場</button>
+                </a>
+            </div>
+
+        </div>
+        <div class="selbox">
+            <div class="selstar" id="selstar"><i class="far fa-star"></i>評價:</div>
+            <div class="selreview" id="selreview">
+                <i class="far fa-smile"></i>
+                <a href="" id="smemReview">
+                    <button type="button" class="btn btn-secondary btn-sm">查看評價</button>
+                </a>
+            </div>
+        </div>
+        <div class="selbox2">
+            <div class="opentime">
+                <i class="fas fa-headphones-alt"></i>服務時間:09點-18點
+            </div>
+            <div class="opentime">
+                <i class="fas fa-bed"></i> 每周一公休
+            </div>
+        </div>
+
+    </div>
+
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+
+    <!-- 商品單品資料 -->
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let param = urlParams.get("pro_id");
+        // console.log(param);
+        if (param != null) {
+            $.ajax({
+                url: "../../product/ProFindByPKServlet",
+                type: "POST",
+                data: {
+                    "pro_id": param
+                },
+                dataType: "json",
+                success: function(data) {
+                    // console.log(data);
+                    let name = `${data.pro_name}`
+                    let price = `${data.pro_price}`
+                    let content = `${data.pro_content}`
+                    $("#proname").append(name);
+                    $("#price").append(price);
+                    $("#content").append(content);
+                }
+            });
+        }
+        if (param != null) {
+            $.ajax({
+                url: "../../product/ProImgSelServlet",
+                type: "get",
+                dataType: "JSON",
+                data: {
+                    "proi_pro_id": param
+                },
+
+                success: function(data) {
+                    // console.log(data);
+                    //主頁
+                    let images = `<img src="../../product/ProImgOutServlet?proi_id=${data[0].proi_id}" alt="">`;
+                    $("#picmain").append(images);
+                    //副頁
+                    for (let k = 0; k < data.length; k++) {
+                        if (k < 5) {
+                            let images2 = `<img src="../../product/ProImgOutServlet?proi_id=${data[k].proi_id}" alt="">`;
+                            $("#picsub").append(images2);
+                        }
+                    }
+                }
+            });
+        }
+
+        // 圖片選擇器
+        $("#picsub").on('click', 'img', function(e) {
+            let src = e.currentTarget.src;
+            // console.log(src);
+            $("#picmain").find("img").prop("src", src);
+        })
+    </script>
+    <!-- 秀店家 -->
+    <script>
+        $.ajax({
+
+            url: "../../ProJoinMemServlet/ProJoinMemServlet",
+            dataType: "JSON",
+            type: "POST",
+            data: {
+                "pro_id": param
+            },
+            success: function(data) {
+                console.log(data)
+                let sellogo = `
+            <a href="ProductSeller.html?memid=${data.mem_id}" id="${data.mem_id}">
+            <img src="data:image/*;base64,${data.mem_shop_logo}">
+            </a>`
+                let selname = `${data.mem_shop_name}`
+                let selnum = `${data.mem_id}`
+                let selstar = `${data.mem_review_score}`
+                    // let selreview = `${data.mem_review_count}`
+                $("#sellogo").append(sellogo);
+                $("#selname").append(selname);
+                $("#selnum").append(selnum);
+                $("#selstar").append(selstar);
+                // $("#selreview").append(selreview);
+                $("#smemPro").prop('href', `ProductSeller.html?memid=${selnum}`)
+                $("#smemReview").prop('href', `../review/show-Review.html?mem_id=${selnum}`)
+            }
+        })
+    </script>
+
+    <!-- 找商品總數 -->
+    <script>
+        $.ajax({
+            url: "../../product/ProFindIDCount",
+            dataType: "JSON",
+            type: "POST",
+            data: {
+                "pro_id": param
+            },
+            success: function(data) {
+                let proCount = data;
+                $("#proCount").append(proCount);
+            }
+        })
+    </script>
+
+    <!-- 直接購買 -->
+    <script>
+        window.onload = function() {
+            $("#tobuy").prop('href', `Checkoutobuy.html?pro_id=${param}`)
+        }
+    </script>
+
+    <script src="../index/js/friendchat.js"></script>
+
+</body>
+
+</html>

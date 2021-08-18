@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <!-- boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- SWEET -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- SWiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>嫁給幸福｜MarryHappiness</title>
+</head>
+<style>
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .swiper-container img {
+        width: 1050px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        box-shadow: 0 10px 15px -3px rgb(115 82 78 / 20%), 0 4px 6px -2px rgb(115 82 78 / 10%);
+    }
+    
+    .swiper-pagination-bullet-active {
+        background: #fc9086;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+                <li><a href="#">首頁</a></li>
+                <li><a href="/CFA101G3/front_end/member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="/CFA101G3/front_end/member/memberBuyProfile.html"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="#">婚禮攝影<br>Photography
+                </a></li>
+            <li><a href="#">婚禮場地<br>Location
+                </a></li>
+            <li>
+                <a href="#" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="ProductMain.html">婚禮週邊<br>Product
+                </a></li>
+            <li><a href="#">專欄討論<br>Post
+                </a></li>
+        </ul>
+    </header>
+
+    <!-- 購物車頁面 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">購物車<img src="images/MHlogo_04.svg" alt=""></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">商品資訊</th>
+                                <th scope="col">商品名稱</th>
+                                <th scope="col">價格</th>
+                                <th scope="col">數量</th>
+                                <th scope="col">小計</th>
+                                <th scope="col">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart"></tbody>
+                    </table>
+                    <div id="total-list" class="total-list">
+                        <h5 class="site-color">合計金額</h5>
+                        <h5 class="site-color">$<span id="total"></span></h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="checkout">結帳</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/sw1.jpeg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/sw2.jpeg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/sw3.jpeg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/sw4.jpeg" alt="">
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- 主頁面 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="post">
+                    <div class="post-heading">
+                        <div>
+                            <h2>專欄討論區</h2>
+                            <p>新娘聊心事的好地方</p>
+                        </div>
+                        <a href="">
+                            <div class="post-more">看更多討論</div>
+                        </a>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-box d-flex">
+                            <img src="images/wed1.jpeg" alt="">
+                            <a href="">
+                                <div class="post-article">
+                                    <div class="post-tag">婚禮心事</div>
+                                    <div class="post-chat">
+                                        <p>婚禮因疫情取消，婚紗工作室不退訂金ssssssssssssssss</p>
+                                        <div class="post-article-reply">
+                                            <i class="far fa-comment-dots"></i>
+                                            <span>2個回覆</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post-box d-flex">
+                            <img src="images/animal_penguin_couple.png" alt="">
+                            <a href="">
+                                <div class="post-article">
+                                    <div class="post-tag">婚禮心事</div>
+                                    <div class="post-chat">
+                                        <p>婚禮因疫情取消，婚紗工作室不退訂金ssssssssssssssss</p>
+                                        <div class="post-article-reply">
+                                            <i class="far fa-comment-dots"></i>
+                                            <span>2個回覆</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post-box d-flex">
+                            <img src="images/animal_penguin_couple.png" alt="">
+                            <a href="">
+                                <div class="post-article">
+                                    <div class="post-tag">婚禮心事</div>
+                                    <div class="post-chat">
+                                        <p>婚禮因疫情取消，婚紗工作室不退訂金ssssssssssssssss</p>
+                                        <div class="post-article-reply">
+                                            <i class="far fa-comment-dots"></i>
+                                            <span>2個回覆</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post-box d-flex">
+                            <img src="images/animal_penguin_couple.png" alt="">
+                            <a href="">
+                                <div class="post-article">
+                                    <div class="post-tag">婚禮心事</div>
+                                    <div class="post-chat">
+                                        <p>婚禮因疫情取消，婚紗工作室不退訂金ssssssssssssssss</p>
+                                        <div class="post-article-reply">
+                                            <i class="far fa-comment-dots"></i>
+                                            <span>2個回覆</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post-box d-flex">
+                            <img src="images/animal_penguin_couple.png" alt="">
+                            <a href="">
+                                <div class="post-article">
+                                    <div class="post-tag">婚禮心事</div>
+                                    <div class="post-chat">
+                                        <p>婚禮因疫情取消，婚紗工作室不退訂金ssssssssssssssss</p>
+                                        <div class="post-article-reply">
+                                            <i class="far fa-comment-dots"></i>
+                                            <span>2個回覆</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post-box d-flex">
+                            <img src="images/animal_penguin_couple.png" alt="">
+                            <a href="">
+                                <div class="post-article">
+                                    <div class="post-tag">婚禮心事</div>
+                                    <div class="post-chat">
+                                        <p>婚禮因疫情取消，婚紗工作室不退訂金ssssssssssssssss</p>
+                                        <div class="post-article-reply">
+                                            <i class="far fa-comment-dots"></i>
+                                            <span>2個回覆</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="product">
+                    <div class="product-heading">
+                        <div>
+                            <h2>婚禮週邊</h2>
+                            <p>新娘最愛的婚禮小物</p>
+                        </div>
+                        <a href="">
+                            <div class="product-more">看更多小物</div>
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <div class="row">
+                            <div class="pro-box col">
+                                <a href="">
+                                    <img src="images/pro1.png">
+                                    <h3>史迪奇糖果</h3>
+                                </a>
+                            </div>
+                            <div class="pro-box col">
+                                <a href="">
+                                    <img src="images/pro2.jpeg">
+                                    <h3>結婚書約訂製</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="pro-box col">
+                                <a href="">
+                                    <img src="images/pro3.jpeg">
+                                    <h3>手工喜糖</h3>
+                                </a>
+                            </div>
+                            <div class="pro-box col">
+                                <a href="">
+                                    <img src="images/pro4.jpeg">
+                                    <h3>米老鼠喜糖</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="pro-box col">
+                                <a href="">
+                                    <img src="images/pro5.jpeg">
+                                    <h3>糖果小物販售</h3>
+                                </a>
+                            </div>
+                            <div class="pro-box col">
+                                <a href="">
+                                    <img src="images/pro6.png">
+                                    <h3>手工餅乾訂製</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wedding">
+            <div class="wedding-heading">
+                <div>
+                    <h2>拍婚紗</h2>
+                    <p>新娘最喜歡的婚紗照</p>
+                </div>
+                <a href="">
+                    <div class="wedding-more">看更多作品</div>
+                </a>
+            </div>
+            <div class="wedding-content">
+                <div class="row">
+                    <div class="wed-box col">
+                        <a href="">
+                            <img src="images/wed1.jpeg">
+                            <h3>J2 Wedding 手工訂製婚紗 體驗館 板橋 中壢</h3>
+                        </a>
+                    </div>
+                    <div class="wed-box col">
+                        <a href="">
+                            <img src="images/wed2.jpeg">
+                            <h3>Duncan Photo Story</h3>
+                        </a>
+                    </div>
+                    <div class="wed-box col">
+                        <a href="">
+                            <img src="images/wed3.jpeg">
+                            <h3>HCstudio攝影工作室 | 桃園▫中壢</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="wed-box col">
+                        <a href="">
+                            <img src="images/wed4.jpeg">
+                            <h3>ONLY YOU 唯你婚紗攝影</h3>
+                        </a>
+                    </div>
+                    <div class="wed-box col">
+                        <a href="">
+                            <img src="images/wed5.jpeg">
+                            <h3>花朵影像製作</h3>
+                        </a>
+                    </div>
+                    <div class="wed-box col">
+                        <a href="">
+                            <img src="images/wed6.jpeg">
+                            <h3>荳蔻攝影工作室 Cardamom Studio</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="location">
+            <div class="location-heading">
+                <div>
+                    <h2>婚禮場地</h2>
+                    <p>新娘最想在這辦婚禮</p>
+                </div>
+                <a href="">
+                    <div class="location-more">看更多場地</div>
+                </a>
+            </div>
+            <div class="location-content">
+                <div class="row">
+                    <div class="loc-box col">
+                        <a href="">
+                            <img src="images/loc1.jpeg">
+                            <h3>大院子- 台北小婚宴場地</h3>
+                        </a>
+                    </div>
+                    <div class="loc-box col">
+                        <a href="">
+                            <img src="images/loc2.jpeg">
+                            <h3>板橋凱撒大飯店</h3>
+                        </a>
+                    </div>
+                    <div class="loc-box col">
+                        <a href="">
+                            <img src="images/loc3.jpeg">
+                            <h3>青青格麗絲莊園</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="loc-box col">
+                        <a href="">
+                            <img src="images/loc4.jpeg">
+                            <h3>孫立人將軍官邸</h3>
+                        </a>
+                    </div>
+                    <div class="loc-box col">
+                        <a href="">
+                            <img src="images/loc5.jpeg">
+                            <h3>青青風車莊園</h3>
+                        </a>
+                    </div>
+                    <div class="loc-box col">
+                        <a href="">
+                            <img src="images/loc6.jpeg">
+                            <h3>Shangri-La Taipei 香格里拉台北遠東國際大飯店</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/cart.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            // autoplay: {
+            //     delay: 5000
+            // }
+        });
+    </script>
+</body>
+
+</html>

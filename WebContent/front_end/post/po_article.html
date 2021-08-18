@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>po-article</title>
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/po_article.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <script src="js/newCart.js"></script>
+
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <div class="po_big_container">
+        <div class="po-container" id="po-container">
+            <div class="po-top">
+                <p>
+                    開話題 <i class="fas fa-comments"></i>
+                </p>
+                <hr class="hr1">
+            </div>
+            <div class="content">
+
+
+                <div class="inner-mem" id="inner-mem">
+                    <!--  <div class="left_author_pic">
+                        <img src="images/animal_hamster.png" width="50">
+                    </div>
+
+                    <div class="right_info">
+                        <ul>
+                            <li class="mem_author">MEM_NAME</li>
+                        </ul>
+                    </div> -->
+                </div>
+
+                <div class="inner-top" id="inner-top">
+                    <div>
+                        <select class="form-select form-select-sm form-select2" aria-label=".form-select-sm example" id="select-profession">
+                            <option value="7">選擇分類</option>
+                            <option value="1">聊結婚</option>
+                            <option value="2">好店推薦</option>
+                            <option value="3">我要靠北</option>
+                            <option value="4">準媽咪</option>
+                            <option value="5">購便宜</option>
+                            <!-- <option value="6">官方文章</option> -->
+                            <option value="7">其它閒聊</option>
+                        </select>
+                    </div>
+
+
+                    <!-- 標題 -->
+                    </br> <input type="text" class="form-control title" id="title" maxlength="40" placeholder="請輸入標題(必填/40字內)">
+                </div>
+
+
+
+                <!--輸入標籤的地方  限定只能打10個字 -->
+                <div class="tag-box">
+                    <input type="text" class="tagInput form-control" id="tagInput" maxlength="10" placeholder="請輸入標籤(非必填)">
+
+                    <button type="button" class="btn btn-danger tag-input-btn tagBtn" id="tagBtn">加入此標籤</button>
+                    <!--生成的Tag出現在此列 -->
+                    <div id="tags"></div>
+                </div>
+
+                <div id="errorMsg"></div>
+                <div id="editor2" class="editor2 form-control" contenteditable="true"></div>
+
+
+                <input type="file" name="file" id="file" class="file" accept="image/gif, image/jpeg, image/png">
+
+
+                <div class="inner-btn">
+                    <input type="button" class="btn btn-dark" value="發佈文章" id="post-button">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- < img src="data:image/*;base64,${result[i].MEM_HEADSHOT}" width="40"> -->
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+    <!-- 抓發文者的大頭貼和名字 -->
+    <script>
+        //  if (mem_id != null) {
+        $.ajax({
+            type: "post",
+            url: "../../member/getMemHeadshotServlet",
+            // async: false,
+            dataType: "json",
+            success: function(response) {
+                console.log(response);
+                let template = `
+                   		 <div class="left_author_pic">
+                        <img src="data:image/*;base64,${response.mem_headshot}" width="50">
+                    </div>
+
+                    <div class="right_info">
+                        <ul>
+                            <li class="mem_author">${response.name}</li>
+                        </ul>
+                    </div>
+					`;
+                $("#inner-mem").append(template);
+            }
+        });
+        // }
+
+
+        //確認是否為管理員
+        $.ajax({
+            type: "post",
+            url: "../../admin/adminServlet?action=check",
+            dataType: "json",
+            success: function(response) {
+                if (response) {
+                    let tmp = `<option value="6">官方文章</option>`;
+                    $('#select-profession').append(tmp);
+                }
+            }
+        });
+
+
+
+        let tmp = []; //tags陣列
+
+        /*讀取圖片功能2.0*/
+        $('#file').on('change', function() {
+            if (this.files && this.files[0]) {
+                /*判斷檔案大小是否超過*/
+                let size = 0;
+                for (let i = 0; i < this.files.length; i++) {
+                    size = size + this.files[i].size;
+                }
+                if (size > 1024 * 1024 * 5) {
+                    $('#file').val(""); //清空file所選圖片
+                    alert("您的檔案大小超過5M");
+                    return;
+                }
+                /******************/
+
+                var reader = new FileReader(); //創建檔案讀取物件
+                reader.onload = function(e) {
+                    let myForm = new FormData(); //創建表單物件
+                    let imgData = e.target.result; //獲取檔案讀取後的資料
+                    let blob = new Blob([imgData], {
+                        type: 'image/*'
+                    }); //轉換成blob型別
+                    let fileName = $('#file').val(); //獲取檔案名稱
+                    myForm.append(fileName, blob); //把圖片加入到表單內
+                    $.ajax({
+                        type: "post",
+                        enctype: 'multipart/form-data',
+                        url: "../../post/postUploadServlet",
+                        data: myForm,
+                        processData: false,
+                        contentType: false,
+                        success: function(result) {
+                            let template = `<img src="../../post/postUploadServlet?data=${result}" alt="">`;
+
+                            $("#editor2").append(template);
+                            $('#file').val(""); //清空file所選圖片
+                        }
+                    });
+                }
+                reader.readAsArrayBuffer(this.files[0]);
+            }
+        });
+
+
+        // 按下發佈文章的按鈕
+        $("#post-button").on('click', function() {
+            let selectprofession = $("#select-profession").val(); //取下拉選單的值
+            let title = $("#title").val(); //取title的值
+            let editor2 = $("#editor2").html();
+            let tags = tmp.toString();
+            console.log(selectprofession);
+            $.ajax({
+                url: "../../post/poArticleServlet",
+                type: "POST",
+                data: { //把data送進servlet
+                    "post_cat_id": selectprofession,
+                    "post_title": title,
+                    "post_content": editor2,
+                    "tag_name": tags
+                },
+                success: function(result) {
+                    alert(result);
+                    window.location.href = 'forumindex.html';
+                },
+                error: function(data) {
+                    $("#errorMsg").html("");
+                    console.log(data.responseText);
+                    // let errorMsg = data.responseText.split(",");
+                    let errorMsg = JSON.parse(data.responseText);
+                    for (let i = 0; i < errorMsg.length; i++) {
+                        $("#errorMsg").append(errorMsg[i] + "<br>");
+                        // console.log(errorMsg[i]);
+                    }
+                    alert("文章發佈失敗");
+                }
+            });
+        });
+
+
+        function checkTagType(tagvalue) {
+            //正則表達式
+            let reg = /^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]|[a-zA-Z0-9_.]){1,20}$/;
+            //獲取輸入框中的值
+            console.log(reg.test(tagvalue));
+            return reg.test(tagvalue);
+        }
+
+        //監聽按下鍵盤後插入tag
+        // $('#tagInput').on('keydown', function (e) {
+        //     if (e.keyCode == 13) { //keycode 13 = Enter
+        //         let tagValue = $('#tagInput').val().trim();
+
+        //         if (!checkTagType(tagValue)) {
+        //             alert("請輸入中文、數字或英文");
+        //             //輸入非法字元，清空輸入框
+        //             $("#tagInput").val("");
+        //             return;
+        //         }
+        //         //判斷輸入框中有內容
+        //         if (tagValue != "") {
+        //             tmp.push(tagValue);
+        //             console.log(tmp);
+        //             let tagTemp =
+        //                 `<button type="button" class="btn btn-primary">
+        //                         <span>${tagValue}</span>
+        //                         <a class="badge bg-danger">X</a>
+        //                     </button>`
+        //             $('#tags').append(tagTemp);
+        //             $('#tagInput').val("");
+        //         }
+        //     }
+        // });
+
+
+        //監聽點擊按鈕後插入tag
+        $('#tagBtn').on('click', function(e) {
+            if (tmp.length >= 5) {
+                $('#tagBtn').attr("disabled", "disabled");
+                return;
+            }
+            let tagValue = $('#tagInput').val().trim();
+            if (!checkTagType(tagValue)) {
+                alert("請輸入中文、數字或英文");
+                //輸入非法字元後，清空輸入框
+                $("#tagInput").val("");
+                return;
+            }
+            // `<button type="button" class="btn btn-primary">
+            //   <a class="badge bg-danger">X</a>
+            if (tagValue != "") {
+                tmp.push(tagValue);
+                console.log(tmp);
+                let tagTemp =
+                    `<button type="button" class="btn btn-secondary btn-sm">
+                                <span>${tagValue}</span>
+                                <a class="badge bg-secondary">X</a>
+                            </button>`
+                $('#tags').append(tagTemp);
+                $('#tagInput').val("");
+            }
+        });
+
+        //刪除tag
+        $('#tags').on('click', 'a', function(e) {
+            //e.currentTarget 指的是註冊的對象'a' 如果'a'底下有其他<span>且要選擇他的span 要用e.target
+            e.currentTarget.closest("button").remove();
+            let tmpValue = $(e.currentTarget).siblings('span').html();
+            tmp.forEach(function(item, index, object) {
+                if (item == tmpValue) {
+                    object.splice(index, 1);
+                }
+            });
+            if (tmp.length < 5) {
+                $('#tagBtn').removeAttr("disabled");
+            }
+        });
+    </script>
+    <script src="js/po_articlejs.js"></script>
+    <script src="js/friendchat.js"></script>
+</body>
+
+</html>

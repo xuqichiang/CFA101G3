@@ -1,0 +1,359 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <!--腳-->
+    <link rel="stylesheet" href="css/memberBuyProfile.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="js/jquery.datetimepicker.full.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/newCart.js"></script>
+
+    <title>廳房中心｜MarryHappiness</title>
+</head>
+<style>
+    img {
+        max-width: 100%;
+    }
+    
+    ul {
+        list-style: none;
+        padding-left: 0px;
+    }
+    
+    div.navv {
+        text-decoration: none;
+        color: purple;
+        list-style: none;
+    }
+    
+    div.na1 {
+        display: inline-block;
+        border: 1px solid red;
+    }
+    
+    .user-menu1 {
+        display: flex;
+        justify-content: flex-start;
+        font-size: 14px;
+        line-height: 30px;
+    }
+    
+    .user-menu1 i {
+        color: #a7aaad;
+        text-indent: 10px;
+    }
+    
+    .user-menu1 a {
+        text-decoration: none;
+        color: #6e6d6d;
+        display: block;
+        opacity: 0.8;
+    }
+    
+    .user-menu1 li:hover {
+        background: #b8e6bf;
+        cursor: pointer;
+    }
+    
+    div.topimages {
+        left: 5%;
+    }
+    
+    div.topimages img {
+        display: flex;
+        width: 700px;
+        margin: 10px auto;
+    }
+    
+    .titlename {
+        height: 70px;
+        /* border: 1px solid black; */
+        display: block;
+        /* background-color: #FFF; */
+        padding-left: 50px;
+        padding-top: 20px;
+        font-size: 22px;
+    }
+    
+    .box1 {
+        width: 400px;
+        display: block;
+        position: relative;
+        border: 1px solid #e2e1e1;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        margin-right: 10px;
+    }
+    
+    .list {
+        display: flex;
+        /*     justify-content: space-between; */
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    
+    .images {
+        overflow: hidden;
+        cursor: pointer;
+        height: 300px;
+        width: 100%;
+        border-bottom: 1px solid #e2e1e1;
+        position: relative;
+    }
+    
+    .images img {
+        display: block;
+        height: 300px;
+        object-fit: cover;
+        transition: all 0.5s;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .box-block {
+        padding: 10px;
+    }
+    
+    .name {
+        height: 30px;
+        width: 230px;
+        /* border: 1px solid black; */
+        font-size: 20px;
+        font-weight: bolder;
+        padding-top: 2px;
+    }
+    
+    .content {
+        height: 50px;
+        width: 230px;
+        /* border: 1px solid black; */
+        overflow: hidden;
+        padding-top: 2px;
+    }
+    
+    .price {
+        height: 40px;
+        width: 230px;
+        /* border: 1px solid black; */
+        padding-top: 5px;
+        color: darkred;
+        font-size: 20px;
+    }
+    
+    div.locr {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 20;
+        bottom: 50;
+        z-index: 2;
+    }
+    
+    div.locrimg {
+        border: 1px solid #facfd2;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        margin-bottom: 10px;
+        overflow: hidden;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+    
+    div.locr a {
+        text-decoration: none;
+    }
+    
+    div.locr a:hover {
+        text-decoration: none;
+    }
+    
+    .form-control {
+        width: 350px;
+    }
+    
+    .titlename2 {
+        margin-right: 50%;
+    }
+    
+    .titlename2 span {
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+    <div class="navv">
+
+        <ul class="user-menu1">
+            <li><a href="../locationprogram/LocIndex.html"><i class="fas fa-dove"></i>找場地</a></li>
+            <li><a href="../locationroom/locrMaintitle.html"><i class="fas fa-dove"></i>找廳房</a></li>
+            <li><a href="../locationprogram/LocpIndex.html"><i class="fas fa-dove"></i>找方案</a></li>
+        </ul>
+    </div>
+    <!-- 搜尋位置 -->
+
+    <div class="topimages">
+        <img src="images/wedd1223.jpg">
+        <div class="titlename2">
+
+            <span class="search2" id="search2"><input type="text" id="control" class="form-control" placeholder="請輸入廳房名字"></span>
+            <span id="btnSearch" class="btnSearch">
+        <a href="" id="kwds">
+            <button type="button" class="btn btn-primary">搜尋</button>
+        </a></span>
+        </div>
+    </div>
+
+    <div class="titlename">搜尋廳房</div>
+    <div class="list" id="list"></div>
+
+    </div>
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+    <script>
+        //搜尋榜定A標籤
+        $("#search2").on('change', function() {
+
+            let control = $("#control").val();
+            console.log(control);
+            $("#kwds").prop('href', `locrMainSearch.html?kwds=${control}`)
+
+        });
+
+        let urlParams = new URLSearchParams(window.location.search);
+        let param = urlParams.get("kwds");
+        console.log(param)
+
+
+        //從資料庫撈出方案的資訊
+        $.ajax({
+                url: '../../locationroom/findbysqlLocrServlet',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    "locr_name": param
+                },
+                success: function(data) {
+                    for (let i = 0; i < data.length; i++) {
+                        let tmp = `<div class="box1">
+                    <input type="hidden" name="locr_smem_id" value="${data[i].locr_SMEM_ID}">
+                    <div class="locr"><div class="locrimg"><img class="" src="../../locationroom/imgsmemlogoServlet?LOCI_SMEM_ID=${data[i].locr_SMEM_ID}" alt=""></div></div>
+                    <div class="images"><a href="../../front_end/locationroom/locrOnePage.html?LOCR_ID=${data[i].locr_ID}&LOCI_ID=${getRoomImgList(data[i].locr_ID)}"><img src="../../locationimages/imgLociServlet?LOCI_ID=${getRoomImgList(data[i].locr_ID)}" alt=""></a></div>
+                    <div class="box-block">
+                    <div class="name">${data[i].locr_NAME}</div>
+                    <div class="content">${data[i].locr_CONTENT}</div>
+                    
+                    </div></div>`;
+                        $('#list').append(tmp);
+                    }
+                }
+            })
+            //從資料庫撈出圖片的資訊讓  data[i].locr_ID  =  LOCI_LOCR_ID  再回傳要的Loci_id
+        function getRoomImgList(LOCI_LOCR_ID) {
+            console.log(LOCI_LOCR_ID)
+            let loci_id = 0;
+            $.ajax({
+                url: '../../locationimages/getLocImageServlet',
+                type: 'post',
+                dataType: 'json',
+                async: false,
+                data: {
+                    "LOCI_LOCR_ID": LOCI_LOCR_ID,
+                    "action": "getImgListByFK"
+                },
+                success: function(data) {
+                    console.log(data);
+                    loci_id = data[0].loci_ID;
+                }
+            })
+            return loci_id;
+
+        }
+    </script>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/friendchat.js"></script>
+
+</body>
+
+</html>

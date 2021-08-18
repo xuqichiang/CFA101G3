@@ -1,0 +1,104 @@
+.biglogo{
+    height: 300px;
+    margin: 20px;
+    display: flex;
+}
+
+.shop_banner{
+    width: 450px;
+    overflow: hidden;
+    object-fit: cover;
+    margin-right: 30px;
+}
+.shop_banner img{
+    object-fit: cover;
+    /* height: 100%; */
+}
+
+.shop_content{
+    width: 650px;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.biglist{
+    height: 1150px;
+    margin: 10px 30px 10px 30px;
+    display: flex;
+}
+
+.shop_search{
+    width: 230px;
+    display: block;
+    margin: 10px;
+    background-color: #fff;
+}
+
+.shop_product{
+    width: 900px;
+    margin: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    overflow: hidden;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+.box2{
+    height: 250px;
+    /* width: 20%; */
+    display: block;
+    /* margin-right: 30px; */
+    margin: 30px 30px 0px 30px;
+}
+
+.SHbox{
+    /* width: 158px; */
+    height: 250px;
+    display: block;
+    /* border: 1px lightgray; */
+    background-color: honeydew;
+}
+
+.SHtitle{
+    display: block;
+    background-color: darkseagreen;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    /* border-radius: 2px 2px 0px 0px; */
+}
+
+.SHinput{
+    width: 145px;
+}
+
+.SHinput2{
+    width: 60px;
+}
+
+.SHname{
+   font-family: 'Courier New', Courier, monospace;
+}
+
+.btn{
+    width: auto;
+}
+
+.btnbox{
+    display: flex;
+    justify-content: center;
+}
+
+.SHselect{
+ width: 145px;
+ height: 25px;
+}

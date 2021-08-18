@@ -1,0 +1,293 @@
+.container {
+    margin-bottom: 30px;
+}
+
+
+/*選單*/
+
+.wed-menu {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #c5c5c5;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-wed {
+    padding: 0px 20px;
+    border-right: 1px solid #c5c5c5;
+}
+
+h1 {
+    font-size: 23px;
+    font-weight: 50;
+    letter-spacing: 2px;
+    font-family: 微軟正黑體;
+}
+
+.menu-wed a {
+    text-decoration: none;
+    color: #6e6d6d;
+    font-family: 微軟正黑體;
+}
+
+.form-control {
+    font-size: 15px;
+    font-family: 微軟正黑體;
+}
+
+.wed-shop {
+    margin-top: 30px;
+    height: 400px;
+    border: 1px solid black;
+}
+
+
+/*婚攝作品內容*/
+
+.web-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.web-content a {
+    text-decoration: none;
+}
+
+
+/*婚攝作品*/
+
+.wor-name {
+    margin: 10px 0px;
+}
+
+
+/*圖片*/
+
+.wed-images {
+    width: 360px;
+    height: 250px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 0 5px;
+}
+
+.wed-images img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    object-fit: cover;
+    /*填滿元素的整個內容框*/
+    transition: all 0.5s;
+}
+
+.wed-images:hover img {
+    transform: scale(1.2, 1.2);
+}
+
+
+/*名稱d*/
+
+.phog-name {
+    color: #414141;
+    margin: 5px;
+}
+
+
+/*攝影師*/
+
+.mem-shop-name {
+    color: #6e6d6d;
+    font-size: 14px;
+    margin: 5px;
+}
+
+
+/*婚攝方案內容*/
+
+.phop-content {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.program {
+    width: 350px;
+    margin: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.program-content {
+    margin: 20px;
+}
+
+.program-content a {
+    text-decoration: none;
+}
+
+
+/*名*/
+
+.phop-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #414141
+}
+
+
+/*內容*/
+
+.phop-content {
+    margin: 20px auto;
+    color: #6e6d6d;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/*價錢*/
+
+.phop-price {
+    margin: 10px auto;
+    color: #eeb8b8;
+    font-weight: 500;
+}
+
+.phop-price span {
+    color: #6e6d6d;
+    font-size: 10px;
+    padding-right: 5px;
+}
+
+
+/*圖片*/
+
+.program-images img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+/*店logo*/
+
+.program-news {
+    display: flex;
+    margin: 20px 20px 0 20px;
+    border-top: 1px solid #c5c5c5;
+}
+
+.phop-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.phop-logo img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+
+/*店家*/
+
+.phop-smem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.phop-smem a {
+    padding-bottom: 8px;
+    color: #414141;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.phop-smem span {
+    color: #6e6d6d;
+    font-size: 10px;
+}
+
+.phop-smem i {
+    padding-right: 5px;
+}
+
+
+/*內容區*/
+
+.chosen {
+    font-size: 20px;
+    margin: 20px auto;
+    color: #6e6d6d;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.chosen i {
+    margin-right: 5px;
+}
+
+
+/*隊長按鈕*/
+
+.edit-submit {
+    display: inline-block;
+    background: #eeb8b8;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    width: 30%;
+    height: 35px;
+    border: 1px solid #eeb8b8;
+    font-size: 14px;
+}
+
+.edit-submit:hover {
+    background: #eeb8b8;
+}
+
+.btn-many {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+/*輪播圖*/
+
+#carouselExampleIndicators {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.carouseWrap {
+    background: #eee;
+    padding: 15px 0;
+}
+
+.carousel-item {
+    height: 400px;
+    border-radius: 10px;
+}
+
+.carousel-inner {
+    border-radius: 10px;
+}
+
+.carousel-item img {
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    /*填滿元素的整個內容框*/
+}

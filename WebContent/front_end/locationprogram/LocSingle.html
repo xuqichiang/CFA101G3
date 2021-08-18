@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- SWEET -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/ProSub.css">
+    <link rel="stylesheet" href="css/ProMain.css">
+    <link rel="stylesheet" href="css/ProSeeMem.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="js/newCart.js"></script>
+    <title>店家資訊</title>
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <!-- 動態生成網頁 -->
+    <div class="wrap">
+
+        <!-- 導覽bar -->
+        <div class="wed-menu" id="wed-menu-id">
+            <ul class="menu">
+                <li class="menu-wed"><a class="goto2" href="javascript:void(0)" id="gotoloc">婚禮場地</a></li>
+                <li class="menu-wed"><a class="goto2" href="javascript:void(0)" id="gotolocr">婚禮廳房</a></li>
+                <li class="menu-wed"><a class="goto2" href="javascript:void(0)" id="gotolocp">婚禮方案</a></li>
+            </ul>
+        </div>
+        <!-- 店家介紹 -->
+        <div class="biglogo">
+            <div class="shop_banner" id="shop_banner"></div>
+            <div class="shop_content">
+                <div class="shop_text" name="" id="shop_content"></div>
+                <div class="talktalk" id="talktalk"></div>
+            </div>
+        </div>
+        <!-- 店家商品總攬 -->
+        <div class="biglist">
+            <div class="shop_product" id="shop_product">
+                <h2 class="loctitle">廳房</h2>
+                <div class="locinfo">
+                    <div class="box1">
+                        <div class="images" id="images1"><img id="locr_image0" src="" alt=""></div>
+                        <div class="name" id="locr_name0">廳房名稱</div>
+                        <div class="content">無梁柱<a id="locr_content0" href="../locationorder/locojoinorder.html" class="reserveVenue_btn">預約賞廳</a></div>
+                        <div class="goto"><a href="../locationroom/locrOnePage.html" id="locr_id0">查看廳房</a></div>
+                    </div>
+                    <div class="box1">
+                        <div class="images" id="images2"><img id="locr_image1" src="" alt=""></div>
+                        <div class="name" id="locr_name1">廳房名稱</div>
+                        <div class="content">無梁柱<a id="locr_content1" href="../locationorder/locojoinorder.html" class="reserveVenue_btn">預約賞廳</a></div>
+                        <div class="goto"><a href="../locationroom/locrOnePage.html" id="locr_id1">查看廳房</a></div>
+                    </div>
+                    <div class="box1">
+                        <div class="images" id="images3"><img id="locr_image2" src="" alt=""></div>
+                        <div class="name" id="locr_name2">廳房名稱</div>
+                        <div class="content">無梁柱<a id="locr_content2" href="../locationorder/locojoinorder.html" class="reserveVenue_btn">預約賞廳</a></div>
+                        <div class="goto"><a href="../locationroom/locrOnePage.html" id="locr_id2">查看廳房</a></div>
+                    </div>
+                </div>
+                <h2 class="loctitle">方案</h2>
+                <div class="locinfo">
+                    <div class="box1">
+                        <div class="images"><img id="locp_image0" src="images/LocationProgram1.jpg" alt=""></div>
+                        <div class="name" id="locp_name0">方案名稱</div>
+                        <!-- <div class="content" id="locp_content0"></div> -->
+                        <div class="price" id="locp_price0"><i class="fas fa-comment-dollar"></i></div>
+                        <div class="goto"><a href="Locpsingle.html" id="locp_id0">查看方案</a></div>
+                    </div>
+                    <div class="box1">
+                        <div class="images"><img id="locp_image1" src="images/LocationProgram2.jpg" alt=""></div>
+                        <div class="name" id="locp_name1">方案名稱</div>
+                        <!-- <div class="content" id="locp_content1"></div> -->
+                        <div class="price" id="locp_price1"><i class="fas fa-comment-dollar"></i></div>
+                        <div class="goto"><a href="Locpsingle.html" id="locp_id1">查看方案</a></div>
+                    </div>
+                    <div class="box1">
+                        <div class="images"><img id="locp_image2" src="images/LocationProgram3.jpg" alt=""></div>
+                        <div class="name" id="locp_name2">方案名稱</div>
+                        <!-- <div class="content" id="locp_content2"></div> -->
+                        <div class="price" id="locp_price2"><i class="fas fa-comment-dollar"></i></div>
+                        <div class="goto"><a href="Locpsingle.html" id="locp_id2">查看方案</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 商家簡易資訊 -->
+        <div class="shop">
+            <div class="sellogo" id="sellogo">
+            </div>
+            <div class="selbox">
+                <div class="selname" id="selname"></div>
+                <div class="selnum" id="selnum">店家編號:</div>
+            </div>
+            <div class="selbox">
+                <div class="proCount" id="locrCount">
+                    <i class="fas fa-door-open"></i>廳房總數:
+                </div>
+
+                <div class="proCount" id="locpCount">
+                    <i class="far fa-list-alt"></i>方案總數:
+                </div>
+
+            </div>
+            <div class="selbox">
+                <div class="selstar" id="selstar"><i class="far fa-star"></i>評價:</div>
+                <a href="" id="smemReview">
+                    <button type="button" class="btn btn-secondary btn-sm">查看評價</button>
+                </a>
+            </div>
+            <div class="selbox2">
+                <div class="opentime">
+                    <i class="fas fa-headphones-alt"></i>服務時間:09點-18點
+                </div>
+                <div class="opentime">
+                    <i class="fas fa-bed"></i> 每周一公休
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let param = urlParams.get("memid");
+        if (param != null) {
+            //秀店家banner
+            $.ajax({
+                url: "../../member/memServlet?action=getOne_review",
+                dataType: "JSON",
+                type: "POST",
+                data: {
+                    "mem_id": param
+                },
+                success: function(data) {
+                    console.log(data);
+                    let banner = `<img src="data:image/*;base64,${data.mem_shop_banner}">`
+                    $("#shop_banner").append(banner);
+                    let content = `${data.mem_shop_content}`;
+                    let content2 = content.replace(/  /g, "  ").replace(/\n/g, "<br>");
+                    $("#shop_content").append(content2);
+                    let sellogo = `<img src="data:image/*;base64,${data.mem_shop_logo}">`
+                    let selname = `${data.mem_shop_name}`
+                    let selnum = `${data.mem_id}`
+                    let selstar = `${data.mem_review_count != 0 ? (data.mem_review_score/data.mem_review_count).toFixed(1) : 0}`
+                    $("#sellogo").append(sellogo);
+                    $("#selname").append(selname);
+                    $("#selnum").append(selnum);
+                    $("#selstar").append(selstar);
+                    $("#smemid").prop('href', `LocSingle.html?memid=${selnum}`)
+                    $("#smemReview").prop('href', `../review/show-Review.html?mem_id=${selnum}`)
+
+                }
+            })
+
+            // 上聊聊btn
+            $("#talktalk").append(`<a data-mem_id="${param}" data-chat="active">點我聊聊</a>`);
+
+            //得到一場地賣家的方案資訊
+            let locpcount = 0;
+            $.ajax({
+                    url: '../../locationprogram/getOneLocSellerInfoServlet',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        'memid': param,
+                        'action': 'getLocationProgram'
+                    },
+                    success: function(data) {
+                        for (let i = 0; i < data.length; i++) {
+                            locpcount++;
+                            $(`#locp_id${i}`).prop('href', `Locpsingle.html?locp_id=${data[i].locp_id}`);
+                            $(`#locp_name${i}`).text(data[i].locp_name);
+                            $(`#locp_price${i}`).append(data[i].locp_price);
+                            $(`#locp_image${i}`).prop('src', `../../locationprogramimages/getImagesByFKservlet?locp_id=${data[i].locp_id}`);
+                        }
+                        $('#locpCount').append(locpcount);
+                    }
+                })
+                //得到一場地賣家的廳房資訊
+            let locrcount = 0;
+            $.ajax({
+                url: '../../locationprogram/getOneLocSellerInfoServlet',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    'memid': param,
+                    'action': 'getLocationRoom'
+                },
+                success: function(data) {
+                    console.log(data);
+                    for (let i = 0; i < data.length; i++) {
+                        locrcount++;
+                        $(`#locr_id${i}`).prop('href', `../locationroom/locrOnePage.html?LOCR_ID=${data[i].locr_ID}`);
+                        $(`#locr_name${i}`).text(data[i].locr_NAME);
+                        $(`#locr_image${i}`).prop('src', `../../locationimages/imgLociServlet?LOCI_ID=${getRoomImgList(data[i].locr_ID)}`);
+                        $(`#locr_content${i}`).prop('href', `../locationorder/locojoinorder.html?LOCR_ID=${data[i].locr_ID}`);
+                    }
+                    $('#locrCount').append(locrcount);
+                }
+            })
+        }
+
+        // 從資料庫撈出廳房圖片的資訊讓 
+        function getRoomImgList(LOCI_LOCR_ID) {
+            console.log(LOCI_LOCR_ID)
+            let loci_id = 0;
+            $.ajax({
+                url: '../../locationimages/getLocImageServlet',
+                type: 'post',
+                dataType: 'json',
+                async: false,
+                data: {
+                    "LOCI_LOCR_ID": LOCI_LOCR_ID,
+                    "action": "getImgListByFK"
+                },
+                success: function(data) {
+
+                    console.log(data);
+                    loci_id = data[0].loci_ID;
+                    console.log(loci_id)
+
+
+                }
+
+            })
+            return loci_id;
+        }
+
+        $("#gotolocp").click(function() {
+            var h = $(window).scrollTop(); //获取当前滚动条距离顶部的位置
+            $("html,body").animate({
+                scrollTop: h + 1000
+            }, 80); //点击按钮向下移动1000px，时间为80毫秒
+        });
+        $("#gotolocr").click(function() {
+            var h = $(window).scrollTop(); //获取当前滚动条距离顶部的位置
+            $("html,body").animate({
+                scrollTop: h + 550
+            }, 80); //点击按钮向下移动550px，时间为80毫秒
+        });
+        $("#gotoloc").click(function() {
+            var h = $(window).scrollTop(); //获取当前滚动条距离顶部的位置
+            $("html,body").animate({
+                scrollTop: h + 150
+            }, 80); //点击按钮向下移动150px，时间为80毫秒
+        });
+    </script>
+
+
+    <script src="js/friendchat.js"></script>
+
+</body>
+
+</html>

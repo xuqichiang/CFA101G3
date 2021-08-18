@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/newCart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/ProUpIMG.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="../index/css/friendchat.css">
+    <title>商品中心｜MarryHappiness</title>
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <div class="wrap">
+        <!-- sidebar -->
+        <div class="side-bar">
+            <img class="imgdata" src="" alt="">
+            <div class="user-name s-user-name"></div>
+            <div class="user-hr"><i class="fas fa-heart"></i></div>
+            <ul class="menu">
+                <li><a href="ProSellerProfile.html?action=profile" id="profile"><i class="fas fa-user"></i>個人資料</a></li>
+                <li><a href="ProSellerProfile.html?action=setting" id="setting"><i class="fas fa-file-invoice"></i>帳號設定</a></li>
+                <li><a href="ProSellerProfile.html?action=sellerProfile"><i class="fas fa-shopping-cart"></i>店家資料</a></li>
+                <li class="menu-work">
+                    <li class="menu-work">
+                        <a href="javascript:void(0)" id="goSel">
+                            <i class="fas fa-home"></i>查看賣場
+                        </a>
+                    </li>
+                    <li><a data-toggle="collapse" href="#demo"><i class="fas fa-shopping-cart"></i>商品管理</a></li>
+                    <ul id="demo" class="collapse">
+                        <li><a class="work" href="/CFA101G3/front_end/product/ProductCRUD.html"><i
+                                    class="fas fa-user"></i>我的商品</a></li>
+                        <li><a class="work" href="/CFA101G3/front_end/product/ProductINSERT.html"><i
+                                    class="fas fa-shopping-cart"></i>新增商品</a></li>
+                        <li><a class="work" href="/CFA101G3/front_end/product/ProductUPImages.html"><i
+                                    class="fas fa-camera-retro"></i>上傳圖片</a></li>
+                    </ul>
+                </li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo2"><i class="fas fa-hand-point-right"></i>訂單管理</a>
+                    <ul id="demo2" class="collapse">
+                        <li><a class="work" href="ProductOrder.html"><i class="fas fa-hand-point-right"></i>我的訂單</a>
+                        </li>
+                        <li><a class="work" href="ProductCancel.html"><i class="fas fa-hand-point-right"></i>取消作業</a>
+                        </li>
+                        <li><a class="work" href="ProductRefund.html"><i class="fas fa-hand-point-right"></i>退貨/退款</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- <li><a href="/CFA101G3/front_end/product/ProductCRUD2.html"><i class="fas fa-file-invoice"></i>商品總覽</a>
+                </li>
+                <li><a href="/CFA101G3/front_end/product/ProductDELETE.html"><i class="fas fa-church"></i>刪除商品</a></li> -->
+            </ul>
+        </div>
+        <!-- CONETNT -->
+        <div class="content">
+            <h2><i class="fas fa-camera-retro"></i>上傳圖片</h2>
+            <div class="profile">
+                <form action="" enctype="multipart/form-data" method="POST" id="imgform">
+                    <p>請選擇商品名稱</p>
+                    <div class="imgID" id="imgID">
+                        <select name="selectID" id="selectID" class="form-control">
+                            <option value="">--請選擇商品--</option>
+                        </select>
+                    </div>
+                    <div class="imgBox">
+                        <div class="imgMain" id="imgMain"></div>
+                    </div>
+
+                    <div class="imgBtn" id="imgBtn">
+                        <!-- 捷哥流上傳圖片 -->
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="file1" class="btn btn-secondary">選取圖片:</label>
+                                <span class="form-group">
+                                    <button type="submit" class="btn btn-secondary" id="uplbtn">上傳</button>
+                                </span>
+                                <input type="file" id="file1" name="file1" accept="image/*" hidden>
+                                <input type="hidden" id="uplocpid" name="locp_id">
+                            </div>
+                            <br>
+                            <img id="demoimg" class="demoimg" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+    <script>
+        //請求大頭貼
+        Ajaxheadshot();
+
+        function Ajaxheadshot() {
+            $.ajax({
+                type: "post",
+                url: "../../member/headshotBuyServlet",
+                data: {
+                    "headshot": "headshot"
+                },
+                xhrFields: {
+                    // 將回傳結果以Blob保持原本二進位的格式回傳
+                    //jquery的dataType無法設定返回格式為blob需要手動修改
+                    responseType: "blob"
+                },
+                success: function(result) {
+                    let img = document.getElementsByClassName('imgdata');
+                    if (result.size != "0") {
+                        let url = URL.createObjectURL(result);
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = url;
+                        }
+                    } else {
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = "images/music_castanet_girl.png";
+                        }
+                    }
+                }
+            });
+        }
+
+        $('#uplbtn').on('click', function(e) {
+            let file1 = $('#file1').val();
+            if (file1 != "") {
+                return true;
+            } else {
+                swal("商品照片有錯誤!", "未上傳圖片", "error");
+                return false;
+            }
+        });
+
+        //動態產生select
+        $.ajax({
+            url: "../../product/ProFindBySellerServlet",
+            Type: "POST",
+            dataType: "JSON",
+            success: function(data) {
+                console.log(data);
+                let list = "";
+                for (i = 0; i < data.length; i++) {
+                    list += `<option value="${data[i].pro_id}">${data[i].pro_name}</option>`
+                }
+                $("#selectID").html(list);
+                $("#selectID").change();
+            }
+        });
+
+        //AJAX請求圖片
+        $("#selectID").on('change', function(e) {
+            let proi_pro_id = $(e.target).val();
+            $("#imgMain").html("");
+            console.log(proi_pro_id);
+
+            $.ajax({
+                url: "../../product/ProImgSelServlet",
+                type: "get",
+                dataType: "JSON",
+                data: {
+                    "proi_pro_id": proi_pro_id
+                },
+
+                success: function(data) {
+                    console.log(data);
+                    for (let p = 0; p < data.length; p++) {
+                        let images =
+                            `   <ul class ="Imgshow">
+            <li><img src="../../product/ProImgOutServlet?proi_id=${data[p].proi_id}" alt=""></li>
+            <li> <a href="javascript:void(0)" data-proiid="${data[p].proi_id}"> <i class="fas fa-trash-alt"></i></a></li>  
+            </ul>
+        `;
+                        $("#imgMain").append(images);
+                    }
+                }
+            });
+        })
+
+        //預覽圖片
+        $('#file1').on('change', function() {
+            var file = $('#file1')[0].files[0];
+            var reader = new FileReader;
+            reader.onload = function(e) {
+                $('#demoimg').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(file);
+        })
+
+        //上傳圖片的ajax
+        $('#imgform').on('submit', function(e) {
+            $.ajax({
+                url: "../../product/ProImgAddServlet",
+                type: 'POST',
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    if (data == "1") {
+                        alert("上傳成功");
+                        location.reload(false);
+
+                    } else {
+                        swal("商品照片有錯誤!", "商品照片最多八張", "error");
+                    }
+                },
+                error: function(data) {
+                    alert("上傳失敗, 請重新檢查")
+                }
+            });
+            //取消form表單的跳轉畫面
+            e.preventDefault();
+        });
+        //刪除圖片
+        $("#imgMain").on('click', "a", function(e) {
+            //取值
+            let proi_id = e.currentTarget.dataset.proiid;
+            console.log(proi_id);
+
+            //傳送
+            $.ajax({
+                url: "../../product/ProImgDelServlet",
+                type: "POST",
+                dataType: "JSON",
+                data: {
+                    "proi_id": proi_id
+                },
+                success: function(data) {
+                    if (data == 1) {
+                        alert("刪除成功");
+                        location.reload(false);
+                    } else {
+                        alert("刪除失敗 請再檢查")
+                    }
+                },
+                error: function(data) {
+                    alert("下架失敗, 請重新檢查")
+                },
+            })
+        });
+
+        $('#goSel').on('click', function(e) {
+            $.ajax({
+                url: "../../product/ProFindBySellerServlet",
+                type: "GET",
+                dataType: "JSON",
+                success: function(data) {
+                    if (data.length != 0) {
+                        window.location.href = `ProductSeller.html?memid=${data[0].pro_smem_id}`;
+                    } else {
+                        alert("目前賣場無商品");
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="../index/js/friendchat.js"></script>
+
+</body>
+
+</html>

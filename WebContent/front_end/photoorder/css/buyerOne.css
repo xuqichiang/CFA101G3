@@ -1,0 +1,314 @@
+.wrap {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Helvetica Neue, PingFang TC, Noto Sans TC, 微軟正黑體, Microsoft JhengHei, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #495057;
+    text-align: left;
+    background-color: #f3f1f1;
+    display: flex;
+    padding: 30px;
+}
+
+.side-bar img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.side-bar {
+    width: 30%;
+    border-radius: 10px;
+    background: #fff;
+    padding-bottom: 30px;
+    margin-right: 30px;
+    padding-top: 30px;
+}
+
+.s-user-name {
+    color: #fb6b5e;
+    font-size: 20px;
+    text-align: center;
+}
+
+.user-hr {
+    display: flex;
+    justify-content: center;
+}
+
+.user-hr i {
+    color: #dee2e6;
+    margin-bottom: 20px;
+}
+
+.user-hr::before {
+    color: #dee2e6;
+    content: "";
+    display: inline-block;
+    width: 100px;
+    height: 1px;
+    border-bottom: 1px solid #a1a0a0bd;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.user-hr::after {
+    color: #dee2e6;
+    display: inline-block;
+    content: "";
+    width: 100px;
+    height: 1px;
+    border-bottom: 1px solid #a1a0a0bd;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.menu a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #495057;
+}
+
+.menu i {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fc9086;
+}
+
+.menu li {
+    width: 85%;
+    line-height: 45px;
+    margin: 10px auto;
+}
+
+.menu a:hover {
+    color: #fa3e2c;
+    background: #fc908621;
+    border-radius: 5px;
+}
+
+.content {
+    width: 100%;
+}
+
+.order {
+    padding: 0 30px;
+    border-radius: 10px;
+}
+
+.order-nav {
+    width: 100%;
+    display: flex;
+    background: #fff;
+    border-bottom: 2px solid #b3acacb9;
+}
+
+.order-nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #495057;
+    padding: 10px 0;
+}
+
+.order-nav li {
+    width: 100%;
+}
+
+.seller {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.order-main li {
+    width: 100%;
+    margin: 10px 0;
+    background: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.order-main img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.order-main a {
+    text-decoration: none;
+    color: #495057;
+}
+
+.order-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    color: #fa3e2c;
+}
+
+.order-price {
+    float: right;
+}
+
+.order-footer {
+    clear: both;
+}
+
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.order-block {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.fa-store {
+    margin-left: 10px;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.order-status {
+    margin-left: 10px;
+    float: left;
+}
+
+.order-status span {
+    margin-right: 20px;
+}
+
+.order-status button {
+    margin-right: 5px;
+}
+
+.spo_status button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.spo_status button:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.spo_pay_status button {
+    background-color: #fc9086;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.spo_pay_status button:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.spo_cargo_status button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.spo_cargo_status button:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.popup-wrap {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    content: '';
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.popup-container {
+    width: 60%;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.popup-container {
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.spo-wrap {
+    border: 1px solid #fa3e2c;
+    padding: 10px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.spo-wrap label {
+    margin-right: 10px;
+    display: inline-block;
+    background: #f1a59e86;
+    width: 140px;
+    text-align: right;
+    padding: 7px 10px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
+.spo-wrap button {
+    display: none;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+
+/*內容input設定*/
+
+.form-control {
+    width: 90%;
+}
+
+.mibblebox {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+textarea {
+    resize: none;
+}

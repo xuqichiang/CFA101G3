@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/buyerShopOrder.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../product/js/newCart.js"></script>
+    <title>會員中心｜MarryHappiness</title>
+    <style>
+        ul {
+            list-style: none;
+            padding-left: 0px;
+        }
+        
+        .form-control {
+            width: 65%;
+        }
+        
+        .mibblebox {
+            display: inline-block;
+            width: 45%;
+        }
+        /* 	.content { */
+        /* 	height: 50px; */
+        /* 	width: 230px; */
+        /* 	border: 10px solid black; */
+        /* 	overflow: hidden; */
+        /* 	padding-top: 2px; */
+    </style>
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+    <div class="wrap">
+        <div class="side-bar">
+            <img class="imgdata" src="" alt="">
+            <div class="user-name s-user-name"></div>
+            <div class="user-hr">
+                <i class="fas fa-heart"></i>
+            </div>
+            <ul class="menu">
+                <li><a href="memberBuyProfile.html?action=profile" id="profile"><i class="fas fa-user"></i>個人資料</a></li>
+                <li><a href="memberBuyProfile.html?action=setting" id="setting"><i
+                            class="fas fa-file-invoice"></i>帳號設定</a></li>
+                <li><a href="buyerShopOrder.html?action=getAll"><i class="fas fa-shopping-cart"></i>商品訂單</a></li>
+                <li><a href="buyerLocationOrder.html"><i class="fas fa-church"></i>婚禮場地</a></li>
+                <li><a href="BuyerOrder.html"><i class="fas fa-camera-retro"></i>婚紗攝影</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <form class="" id="orderlist"></form>
+        </div>
+        <form action="../../locationorder/GetorderLocrServletfront?action=checkoutdeposit" method="post" id="submit-form">
+            <input type="hidden" name="LOCO_PAYTYPE" value="" id="LOCO_PAYTYPE">
+            <input type="hidden" name="LOCO_ID" value="" id="LOCO_ID">
+        </form>
+        <form action="../../locationorder/GetorderLocrServletfront?action=checkoutTotal" method="post" id="submit-formtotal">
+            <input type="hidden" name="LOCO_PAYTYPEtotal" value="" id="LOCO_PAYTYPEtotal">
+            <input type="hidden" name="LOCO_IDtotal" value="" id="LOCO_IDtotal">
+        </form>
+    </div>
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let order = urlParams.get("LOCO_ID");
+        let loco_PAYTYPE = null;
+        // console.log(order);
+        $.ajax({
+            url: "../../locationorder/SmemLocationorderList",
+            type: "post",
+            dataType: "json",
+            data: {
+                "action": "getSmemOrderOneID",
+                "LOCO_ID": order
+            },
+            success: function(data) {
+                // console.log(data);
+                let loco_PAYTYPE = data.loco_PAYTYPE;
+                let tmp = `	
+				<div class="mibblebox">
+				<div class="mb-3">
+					<label for="loco_ID" class="form-label">訂單編號</label> <input
+						type="text/UTF-8" class="form-control" id="loco_ID"
+						name="loco_ID" value="${data.loco_ID}" disabled>
+				</div>
+				<div class="mb-3">
+					<label for="loco_BMEM_ID" class="form-label">場地店家</label> <input
+						type="text/UTF-8" class="form-control" id="loco_BMEM_ID"
+						name="loco_BMEM_ID" value="${getmemname(data.loco_SMEM_ID)}" disabled>
+				</div>
+				<div class="mb-3">
+				<label for="loco_LOCR_ID" class="form-label">廳房</label> <input
+					type="text/UTF-8" class="form-control" id="loco_LOCR_ID"
+					name="loco_LOCR_ID" value="${getlocrname(data.loco_LOCR_ID)}" disabled>
+				</div>
+				<div class="mb-3">
+				<label for="loco_LOCP_ID" class="form-label">方案</label> <input
+					type="text/UTF-8" class="form-control" id="loco_LOCP_ID"
+					name="loco_LOCP_ID" value="${getlocpname(data.loco_LOCP_ID)}" disabled>
+				</div>
+				<div class="mb-3">
+				<label for="loco_TABLE_NUM" class="form-label">預定桌數</label> <input
+					type="text/UTF-8" class="form-control" id="loco_TABLE_NUM"
+					name="loco_TABLE_NUM" value="${data.loco_TABLE_NUM}" disabled>
+				</div>
+				<div class="mb-3">
+				<label for="loco_ORDER_TIME" class="form-label">預定日期</label> <input
+					type="text/UTF-8" class="form-control" id="loco_ORDER_TIME"
+					name="loco_ORDER_TIME" value="${data.loco_ORDER_TIME}" disabled>
+				</div>
+				<div class="mb-3">
+				<label for="loco_RESERVE_TIME" class="form-label">宴客日期</label> <input
+					type="text/UTF-8" class="form-control" id="loco_RESERVE_TIME"
+					name="loco_RESERVE_TIME" value="${data.loco_RESERVE_TIME}" disabled>
+				</div>
+			</div>
+				<div class="mibblebox">
+				<div class="mb-3">
+				<label for="loco_DEPOSIT" class="form-label">訂金</label> <input
+					type="text/UTF-8" class="form-control" id="loco_DEPOSIT"
+					name="loco_DEPOSIT" value="${data.loco_DEPOSIT}" disabled>
+				</div>
+				<div class="mb-3">
+				<label for="loco_TOTALPRICE" class="form-label">總金額</label> <input
+					type="text/UTF-8" class="form-control" id="loco_TOTALPRICE"
+					name="loco_TOTALPRICE" value="${data.loco_TOTALPRICE}" disabled>
+				</div>
+				<div class="mb-3">
+				<label for="loco_PAYTYPE" class="form-label">付款方式</label> <input
+					type="text/UTF-8" class="form-control" id="loco_PAYTYPE"
+					name="loco_PAYTYPE" value="${getpaytype(data.loco_PAYTYPE)}" disabled>
+				</div>
+				<div class="mb-3">
+				<label for="loco_ORDER_STATUS" class="form-label">訂單狀況</label> <input
+					type="text/UTF-8" class="form-control" id="loco_ORDER_STATUS"
+					name="loco_ORDER_STATUS" value="${getstatus(data.loco_ORDER_STATUS)}" disabled>
+				</div>
+				<div class="mb-3">
+				<label for="loco_PAY_STATUS" class="form-label">付款狀況</label> <input
+					type="text/UTF-8" class="form-control" id="loco_PAY_STATUS"
+					name="loco_PAY_STATUS" value="${getpaystatus(data.loco_PAY_STATUS)}" disabled>
+				</div>
+				<div class="mb-3">
+				<label for="loco_NOTE" class="form-label">備註</label> <input
+					type="text/UTF-8" class="form-control" id="loco_NOTE"
+					name="loco_NOTE" value="${getnote(data.loco_NOTE)}" disabled>
+				</div>
+
+			</div>`;
+                $('#orderlist').append(tmp);
+
+                $('#LOCO_PAYTYPE').val(loco_PAYTYPE);
+                $('#LOCO_PAYTYPEtotal').val(loco_PAYTYPE);
+
+
+                //loco_ORDER_STATUS   0:預約中	1:預約成功	2:預約失敗	3:訂單已完成	4:已取消	
+                //loco_PAY_STATUS     0:未付款	1:付款失敗	2:超過付款時間	3:已付訂金	4:已付尾款	5:退款中
+
+
+                if (data.loco_ORDER_STATUS == 0 && data.loco_PAY_STATUS == 0) {
+                    let botton = `
+				<button type="button" class="btn btn-primary" value="${data.loco_ID}" data-action="paydeposit">訂金付款</button>
+
+				<button type="button" class="btn btn-primary" value="${data.loco_ID}" data-action="deleteorder">取消預約</button>`;
+
+                    $('#orderlist').append(botton);
+
+
+                } else if (data.loco_ORDER_STATUS == 1 && data.loco_PAY_STATUS == 0) {
+                    let botton = `
+				<button type="button" class="btn btn-primary" value="${data.loco_ID}" data-action="paydeposit">訂金付款</button>
+
+				<button type="button" class="btn btn-primary" value="${data.loco_ID}" data-action="deleteorder">取消預約</button>`;
+
+                    $('#orderlist').append(botton);
+
+
+                } else if (data.loco_ORDER_STATUS == 0 && data.loco_PAY_STATUS == 3) {
+                    let botton = `
+				<button type="button" class="btn btn-primary" value="${data.loco_ID}" data-action="finishtotal">結清尾款</button>`;
+                    $('#orderlist').append(botton);
+                } else if (data.loco_ORDER_STATUS == 1 && data.loco_PAY_STATUS == 3) {
+                    let botton = `
+				<button type="button" class="btn btn-primary" value="${data.loco_ID}" data-action="finishtotal">結清尾款</button>`;
+                    $('#orderlist').append(botton);
+                } else if (data.loco_ORDER_STATUS == 3 && data.loco_PAY_STATUS == 3) {
+                    let botton = `
+				<button type="button" class="btn btn-primary" value="${data.loco_ID}" data-action="finishtotal">結清尾款</button>`;
+                    $('#orderlist').append(botton);
+                } else if (data.loco_ORDER_STATUS == 4 && data.loco_PAY_STATUS == 5) {
+                    let botton = `
+				<button type="button" class="btn btn-primary" value="${data.loco_ID}" data-action="rebackcheck">確認退款</button>`;
+                    $('#orderlist').append(botton);
+                }
+
+
+
+
+
+
+            }
+
+
+
+
+
+        })
+
+
+        $('#orderlist').on('click', "button", function(e) {
+            let AA = e.currentTarget.dataset.action;
+
+            // if (AA == "paydeposit") {
+            // 	LocoID = e.target.value;
+            // 	console.log("111");
+            // 	$.ajax({
+            // 		url: "../../locationorder/GetorderLocrServletfront",
+            // 		type: 'POST',
+            // 		data: {
+            // 			"LOCO_ID": LocoID,
+            // 			"LOCO_PAYTYPE": loco_PAYTYPE,
+            // 			"action": "paydeposit"
+            // 		},
+            // 		dataType: "json",
+            // 		success: function (data) {
+            // 			console.log("1112");
+            // 			if (data == "1") {
+            // 				alert("更新成功");
+            // 				location.reload(false);
+            // 			} else {
+            // 				alert("更新失敗");
+            // 			}
+            // 		}
+
+            // 	});
+            if (AA == "paydeposit") {
+                LocoID = e.target.value;
+                $('#LOCO_ID').val(LocoID);
+
+                Swal.fire({
+                    title: '確認付款嗎?',
+                    showCancelButton: true,
+                    confirmButtonText: `前往付款`,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $('#submit-form').submit();
+                    }
+                })
+
+
+            } else if (AA == "finishtotal") {
+                LocoID = e.target.value;
+                $('#LOCO_IDtotal').val(LocoID);
+                Swal.fire({
+                    title: '確認付清尾款嗎?',
+                    showCancelButton: true,
+                    confirmButtonText: `前往付款`,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $('#submit-formtotal').submit();
+                    }
+                })
+
+            } else if (AA == "deleteorder") {
+                LocoID = e.target.value;
+                console.log("1113");
+                Swal.fire({
+                    title: '您確定要取消訂單嗎?',
+                    text: "取消後將無法返回唷～",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '是的, 忍痛取消!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: "../../locationorder/GetorderLocrServletfront",
+                            type: 'POST',
+                            data: {
+                                "LOCO_ID": LocoID,
+                                "action": "deleteorder"
+                            },
+                            dataType: "json",
+                            success: function(data) {
+                                if (data) {
+                                    Swal.fire(
+                                        '已經取消了!',
+                                        '您已經將此筆訂單取消',
+                                        'success'
+                                    ).then((response) => {
+                                        window.location.reload();
+                                    });
+                                } else {
+                                    swal("發生異常", "取消失敗，請聯絡客服人員", "error").then((response) => {
+                                        window.location.reload();
+                                    });
+                                }
+
+                            }
+
+                        });
+                    }
+                })
+
+
+            } else if (AA == "rebackcheck") {
+                LocoID = e.target.value;
+                console.log("1113");
+                Swal.fire({
+                    title: '您有收到退款嗎?',
+                    text: "確定後將無法更改唷～",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '是的, 已收退款!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: "../../locationorder/GetorderLocrServletfront",
+                            type: 'POST',
+                            data: {
+                                "LOCO_ID": LocoID,
+                                "action": "rebackcheck"
+                            },
+                            dataType: "json",
+                            success: function(data) {
+                                if (data) {
+                                    Swal.fire(
+                                        '狀態已更新了!',
+                                        '您已收取此筆訂單退款',
+                                        'success'
+                                    ).then((response) => {
+                                        window.location.reload();
+                                    });
+                                } else {
+                                    swal("發生異常", "更新失敗，請聯絡客服人員", "error").then((response) => {
+                                        window.location.reload();
+                                    });
+                                }
+
+                            }
+
+                        });
+                    }
+                })
+
+            }
+
+
+            //取消form表單的跳轉畫面
+            e.preventDefault();
+        });
+
+        //跟資料庫請求個人頭像
+        Ajaxheadshot();
+
+        function Ajaxheadshot() {
+            $.ajax({
+                type: "post",
+                url: "../../member/headshotBuyServlet",
+                data: {
+                    "headshot": "headshot"
+                },
+                xhrFields: {
+                    // 將回傳結果以Blob保持原本二進位的格式回傳
+                    //jquery的dataType無法設定返回格式為blob需要手動修改
+                    responseType: "blob"
+                },
+                success: function(result) {
+                    let img = document.getElementsByClassName('imgdata');
+                    if (result.size != "0") {
+                        let url = URL.createObjectURL(result);
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = url;
+                        }
+                    } else {
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = "images/music_castanet_girl.png";
+                        }
+                    }
+
+                }
+            });
+        }
+        //請求個人資料
+        Ajaxprofile();
+
+        function Ajaxprofile() {
+            $.ajax({
+                type: "get",
+                url: "../../member/buyProfileServlet",
+                dataType: 'json',
+                success: function(result) {
+                    if (result == "0") {
+                        window.location.href = "../../front_end/index/index.jsp";
+                    } else {
+                        resultData = result;
+                        $('.user-name').html(result.name != null ? result.name : "尚未填寫");
+                        $('#phone').html(result.phone != null ? result.phone : "尚未填寫");
+                        $('#city').html(result.city != null ? result.city : "尚未填寫");
+                        $('#cityarea').html(result.cityarea != null ? result.cityarea : "尚未填寫");
+                        $('#street').html(result.street != null ? result.street : "尚未填寫");
+                    }
+                }
+            });
+        };
+
+        function getmemname(Mem_ID) {
+            let Mem_name = null;
+            $.ajax({
+                type: "post",
+                url: "../../locationorder/SmemLocationorderList",
+                data: {
+                    "Mem_ID": Mem_ID,
+                    "action": "getSmemname"
+                },
+                async: false,
+                dataType: "json",
+                success: function(data) {
+                    Mem_name = data.mem_shop_name;
+                }
+            });
+            return Mem_name;
+        }
+
+        function getlocrname(LOCR_ID) {
+            let Locr_name = null;
+            $.ajax({
+                type: "post",
+                url: "../../locationorder/SmemLocationorderList",
+                data: {
+                    "LOCR_ID": LOCR_ID,
+                    "action": "getlocrname"
+                },
+                async: false,
+                dataType: "json",
+                success: function(data) {
+                    Locr_name = data.locr_NAME;
+
+                }
+            });
+            return Locr_name;
+        }
+
+        function getlocpname(LOCP_ID) {
+            let Locp_name = null;
+            $.ajax({
+                type: "post",
+                url: "../../locationorder/SmemLocationorderList",
+                data: {
+                    "LOCP_ID": LOCP_ID,
+                    "action": "getlocpname"
+                },
+                async: false,
+                dataType: "json",
+                success: function(data) {
+
+                    Locp_name = data.locp_name;
+
+                }
+            });
+            return Locp_name;
+        }
+        //getpaytype:0:信用卡付款	1:web ATM
+        function getnote(id) {
+
+            if (id == null) {
+                return "";
+            } else {
+                return id;
+            }
+        }
+        //getpaytype:0:信用卡付款	1:web ATM
+        function getpaytype(id) {
+
+            if (id == 0) {
+                return "信用卡付款";
+            } else if (id == 1) {
+                return "web ATM";
+            }
+        }
+
+        //status:預約中1:預約成功2:預約失敗3:訂單已完成4:已取消
+        function getstatus(id) {
+
+            if (id == 0) {
+                return "預約中";
+            } else if (id == 1) {
+                return "預約成功";
+            } else if (id == 2) {
+                return "預約失敗";
+            } else if (id == 3) {
+                return "訂單已完成";
+            } else if (id == 4) {
+                return "已取消";
+            }
+        }
+
+        //getpaystatus 0:未付款	1:付款失敗	2:超過付款時間	3:已付訂金	4:已付尾款	5:退款中 6:已退款
+        function getpaystatus(id) {
+
+            if (id == 0) {
+                return "未付款";
+            } else if (id == 1) {
+                return "付款失敗";
+            } else if (id == 2) {
+                return "超過付款時間";
+            } else if (id == 3) {
+                return "已付訂金";
+            } else if (id == 4) {
+                return "已付尾款";
+            } else if (id == 5) {
+                return "退款中";
+            } else if (id == 6) {
+                return "已退款";
+            }
+        }
+    </script>
+    <script src="js/friendchat.js"></script>
+</body>
+
+</html>

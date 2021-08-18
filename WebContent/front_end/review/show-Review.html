@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show-review</title>
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/show-Review.css">
+    <script src="js/newCart.js"></script>
+
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+
+    <div class="big_container">
+        <!-- 左側文章處+留言-->
+        <div class="big_left">
+
+            <div class="category">
+                <ul id="category-data">
+                </ul>
+            </div>
+
+
+            <!--左側會員評價-->
+            <div class="all-message">
+                <div class="one-message" id="one-message">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 右側bar-->
+        <div class="big_right">
+            <div class="sidebar">
+
+                <section class="goto_post">
+                    <div class="text">
+                        <p><i class="fas fa-star" style="color: rgb(247, 183, 9);"></i>&nbsp;店家評價募集中 </p>
+                        <span>五星大推的！可怕的雷店？有什麼要提前溝通的小細節？結婚是人一生一次的大事，快給學弟妹們指點迷津吧！ </span>
+                    </div>
+                    <a href="javascript:void(0)" id="reviewbtn">
+						評價此商家</a>
+                </section>
+                <div class="hot-store-area">
+                    <div class="hot-store-top" id="hot-store-top">
+                        <span>熱門商家</span><span>HOT STORE</span>
+                        <div class="hot-store-div"></div>
+                        <hr class="right1">
+                    </div>
+                </div>
+
+                <div id="shop">
+                    <div class="hot-store" id="hot-store">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" id="hiddenbtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" hidden>
+		幫我藏起來
+	</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title commentTitle" id="exampleModalLongTitle">評價此商家</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+                </div>
+
+                <div class="modal-body commentBox" id="modal-body">
+                    <!-- <label id="shopname" for="">商家名稱</label>
+					<input class="form-control" type="text" value="${data.spo_id}" readonly> -->
+
+                    <!-- 選擇星星區 -->
+                    <label for="">星數</label>
+                    <div>
+                        <!-- 下方 JS 會判斷輸入的星數 -->
+                        <div class="h5 mb-0" id="stars">
+                            <a href="#" class="text-decoration-none commentStar star-count-1">
+                                <i class="fas fa-star text-light p-1 bg-secondary" aria-hidden="true" style="font-size:12px;"></i>
+                            </a>
+                            <a href="#" class="text-decoration-none commentStar star-count-2">
+                                <i class="fas fa-star text-light p-1 bg-secondary" aria-hidden="true" style="font-size:12px;"></i>
+                            </a>
+                            <a href="#" class="text-decoration-none commentStar star-count-3">
+                                <i class="fas fa-star text-light p-1 bg-secondary" aria-hidden="true" style="font-size:12px;"></i>
+                            </a>
+                            <a href="#" class="text-decoration-none commentStar star-count-4">
+                                <i class="fas fa-star text-light p-1 bg-secondary" aria-hidden="true" style="font-size:12px;"></i>
+                            </a>
+                            <a href="#" class="text-decoration-none commentStar star-count-5">
+                                <i class="fas fa-star text-light p-1 bg-secondary" aria-hidden="true" style="font-size:12px;"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <label for="">評價內容</label>
+                    <textarea class="form-control" name="" id="review-area" cols="30" rows="7" placeholder="寫下你的心得(250字)..." maxlength="250"></textarea>
+
+                    <form>
+                        <div class="form-group">
+
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer" id="modal-footer">
+                    <div id="errorMsg" class="errorMsg"></div>
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button> -->
+                    <button type="button" class="btn btn-primary" id="okbtn">送出</button>
+                    <!--接錯誤訊息 -->
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+    <script>
+        // 取得星星數
+        let starIcon = document.querySelectorAll('.commentStar i');
+        let starNumber = 0;
+        for (let i = 0; i < 5; i++) {
+            starIcon[i].addEventListener('click', function(event) {
+                    event.preventDefault();
+                    for (let j = 0; j <= i; j++) {
+                        starIcon[j].classList.add('bg-warning');
+                    }
+                    for (let k = 4; k > i; k--) {
+                        starIcon[k].classList.remove('bg-warning');
+                    }
+                    starNumber = i + 1; // starNumber = 傳到資料庫的星數
+                },
+                false
+            );
+        }
+
+        $("#reviewbtn").on('click', function() {
+            $("#hiddenbtn").click();
+        });
+
+
+
+
+        //頁面載入即顯示右方熱門商家
+        hotStore();
+
+        //獲取熱門商家
+        function hotStore() {
+            $.ajax({
+                type: "post",
+                url: "../../review/reviewActionServlet",
+                data: {
+                    "action": "hotStore",
+                },
+                dataType: "json",
+                success: async function(response) {
+                    console.log(response)
+                    if (response.length < 5) {
+                        for (let i = 0; i < response.length; i++) {
+                            let tmp = `
+							<div class="hot-store" id="hot-store">
+								<div class="left_store_pic">
+						<img src="../../review/reviewImgServlet?action=getShopLogo&mem_id=${response[i].SMEM_ID}" width="65px" height="65px">
+					</div>
+
+					<div class="sidebar_right_info">
+						<ul>
+							<li><a class="sidebar_storename" href="javascript:void(0)">${await getShopNameAsync(response[i].SMEM_ID)}</a></li>
+							<li>共${response[i].REV_COUNT}則評價 </li>
+							<li>平均${response[i].AVG_SCORE}/5顆星<i class="fas fa-star" style="color: rgb(247, 183, 9);"></i></li>
+						</ul>
+							
+					</div>
+					</div>
+							`;
+                            $("#shop").append(tmp);
+                        }
+                    } else {
+                        for (let i = 0; i < 5; i++) {
+                            let tmp = `
+							<div class="hot-store" id="hot-store">
+							<div class="left_store_pic">
+						<img src="../../review/reviewImgServlet?action=getShopLogo&mem_id=${response[i].SMEM_ID}" height="65px">
+					</div>
+
+					<div class="sidebar_right_info">
+						<ul>
+							<li><a class="sidebar_storename" href="javascript:void(0)">${await getShopNameAsync(response[i].SMEM_ID)}</a></li>
+							<li>共${response[i].REV_COUNT}則評價 </li>
+							<li>平均${response[i].AVG_SCORE}/5顆星<i class="fas fa-star" style="color: rgb(247, 183, 9);"></i></li>
+						</ul>
+					</div>
+					</div>
+							`;
+                            $("#shop").append(tmp);
+                        }
+                    }
+                }
+            });
+        }
+
+
+        let urlParams = new URLSearchParams(window.location.search);
+        let mem_id = urlParams.get("mem_id"); //指賣家會員id
+        if (mem_id != null) {
+            //用smemid抓出評價內容
+            $.ajax({
+                type: "post",
+                url: "../../review/reviewActionServlet",
+                dataType: 'json',
+                data: {
+                    "smem_id": mem_id,
+                    "action": "showBmemReview"
+                },
+                //< img src = "data:image/*;base64,${result[i].MEM_HEADSHOT}" width = "40" >
+                success: async function(result) {
+                    for (let i = 0; i < result.length; i++) {
+                        let template = `
+							<div class="message-top">
+						<div class="left_author_pic">
+						<img src="../../review/reviewImgServlet?action=getBmemHeadShot&mem_id=${result[i].BMEM_ID}" width="40">
+						</div>
+
+						<div class="right_info">
+							<ul>
+								<li class="mem_author">${await getMemberNameAsync(result[i].BMEM_ID)}<span>&emsp;評價了</span><a class="storename"
+										href="javascript:void(0)">${await getShopNameAsync(result[i].SMEM_ID)}</a></li>
+								──&ensp;${result[i].REV_SCORE}顆星${conutStar(result[i].REV_SCORE)}
+							</ul>
+						</div>
+					</div>
+
+					<div class="inner-message" id="inner-message">
+						${result[i].REV_CONTENT}<br>
+
+						<div class="time">${result[i].REV_TIME}</div>
+						<hr class="left1">
+					</div>
+						`;
+                        $("#one-message").append(template);
+                    }
+                }
+            });
+        }
+
+        // 把店家商店名稱顯示在評論格中
+        if (mem_id != null) {
+            $.ajax({
+                type: "post",
+                url: "../../member/memServlet",
+                data: {
+                    "action": "getMemberVO",
+                    "mem_id": mem_id
+                },
+                async: false,
+                dataType: "json",
+                success: function(response) {
+                    let template = `
+                   		 <label id="shopname" for="">商家名稱</label>
+			<input class="form-control" type="text" value="${response.mem_shop_name}" readonly>
+					`;
+                    $(".commentBox").prepend(template);
+                }
+            });
+        }
+
+
+
+        //會員編號找到會員名稱
+        function getMemberNameAsync(mem_id) { //做一個 Promise 物件
+            return new Promise(function(resolve, reject) {
+                $.ajax({
+                    url: "../../member/memServlet",
+                    type: "post",
+                    data: {
+                        "action": "getMemberVO",
+                        "mem_id": mem_id
+                    },
+                    dataType: 'json',
+                    success: function(res) {
+                        resolve(res.mem_name); // 成功的結果用 resolve
+                    },
+                    error: function(res) {
+                        reject("error"); // 失敗的結果用 reject
+                    }
+                });
+            });
+        }
+
+        //會員編號找到商店名稱
+        function getShopNameAsync(mem_id) {
+            return new Promise(function(resolve, reject) {
+                $.ajax({
+                    url: "../../member/memServlet",
+                    type: "post",
+                    data: {
+                        "action": "getMemberVO",
+                        "mem_id": mem_id
+                    },
+                    dataType: 'json',
+                    success: function(res) {
+                        resolve(res.mem_shop_name); // 成功的結果用 resolve
+                    },
+                    error: function(res) {
+                        reject("error"); // 失敗的結果用 reject
+                    }
+                });
+            });
+        }
+
+        //返回星星數
+        function conutStar(count) {
+            let star = "";
+            for (let index = 0; index < count; index++) {
+                star += `<i class="fas fa-star" style="color: rgb(247, 183, 9);"></i>`;
+            }
+            return star;
+        }
+
+        // 送出按鈕
+        $("#okbtn").on('click', function() {
+            //  let starNumber = starNumber;//取星數
+            let review = $("#review-area").val();
+            review2 = review.replace(/  /g, "  "); //當遇到兩個空白轉換成兩個  
+            review2 = review2.replace(/\n/g, "<br>"); //textarea換行轉成<br>
+
+
+            $.ajax({
+                url: "../../review/PoReviewServlet",
+                type: "POST",
+                data: { //把data送進servlet
+                    "smem_id": mem_id,
+                    "rev_score": starNumber,
+                    "rev_content": review2
+                },
+                success: function(result) {
+                    alert(result);
+                    window.location.reload();
+                },
+                error: function(data) {
+                    $("#errorMsg").html("");
+                    let errorMsg = JSON.parse(data.responseText);
+                    for (let i = 0; i < errorMsg.length; i++) {
+                        $("#errorMsg").append(errorMsg[i] + "<br>");
+                    }
+                    alert("發佈失敗");
+                }
+            });
+        });
+    </script>
+
+    <script src="js/friendchat.js"></script>
+</body>
+
+</html>

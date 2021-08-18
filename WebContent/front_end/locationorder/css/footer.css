@@ -1,0 +1,52 @@
+.footer{
+    margin-top: 50px;
+    padding: 10px 70px;
+/*     height: 100%; */
+    background-color: #c5dad1;
+}
+
+.foote-top{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    color:black;
+    border-bottom: 1px solid #6e6d6d;
+}
+.foote-content div{
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing:2px;
+}
+
+.foote-content li{
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.foote-content a{
+    text-decoration: none;
+    color: #414141;
+}
+
+.foote-content a:hover{
+    color: #6e6d6d;
+}
+
+.foote-between{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.foote-between img{
+    border-radius: 10px;
+    width: 150px;
+}
+
+.f-logo{
+    font-size: 10px;
+    margin: 10px;
+    line-height: 10px;
+    color: #6e6d6d;
+}

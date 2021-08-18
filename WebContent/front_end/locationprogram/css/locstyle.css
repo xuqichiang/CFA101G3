@@ -1,0 +1,465 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.wrapper {
+    /* width: 1024px; */
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    background: #eee;
+    padding: 0 10px;
+    ;
+}
+
+.topbar ul {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topbar a {
+    text-decoration: none;
+    color: #616161;
+}
+
+.topbar a:hover {
+    text-decoration: underline;
+}
+
+.topbar h2 {
+    color: #9f9f9f;
+}
+
+h1 {
+    margin-right: 50px;
+    margin-left: 20px;
+}
+
+h1 a,
+h1 a:hover {
+    text-decoration: none;
+    font-size: 25px;
+    color: #ff3e9e;
+}
+
+.nav {
+    display: flex;
+    line-height: 80px;
+    height: 80px;
+}
+
+.menu {
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #616161;
+}
+
+.menu a:hover {
+    color: #000;
+}
+
+.store {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    top: 60px;
+    left: -25px;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    padding: 5px 10px;
+    line-height: 40px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 20;
+    background: #fff;
+}
+
+.menu li:hover .store {
+    display: block;
+}
+
+.store li:hover {
+    background: #eee;
+}
+
+.product {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    top: 60px;
+    left: 75px;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    padding: 5px 10px;
+    line-height: 40px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 20;
+    background: #fff;
+}
+
+.product li:hover {
+    background: #eee;
+}
+
+.menu li:hover .product {
+    display: block;
+}
+
+#carouselExampleIndicators {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    border-radius: 10px;
+}
+
+#carouselExampleIndicators img {
+    border-radius: 10px;
+    max-height: 350px;
+    max-width: 650px;
+}
+
+.carouseWrap {
+    background: #eee;
+    padding: 30px 0;
+}
+
+.place h3 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 微軟正黑體, "Microsoft JhengHei";
+    display: inline-block;
+}
+
+.place,
+.place:hover {
+    display: inline-block;
+    margin: 15px 30px;
+    color: #000;
+    text-decoration: none;
+}
+
+.place i {
+    color: #587ef1;
+    font-size: 25px;
+}
+
+.place-photo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.place-photo li {
+    width: 24%;
+    margin-bottom: 30px;
+    border: 1px solid #959595;
+    border-radius: 5px;
+    height: 400px;
+    position: relative;
+    margin-left: -1px;
+    margin-right: 12px;
+}
+
+.place-photo img {
+    border-radius: 5px 5px 0 0;
+    margin-top: -1px;
+}
+
+.place-photo-img {
+    position: relative;
+}
+
+.place-photo a,
+.place-photo a:hover {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    color: #000;
+    margin-top: 40px;
+    text-indent: 20px;
+}
+
+.tag {
+    background: #ff9e3e;
+    width: 120px;
+    padding: 6px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    top: -1px;
+    left: 15px;
+}
+
+.tagImg {
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+    /* background-image: url(../images/Loclogo1.jpg); */
+    overflow: hidden;
+    position: absolute;
+    top: -35px;
+    left: 20px;
+}
+
+.place-title a,
+.place-title a:hover {
+    text-indent: 10px;
+    margin-top: 10px;
+    color: #ff9e3e;
+    font-weight: normal;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.place-title span {
+    color: #5e5e5e;
+}
+
+.tag-wrap {
+    margin: 20px 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.tag-wrap-1 {
+    background-color: #FFE6E5;
+    color: #FF6687;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.tag-wrap-2 {
+    background-color: #eee;
+    color: #5e5e5e;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.tag-map {
+    text-align: right;
+    padding: 10px 20px;
+    color: #616161;
+}
+
+.footer {
+    background: #ffe6e5;
+    padding: 30px;
+}
+
+.footer h4 {
+    text-align: center;
+    text-shadow: 0px 0px 10px #b64c50;
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.wanted-form {
+    max-width: 500px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.wanted-btn {
+    background: #ff6687;
+    color: #fff;
+    height: 45px;
+    line-height: 45px;
+    margin: 15px auto;
+    font-size: 15px;
+    width: 90%;
+    display: block;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 0;
+}
+
+.wanted-btn:hover {
+    color: #eee;
+}
+
+.place-href {
+    display: block;
+    padding: 0;
+    width: 100%;
+    height: 200px;
+    margin: 0 !important;
+}
+
+.place-banner {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    width: 100%;
+}
+
+.place-banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    max-width: 100%;
+}
+
+.carousel-item img {
+    margin: 0 auto;
+}

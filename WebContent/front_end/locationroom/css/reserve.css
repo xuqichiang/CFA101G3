@@ -1,0 +1,125 @@
+/*頁面*/
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    
+}
+
+/*整個預約區*/
+.reserve-content{
+    margin-top: 100px;
+    height: 100%;
+    border: 1px solid #d5cb8e;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/*店家資訊*/
+.mem-information{
+    height: 100px;
+    border-bottom: 1px solid #d5cb8e;
+    background-color: #d5cb8e;
+    display: flex;
+    align-items: center;
+    opacity:0.5;
+}
+
+/*LOGO*/
+.mem-logo{
+    width: 70px;
+    height: 70px;
+    overflow: hidden; /*隱藏邊框外*/
+    background-color: white;
+    border-radius: 30%;
+    margin-left: 30px;
+    opacity:0.8; /*刷淡*/
+    display: flex;
+    align-items: center;
+}
+
+.mem-logo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*婚攝店家*/
+.mem-wed{
+    margin-left: 10px;
+}
+
+.mem-shop{
+    margin-bottom:8px;
+    font-size: 18px;
+    font-family: 微軟正黑體;
+    letter-spacing: 3px;
+}
+
+/*地標*/
+.mem-map{
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: #000000;
+}
+
+.mem-map img{
+    width: 15px;
+    height: 15px;
+}
+
+/*預約專區*/
+.reserve-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topic-from{
+    color: ;
+    font-size: 25px;
+    font-family: 微軟正黑體;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 20px 0;
+}
+
+/*表單*/
+.table-form{
+    width: 450px;
+}
+
+label{
+    margin: 10px 0;
+    font-family: 微軟正黑體;
+    font-size: 17px;
+    font-weight: 500;
+    color: #495057;
+    letter-spacing: 1px;
+}
+
+input{
+    width: 100%;
+    height: 35px;
+    font-size: 12px;
+    color: #6e6d6d;
+}
+/*下拉選單*/
+.phoo-phop{
+
+}
+
+/*單選*/
+.phoo-place{
+    width: 15px;
+    height: 10px;
+}
+
+.phoo-place span{
+    color: tomato;
+}
+
+/*確認*/
+.confirm{
+    margin: 20px 0;
+    height: 40px;
+}

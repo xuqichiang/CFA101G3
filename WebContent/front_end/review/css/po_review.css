@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Sarabun:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+
+body {
+	/* background-color: #EEB8B8; */
+	background-color:white;
+	font-family: 'Noto Sans TC', sans-serif;
+	font-family: 'Sarabun', sans-serif;
+	font-weight: 300;
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+/* .po_big_container{
+	width: 100%;
+	height: 100%;
+	background-color:rgb(65, 25, 25);
+} */
+
+
+#errorMsg{
+    font-weight: 500;
+    color: maroon;
+}
+
+.form-select2{
+	margin: 0; 
+	margin-top: 20px;
+}
+
+.po-container {
+	background-color: #FADCDA;
+	width: 800px;
+	height: 1300px;
+	margin: 0px auto;
+	margin-top: 50px;
+    margin-bottom: 50px;
+	border-radius: 10px;
+}
+
+.content {
+	width: 700px;
+	height: 1250px;
+	/* border: 1.5px solid rgb(145, 145, 137); */
+	margin: 0px auto;
+	
+}
+
+.po-top {
+	/*border: 1px solid yellow;*/
+	height: 55px;
+	background-color: #FF80A2;
+    width: 800px;
+	position: absolute;
+    left: 300px;
+	border-radius: 10px 10px 0 0 ;
+}
+
+
+/* 開話題的字 */
+.po-top p {
+	font-size: 24px;
+	font-family: 'Noto Sans TC', sans-serif;
+	letter-spacing: 2px;
+	font-weight: 500;
+	text-align: center;
+	line-height: 55px;
+	color:  #fcfcfc ;
+}
+
+.hr1 {
+	/* border: 2px solid #f3827a;*/
+	/* width: 90%;  */
+	text-align: center; 
+    margin: 0;
+    border: 2px solid #f3827a 
+}
+
+
+
+.inner-mem {
+	display: flex;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	/*border: 1px solid palevioletred;*/
+}
+
+.right_info {
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+/* .right_info ul li {
+	
+} */
+
+.mem_author {
+	font-size: 18px;
+	font-family: 'Noto Sans TC', sans-serif;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 20px;
+}
+
+
+/* .show-cat {
+	margin-bottom: 5px;
+	font-size: 15px;
+	width: 200px;
+	height: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+    background-color: #D5CB81;
+}  */
+
+
+.title {
+	width: 100%;
+	height: 40px;
+    box-sizing: border-box;
+}
+
+.editor2 {
+    margin-top: 10px;
+	width: 100%;
+	height: 70%;
+    background-color: white;
+	/* border: 1px solid #000; */
+	padding: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-radius: 5px;
+
+}
+
+.editor2:focus {
+	/* border: 1px solid rgb(240, 64, 64); */
+	outline: none;
+}
+
+.editor2 img {
+	max-width: 500px;
+}
+
+.inner-btn{
+    text-align: center;
+}
+
+#post-button{
+     margin: 5px;
+}
+
+
+.file{
+     margin-top: 5px;
+}
+
+
+/* .tag-box{
+	height: 40px;
+	
+} */
+
+#tagBtn:disabled{
+	cursor: not-allowed;
+
+}
+#tags > button{
+	margin: 5px;
+}
+
+.tagInput{
+	width: 200px;
+	height: 32px;
+	margin-top: 10px;
+	border-radius: 5px;
+	display: inline-block;
+}
+/* 加入此標籤按鈕 */
+.tagBtn{
+margin-left: 10px;
+background-color: #FF80A2;
+width: 120px;
+height: 36px;
+display: inline-block;
+}

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <link rel="stylesheet" href="css/LocSellerProfile.css">
+    <link rel="stylesheet" href="css/memberBuyProfile.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="js/jquery.datetimepicker.full.js"></script>
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/newCart.js"></script>
+    <style>
+        #table thead,
+        #table tr {
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-top-color: rgb(230, 189, 189);
+        }
+        
+        #table {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(230, 189, 189);
+        }
+        
+        table td {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        
+        #table th {
+            padding: 5px 10px;
+            font-size: 12px;
+            font-family: Verdana;
+            color: rgb(177, 106, 104);
+        }
+        
+        #table tr:nth-child(even) {
+            background: rgb(238, 211, 210)
+        }
+        
+        #table tr:nth-child(odd) {
+            background: #FFF
+        }
+        
+        .profile {
+            display: flex;
+        }
+    </style>
+    <title>場地中心｜MarryHappiness</title>
+</head>
+
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart">
+                    <a href="javascript:void(0)" id="cartModal">
+                        <i class="fas fa-shopping-cart" id="cartIcon"></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography
+				</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location
+				</a></li>
+            <li>
+                <a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a>
+            </li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product
+				</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post
+				</a></li>
+        </ul>
+    </header>
+    <div class="wrap">
+        <div class="side-bar">
+            <img class="imgdata" src="" alt="">
+            <div class="user-name s-user-name"></div>
+            <div class="user-hr"><i class="fas fa-heart"></i></div>
+            <ul class="menu">
+                <li><a href="../member/LocSellerProfile.html?action=profile" id="profile"><i class="fas fa-user"></i>個人資料</a></li>
+                <li><a href="../member/LocSellerProfile.html?action=setting" id="setting"><i class="fas fa-file-invoice"></i>帳號設定</a></li>
+                <li><a href="../member/LocSellerProfile.html?action=sellerProfile"><i class="fas fa-shopping-cart"></i>店家資料</a></li>
+                <li><a href="../locationprogram/Locmanagement.html"><i class="fas fa-church"></i>場地管理</a></li>
+                <li><a href="javascript:void(0)" id="locRManage"><i class="fas fa-home"></i>廳房管理</a></li>
+                <ul class="menu-locR">
+                    <li><a href="../locationorder/locationOrderGetAll.html"><i class="fas fa-user"></i>訂單資料</a>
+                    </li>
+                    <li><a href="../../locationroom/locationRoomServlet?action=locationRoomGetAll"><i
+                                class="fas fa-file-invoice"></i>查詢廳房</a></li>
+
+                    <li><a href="../locationroom/locationRoomGetOnee2.jsp"><i
+                            class="fas fa-church"></i>新增廳房</a></li>
+                    <li><a href="../../locationroom/locationRoomServlet?action=locationRoomDelete"><i
+                            class="fas fa-camera-retro"></i>刪除廳房</a></li>
+                </ul>
+                <li><a href="javascript:void(0)" id="locPManage"><i class="fas fa-indent"></i>方案管理</a></li>
+                <ul class="menu-locP">
+                    <li><a href="../locationprogram/listLocpBySmemId.html"><i class="fas fa-tasks"></i>查詢方案</a></li>
+                    <li><a href="../locationprogram/addLocpimage.html"><i class="fas fa-folder-plus"></i></i>新增方案</a></li>
+                    <li><a href="../locationprogram/updateLocpimage.html"><i class="fas fa-pencil-alt"></i>修改方案</a></li>
+                    <li><a href="../locationprogram/delLocp.html"><i class="fas fa-trash-alt"></i>刪除方案</a></li>
+                </ul>
+                <li><a href="../locationprogram/loccalendar.html"><i class="far fa-calendar-alt"></i>行程管理</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2 style="font-size: 20px;font-weight: 500;">修改方案</h2>
+            <div class="profile">
+                <div class="programblock">
+                    請選擇想修改的方案
+                    <select class="form-control" id="cholocp">
+                            <option value="">---請選擇---</option>
+                        </select>
+                    <ul>
+                        <li>
+                            <h3 id="name-prompt"></h3>
+                        </li>
+                        <li>
+                            <h3 id="price-prompt"></h3>
+                        </li>
+                        <li>
+                            <h3 id="start-prompt"></h3>
+                        </li>
+                        <li>
+                            <h3 id="end-prompt"></h3>
+                        </li>
+                        <li>
+                            <h3 id="status-prompt"></h3>
+                        </li>
+                        <li>
+                            <h3 id="content-prompt"></h3>
+                        </li>
+                    </ul>
+                    <table id="updtable"> </table>
+                    <br>
+                    <input type="button" value="修改方案" id="changebutton" class="submit-btn" disabled><br>
+                    <br>
+                </div>
+
+
+                <div class="imgblock">
+                    <form action="" enctype="multipart/form-data" method="POST" id="imgform">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="file1">選取圖片:</label>
+                                <input type="file" id="file1" name="file1" accept="image/*">
+                                <input type="hidden" id="uplocpid" name="locp_id">
+                            </div>
+                            <br>
+                            <img id="demoimg" width="450" />
+                            <div class="form-group">
+                                <button type="submit" class="submit-btn" id="uplbtn">上傳</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+
+    <script>
+        //ajax請求買家的所有方案
+        $(function() {
+            $.ajax({
+                url: "../../locationprogram/getOneBySmemidServlet",
+                type: "POST",
+                dataType: "JSON",
+                success: function(data) {
+                    let html = "";
+                    for (let i = 0; i < data.length; i++) {
+                        html += `<option value="${data[i].locp_id}">${data[i].locp_name}</option>`;
+                    }
+                    $("#cholocp").append(html);
+                }
+            })
+        })
+
+        //註冊select選單的change事件,產生修改的內容
+        $("#cholocp").on('change', function(e) {
+            $("#changebutton").removeAttr("disabled");
+            $('#name-prompt').text('');
+            $('#price-prompt').text('');
+            $('#start-prompt').text('');
+            $('#end-prompt').text('');
+            $('#status-prompt').text('');
+            $('#content-prompt').text('');
+            let locpid = $(e.target).val();
+            $.ajax({
+                url: "../../locationprogram/getOneByLocpidServlet",
+                type: "POST",
+                dataType: "JSON",
+                data: {
+                    "locpid": locpid
+                },
+                success: function(data) {
+                    let html = "";
+                    html = `<tr>
+                                    <td>方案名稱</td>
+                                    <td><input type="hidden" id="locp_id" name="locp_id" value="${data.locp_id}">
+                                        <input type="text" id="locp_name" name="locp_name" value="${data.locp_name}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>方案價格</td>
+                                    <td><input type="text" id="locp_price" name="locp_price" value="${data.locp_price}"></td>
+                                </tr>
+                                <tr>
+                                    <td>方案開始日期</td>
+                                    <td><input name="start_date" id="start_date" type="text" value="${data.locp_start_time}"></td>
+                                </tr>
+                                <tr>
+                                    <td>方案結束日期</td>
+                                    <td><input name="end_date"   id="end_date"   type="text" value="${data.locp_end_time}"></td>
+                                </tr>
+                                <tr>
+                                    <td>方案內容</td>
+                                    <td><textarea name="locp_content" id="locp_content">${data.locp_content}</textarea></td>
+                                </tr>    
+                                <tr>
+                                    <td>方案狀態</td>
+                                    <td><label for="locp_status_0">下架</label><input type="radio" id="locp_status_0" name="locp_status" value="0">
+                                        <label for="locp_status_1">上架</label><input type="radio" id="locp_status_1" name="locp_status" value="1">
+                                    </td>
+                                </tr>`;
+
+                    let status = data.locp_status;
+                    $("table").html(html);
+                    if (status == 0) {
+                        $('#locp_status_0').prop('checked', true);
+                    } else {
+                        $('#locp_status_1').prop('checked', true);
+                    }
+                    //產生上傳圖片區的方案id
+                    $('#uplocpid').attr('value', data.locp_id);
+                }
+            })
+        })
+
+        //送出修改ajax
+        $("#changebutton").on('click', function() {
+            let locp_id = $('#locp_id').val();
+            let locp_name = $('#locp_name').val();
+            let locp_price = $('#locp_price').val();
+            let locp_start_time = $('#start_date').val();
+            let locp_end_time = $('#end_date').val();
+            let locp_content = $('#locp_content').val();
+            let locp_status = $('input[name=locp_status]:checked').val();
+            $.ajax({
+                url: "../../locationprogram/updateLocpServlet",
+                type: "POST",
+                dataType: "JSON",
+                data: {
+                    "locp_id": locp_id,
+                    "locp_name": locp_name,
+                    "locp_price": locp_price,
+                    "locp_start_time": locp_start_time,
+                    "locp_end_time": locp_end_time,
+                    "locp_content": locp_content,
+                    "locp_status": locp_status
+                },
+                success: function(data) {
+
+                    if (data == "1") {
+                        swal('恭喜你', "修改成功", 'success');
+                    } else {
+                        swal("修改失敗", '請檢查內容是否有誤,圖片格式是否正確', 'error');
+                    }
+                },
+                error: function(data) {
+                    swal("修改失敗", '請檢查內容是否有誤,圖片格式是否正確', 'error');
+                },
+            });
+        });
+
+        //日期選擇器datetimepicker註冊(使用滑鼠滑進註冊)
+        $("#updtable").on('mouseenter', '#start_date', function() {
+            $.datetimepicker.setLocale('zh'); // kr ko ja en
+            $(function() {
+                $('#start_date').datetimepicker({
+                    format: 'Y-m-d',
+                    onShow: function() {
+                        this.setOptions({
+                            maxDate: $('#end_date').val() ? $('#end_date').val() : false
+                        })
+                    },
+                    timepicker: false
+                });
+
+                $('#end_date').datetimepicker({
+                    format: 'Y-m-d',
+                    onShow: function() {
+                        this.setOptions({
+                            minDate: $('#start_date').val() ? $('#start_date').val() : false
+                        })
+                    },
+                    timepicker: false
+                });
+            });
+        })
+
+        //預覽圖片
+        $('#file1').on('change', function() {
+            var file = $('#file1')[0].files[0];
+            var reader = new FileReader;
+            reader.onload = function(e) {
+                $('#demoimg').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(file);
+        })
+
+        //上傳圖片的ajax
+        $('#imgform').on('submit', function(e) {
+            $.ajax({
+                url: "../../locationprogramimages/updateLocpImagesServlet",
+                type: 'POST',
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    if (data == "1") {
+                        swal('恭喜你', "上傳成功", 'success');
+                    } else {
+                        swal("上傳失敗", '請檢查圖片格式是否正確', 'error');
+                    }
+                },
+                error: function(data) {
+                    swal("上傳失敗", '請檢查圖片格式是否正確', 'error');
+                }
+            });
+            //取消form表單的跳轉畫面
+            e.preventDefault();
+        });
+
+        //設置旗幟
+        let n_flag = true;
+        let p_flag = true;
+        let sd_flag = true;
+        let ed_flag = true;
+        let s_flag = true;
+        let c_flag = true;
+
+        //確認旗幟均為true按鈕才能按
+        function checkFlag() {
+            if (n_flag && p_flag && c_flag && sd_flag && ed_flag && s_flag) {
+                $("#changebutton").removeAttr("disabled");
+            } else {
+                $("#changebutton").attr("disabled", "disabled");
+            }
+        }
+
+        //監聽方案名稱是否填寫正確
+        $('#updtable').on('input', '#locp_name', function() {
+            $('#name-prompt').text('');
+            if (validateLocpname()) {
+                $('#locp_name').css('border', '2px solid #27da80');
+                n_flag = true;
+            } else {
+                $('#name-prompt').text('請輸入有效的方案名稱');
+                $('#name-prompt').css('color', 'red');
+                $('#name-prompt').css('font-size', '6px');
+                $('#locp_name').css('border', '2px solid red');
+                n_flag = false;
+            }
+            checkFlag();
+        })
+
+        //監聽方案價格是否填寫正確
+        $('#updtable').on('input', '#locp_price', function() {
+            $('#price-prompt').text('');
+            if (validateLocpprice()) {
+                $('#locp_price').css('border', '2px solid #27da80');
+                p_flag = true;
+            } else {
+                $('#price-prompt').text('請輸入正確金額');
+                $('#price-prompt').css('color', 'red');
+                $('#price-prompt').css('font-size', '6px');
+                $('#locp_price').css('border', '2px solid red');
+                p_flag = false;
+            }
+            checkFlag();
+        })
+
+        //監聽方案開始日期是否有填寫
+        $('#updtable').on('change', '#start_date', function(e) {
+            $('#start-prompt').text('');
+            if (e.target.value != "") {
+                $('#start_date').css('border', '2px solid #27da80');
+                sd_flag = true;
+            } else {
+                $('#start-prompt').text('請輸入正確日期');
+                $('#start-prompt').css('color', 'red');
+                $('#start-prompt').css('font-size', '6px');
+                $('#start_date').css('border', '2px solid red');
+                sd_flag = false;
+            }
+            checkFlag();
+        })
+
+        //監聽方案結束日期是否有填寫
+        $('#updtable').on('change', '#end_date', function(e) {
+            $('#end-prompt').text('');
+            if (e.target.value != "") {
+                $('#end_date').css('border', '2px solid #27da80');
+                ed_flag = true;
+            } else {
+                $('#end-prompt').text('請輸入正確日期');
+                $('#end-prompt').css('color', 'red');
+                $('#end-prompt').css('font-size', '6px');
+                $('#end_date').css('border', '2px solid red');
+                ed_flag = false;
+            }
+            checkFlag();
+        })
+
+        //監聽方案狀態是否有填寫
+        $('#updtable').on('change', 'input[name=locp_status]', function(e) {
+            $('#status-prompt').text('');
+            if (e.target.value != "") {
+                s_flag = true;
+            } else {
+                $('#status-prompt').text('方案狀態未選擇');
+                s_flag = false;
+            }
+            checkFlag();
+        })
+
+        //監聽方案內容是否有填寫
+        $('#updtable').on('input', '#locp_content', function() {
+            $('#content-prompt').text('');
+            if (validateLocpcontent()) {
+                $('#locp_content').css('border', '2px solid #27da80');
+                c_flag = true;
+            } else {
+                $('#content-prompt').text('請輸入正確內容,最少30個字!');
+                $('#content-prompt').css('color', 'red');
+                $('#content-prompt').css('font-size', '6px');
+                $('#locp_content').css('border', '2px solid red');
+                c_flag = false;
+            }
+            checkFlag();
+        })
+
+        //方案名稱正則表達式
+        function validateLocpname() {
+            let locpname = $('#locp_name').val();
+            const re = /^[(\u4e00-\u9fa5)(a-zA-Z0-9_)]{2,10}$/;
+            return re.test(locpname);
+        }
+
+        //價格正則表達式
+        function validateLocpprice() {
+            let locpprice = $('#locp_price').val();
+            const re = /^[0-9]{1,10}$/;
+            return re.test(locpprice);
+        }
+
+        //方案內容正則表達式
+        function validateLocpcontent() {
+            let locpcontent = $('#locp_content').val();
+            if (locpcontent.length > 30) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+        //profile跟資料庫請求個人資料
+        Ajaxprofile();
+        //跟資料庫請求個人頭像
+        Ajaxheadshot();
+
+        function Ajaxprofile() {
+            $.ajax({
+                type: "get",
+                url: "../../member/buyProfileServlet",
+                dataType: 'json',
+                success: function(result) {
+                    if (result == "0") {
+                        window.location.href = "../../front_end/index/index.jsp";
+                    } else {
+                        resultData = result;
+                        $('.user-name').html(result.name != null ? result.name : "尚未填寫");
+                        $('#phone').html(result.phone != null ? result.phone : "尚未填寫");
+                        $('#city').html(result.city != null ? result.city : "尚未填寫");
+                        $('#cityarea').html(result.cityarea != null ? result.cityarea : "尚未填寫");
+                        $('#street').html(result.street != null ? result.street : "尚未填寫");
+                    }
+                }
+            });
+        };
+
+        function Ajaxheadshot() {
+            $.ajax({
+                type: "post",
+                url: "../../member/headshotBuyServlet",
+                data: {
+                    "headshot": "headshot"
+                },
+                xhrFields: {
+                    // 將回傳結果以Blob保持原本二進位的格式回傳
+                    //jquery的dataType無法設定返回格式為blob需要手動修改
+                    responseType: "blob"
+                },
+                success: function(result) {
+                    let img = document.getElementsByClassName('imgdata');
+                    if (result.size != "0") {
+                        let url = URL.createObjectURL(result);
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = url;
+                        }
+                    } else {
+                        for (let i = 0; i < img.length; i++) {
+                            img[i].src = "images/music_castanet_girl.png";
+                        }
+                    }
+                }
+            });
+        }
+
+        $('#locRManage').on('click', function() {
+            $('.menu-locR').slideToggle();
+        });
+        $('#locPManage').on('click', function() {
+            $('.menu-locP').slideToggle();
+        });
+    </script>
+    <script src="js/friendchat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootatrap套版-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/header.css"><!--頭-->
+    <link rel="stylesheet" href="css/footer.css"><!--腳-->
+    <link rel="stylesheet" href="css/addPhop.css"><!--內容-->
+    <link rel="stylesheet" href="css/newCart.css">
+    <link rel="stylesheet" href="css/friendchat.css">
+    <!--日期css-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!--日期js-->
+    <script src="js/jquery.datetimepicker.full.js"></script>
+    <script src="js/newCart.js"></script>
+    <!--下拉選單JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!--ICON-->
+    <link rel="icon" href="images/logo-icon01.ico" type="image/x-icon" />
+    <title>MarryHappiness｜婚攝方案管理-新增方案</title>
+</head>
+<body>
+    <!--大頭-->
+    <header>
+        <div class="top">
+            <ul>
+                <!-- 購物車圖片Icon -->
+                <li><a href="../index/index.jsp">首頁</a></li>
+                <li><a href="../member/login.html"><i class="fas fa-sign-out-alt"></i>登入</a></li>
+                <li><a href="../../member/loginServlet?action=logout"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+                <li><a href="../../member/checkServlet"><i class="fas fa-home"></i> 會員系統</a></li>
+                <li class="headcart"><a href="javascript:void(0)" id="cartModal"><i class="fas fa-shopping-cart" id="cartIcon"></i></a></li>
+            </ul>
+        </div>
+        <!--上面增加的小色塊-->
+        <div class="nav1"></div>
+        <ul class="nav2">
+            <li><a href="../workphoto/browseHome.html">婚禮攝影<br>Photography</a></li>
+            <li><a href="../locationprogram/LocIndex.html">婚禮場地<br>Location</a></li>
+            <li><a href="../index/index.jsp" class="logo"><img src="images/MHlogo_01.svg"></a></li>
+            <li><a href="../product/ProductMain.html">婚禮週邊<br>Product</a></li>
+            <li><a href="../post/forumindex.html">專欄討論<br>Post</a></li>
+        </ul>
+    </header>
+    <!--內容-->
+    <div class="container">
+        <!--左欄-->
+        <div class="side-bar">
+            <!-- <img src="images/MHlogo_01.svg"> -->
+            <img class="imgdata" src="" alt="">
+            <div class="user-name s-user-name"></div>
+            <div class="user-hr"><i class="fas fa-heart"></i></div>
+            <!--管理頁面選單-->
+            <ul class="menu">
+                <li><a href="../photographer/wedSellerProfile.html?action=profile" id="profile"><i class="fas fa-user"></i>個人資料</a></li>
+                <li><a href="../photographer/wedSellerProfile.html?action=setting" id="setting"><i class="fas fa-file-invoice"></i>帳號設定</a></li>
+                <li><a href="../photographer/wedSellerProfile.html?action=sellerProfile"><i class="fas fa-address-card"></i>店家資料</a></li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo"><i class="fas fa-calendar-alt"></i>預約管理</a>
+                    <ul id="demo" class="collapse">
+                        <li><a class="work" href="../photoorder/listReserve.html"><i class="fas fa-angle-right"></i>查詢訂單</a></li>
+                        <li><a class="work" href="../photographer/calendarPhotographer.html"><i class="fas fa-angle-right"></i>查詢行程</a></li>
+                    </ul>
+                </li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo2"><i class="fas fa-tasks"></i>方案管理</a>
+                    <ul id="demo2" class="collapse">
+                        <li><a class="work" href="listAllPhotoProgram.html"><i class="fas fa-angle-right"></i>查詢方案</a></li>
+                        <li><a class="work" href="addPhotoProgram.html"><i class="fas fa-angle-right"></i>新增方案</a></li>
+                        <li><a class="work" href="updatePhotoProgram.html"><i class="fas fa-angle-right"></i>修改方案</a></li>
+                    </ul>
+                </li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo3"><i class="fas fa-camera-retro"></i>攝影師管理</a>
+                    <ul id="demo3" class="collapse">
+                        <li><a class="work" href="../photographer/listAllPhotographer.html"><i class="fas fa-angle-right"></i>查詢攝影師</a></li>
+                        <li><a class="work" href="../photographer/addPhotographer.html"><i class="fas fa-angle-right"></i>新增攝影師</a></li>
+                        <li><a class="work" href="../photographer/updataPhotographer.html"><i class="fas fa-angle-right"></i>修改攝影師</a></li>
+                    </ul>
+                </li>
+                <li class="menu-work">
+                    <a data-toggle="collapse" href="#demo4"><i class="fas fa-pencil-alt"></i>作品集管理</a>
+                    <ul id="demo4" class="collapse">
+                        <li><a class="work" href="../photographer/addWork.html"><i class="fas fa-angle-right"></i></i>新增作品集</a></li>
+                        <li><a class="work" href="../photographer/updataWork.html"><i class="fas fa-angle-right"></i></i>修改作品集</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--右欄-->
+        <div class="content">
+            <div class="title-top">
+                <i class="fas fa-camera-retro"></i>
+                <h2>新增方案</h2>
+            </div>
+            <form class="content-top" action="" enctype="multipart/form-data" method="POST" id="phopform">
+                <div class="program-left" id="program-left-id">
+                    <div class="form-group" id="form-name">
+                        <label>方案名稱</label>
+                        <input type="text" class="form-control" id="phop_name" name="phop_name"></input>
+                        <p id="name-prompt"></p>
+                    </div>
+                    <div class="form-group" id="form-price">
+                        <label>方案價錢</label>
+                        <input type="text" class="form-control" id="phop_price" name="phop_price"></input>
+                        <p id="price-prompt"></p>
+                    </div>
+                    <div class="form-group" id="form-categore">
+                        <label for="exampleFormControlSelect1">選擇類別</label>
+                        <select class="form-control" id="phop_phoc_id" name="phop_phoc_id">
+                            <option value="">---請選擇---</option>
+                            <option value="1">美式簡約風</option>
+                            <option value="2">韓式唯美風</option>
+                            <option value="3">中式復古風</option>
+                            <option value="4">經典大氣風</option>
+                            <option value="5">青春活潑風</option>
+                        </select>
+                        <p id="categore-prompt"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>開始時間</label><br>
+                        <input class="form-control start" id="phop_start_time" type="text" name="phop_start_time">
+                        <p id="start-prompt"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>結束時間</label><br>
+                        <input class="form-control end" id="phop_end_time" type="text" name="phop_end_time">
+                        <p id="end-prompt"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>方案內容</label>
+                        <textarea class="form-control" id="phop_content" rows="5" name="phop_content" onkeyup="this.value=this.value.replace(/[, ]/g,'')"></textarea>
+                        <p id="content-prompt"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>方案狀態</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="phop_status" id="phop_status_1" value="1">
+                            <label class="form-check-label" for="phop_status_1">上架</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="phop_status" id="phop_status_0" value="0" checked>
+                            <label class="form-check-label" for="phop_status_0">下架</label>
+                        </div>
+                        <p id="status-prompt"></p>
+                    </div>
+                    <button type="submit" class="edit-submit" id="confirm-program" disabled="disabled">確認新增</button>
+                </div>
+                <div class="program-rigth">
+                    <!--新增圖片-->
+                    <div class="form-group">
+                        <label for="file">方案圖片</label>
+                        <input type="file" id="file_img" class="upload" name="file_img" accept="image/*" multiple="multiple">
+                        <input type="hidden" id="phop-img-id" name="phop_img">
+                    </div>
+                    <div class="new-imgs" id="new-imgs-id"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--尾巴-->
+    <div class="footer">
+        <div class="foote-top">
+            <ul class="foote-content">
+                <div>婚攝服務</div>
+                <li><a href="../workphoto/browseHome.html">拍婚紗</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚宴服務</div>
+                <li><a href="../locationprogram/LocIndex.html">婚宴場地</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>婚禮週邊</div>
+                <li><a href="../product/ProductSubGoods.html">婚禮小物</a></li>
+                <li><a href="../product/ProductSubShoes.html">婚鞋</a></li>
+                <li><a href="../product/ProductSubRing.html">婚戒</a></li>
+            </ul>
+            <ul class="foote-content">
+                <div>專欄討論</div>
+                <li><a href="../post/forumindex.html">幸福專欄</a></li>
+            </ul>
+        </div>
+        <div class="foote-between">
+            <img src="images/MHlogo_01.svg" alt="">
+            <p class="f-logo">2021 MarryHappiness 嫁給幸福</p>
+        </div>
+    </div>
+    <script src="js/addphop.js"></script>
+    <script src="js/friendchat.js"></script>
+</body>
+
+</html>
